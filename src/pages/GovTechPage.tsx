@@ -232,7 +232,7 @@ export const GovTechPage: React.FC<GovTechPageProps> = ({
           <div className="flex flex-col sm:flex-row items-center gap-3">
             <button
               onClick={() => onNavigate('/enviar-oportunidade', undefined, 'parceiro')}
-              className="px-6 py-3.5 text-xs font-semibold uppercase tracking-wider text-[#0B1728] bg-[#C5A869] hover:bg-[#B59858] rounded-md transition-all shadow-md cursor-pointer whitespace-nowrap flex items-center gap-2"
+              className="px-6 py-3.5 text-xs font-semibold uppercase tracking-wider text-[#0B1728] btn-gold rounded-md transition-all shadow-md cursor-pointer whitespace-nowrap flex items-center gap-2"
             >
               <span>Apresentar solução</span>
               <ArrowUpRight className="w-4 h-4" />
@@ -464,7 +464,7 @@ const GovTechInlineForm: React.FC<{ onNavigate: (path: string) => void }> = ({ o
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full py-3.5 px-6 bg-[#C5A869] hover:bg-[#B59858] text-[#0B1728] font-bold text-xs uppercase tracking-wider rounded-lg shadow-sm transition-all cursor-pointer flex items-center justify-center gap-2"
+        className="w-full py-3.5 px-6 btn-gold text-[#0B1728] font-bold text-xs uppercase tracking-wider rounded-lg shadow-sm transition-all cursor-pointer flex items-center justify-center gap-2"
       >
         <span>{isSubmitting ? 'Registrando no CRM...' : 'Cadastrar Solução GovTech'}</span>
         <ArrowUpRight className="w-4 h-4" />
