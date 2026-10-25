@@ -1,0 +1,6 @@
+{
+  "name": "MACK Estratégias e Negócios",
+  "description": "Plataforma B2B de originação, crédito e soluções corporativas. Conectamos empresas, ativos e capital a parceiros capazes de executar.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

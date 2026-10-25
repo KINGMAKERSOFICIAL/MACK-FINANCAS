@@ -1,0 +1,1595 @@
+# PROMPT MASTER — CRIAÇÃO COMPLETA DO SITE MACK ESTRATÉGIAS E NEGÓCIOS
+
+## 1. INSTRUÇÃO PRINCIPAL
+
+Crie um site institucional B2B completo, premium, responsivo, comercial e orientado à conversão para:
+
+**MACK ESTRATÉGIAS E NEGÓCIOS**  
+Domínio: **mackfinancas.com.br**
+
+Descriptor obrigatório em todo o site:
+
+**ORIGINAÇÃO • CRÉDITO • SOLUÇÕES CORPORATIVAS**
+
+Frase institucional prioritária:
+
+**“Conectamos empresas, ativos e capital a parceiros capazes de executar.”**
+
+O site deve seguir rigorosamente as diretrizes abaixo.
+
+NÃO invente:
+- serviços;
+- produtos;
+- parceiros;
+- logos;
+- clientes;
+- depoimentos;
+- cases;
+- números;
+- faturamento;
+- resultados;
+- certificações;
+- taxas;
+- condições comerciais;
+- aprovações;
+- funcionalidades;
+- informações jurídicas;
+- informações regulatórias.
+
+Se uma informação não estiver especificada neste prompt, NÃO invente. Estruture o componente para receber a informação posteriormente pelo CMS.
+
+A MACK NÃO deve ser apresentada como:
+- banco;
+- instituição financeira;
+- gestora de recursos;
+- assessoria de investimentos;
+- consultoria de valores mobiliários;
+- escritório jurídico.
+
+A MACK deve ser apresentada como:
+
+**plataforma B2B de originação, crédito e soluções corporativas.**
+
+A atuação da MACK envolve:
+- originação;
+- qualificação;
+- conexão;
+- estruturação comercial;
+- acompanhamento.
+
+Serviços jurídicos não fazem parte da oferta da MACK.
+
+Quando uma demanda exigir assessoria jurídica, informar que essa necessidade será tratada por contratação própria e independente.
+
+Nunca utilizar linguagem de:
+- recomendação individualizada de investimentos;
+- gestão de recursos;
+- promessa de rentabilidade;
+- garantia de crédito;
+- garantia de aquisição;
+- garantia de preço;
+- garantia de prazo;
+- garantia de fechamento.
+
+Crédito, aquisição de ativos e demais operações sempre dependem de análise, aprovação e contratação com o parceiro responsável.
+
+---
+
+# 2. POSICIONAMENTO
+
+O site deve transmitir:
+
+**Institucional + B2B + Premium + Estratégico + Discreto + Confiável + Comercial.**
+
+A estética deve ser sofisticada, porém não parecer um banco digital.
+
+### Identidade visual
+
+Utilizar:
+
+- azul-marinho profundo como cor principal;
+- branco;
+- dourado discreto como cor de destaque;
+- tons neutros complementares.
+
+Evitar:
+- excesso de dourado;
+- efeitos cromados;
+- aparência de banco digital;
+- visual de fintech popular;
+- excesso de gradientes;
+- elementos chamativos demais;
+- fotos genéricas de dinheiro;
+- cartões de crédito;
+- moedas;
+- notas de dinheiro;
+- gráficos financeiros genéricos;
+- estética agressivamente promocional.
+
+O resultado deve parecer uma empresa de negócios B2B de alto nível.
+
+---
+
+# 3. DIREÇÃO VISUAL
+
+Criar uma identidade visual consistente em todas as páginas.
+
+### Cabeçalho
+
+Desktop:
+- header fixo;
+- fundo azul-marinho;
+- logo MACK;
+- menu horizontal;
+- CTA destacado “Enviar oportunidade”.
+
+Mobile:
+- menu hambúrguer;
+- logo;
+- CTA ou acesso rápido ao CTA principal.
+
+O CTA **“Enviar oportunidade”** deve permanecer visualmente destacado.
+
+### WhatsApp
+
+Adicionar botão flutuante de WhatsApp em todas as páginas públicas.
+
+O número deve ser configurável pelo painel/CMS.
+
+NUNCA utilizar número fictício ou placeholder em produção.
+
+---
+
+# 4. ARQUITETURA PRINCIPAL
+
+Criar exatamente estas rotas:
+
+```text
+/
+ /originacao-ativos
+ /credito-pj-agro
+ /solucoes-corporativas
+ /govtech
+ /parceiros
+ /conteudo
+ /enviar-oportunidade
+ /quem-somos
+ /area-do-cliente
+```
+
+Menu principal:
+
+1. Início
+2. Originação & Ativos
+3. Crédito PJ & Agro
+4. Soluções Corporativas
+5. GovTech & Mercado Público
+6. Parceiros
+7. Conteúdo
+8. CTA — Enviar oportunidade
+
+Rodapé:
+- Quem Somos
+
+Área do Cliente:
+- rota reservada;
+- NÃO exibir login até existir autenticação real.
+
+---
+
+# 5. FASES DE IMPLEMENTAÇÃO
+
+## FASE 0 — ATIVA
+
+Publicar:
+
+- Home;
+- Quem Somos;
+- Originação & Ativos;
+- Crédito PJ & Agro;
+- Parceiros;
+- Enviar Oportunidade;
+- Conteúdo;
+- formulários;
+- WhatsApp;
+- CRM/base central;
+- SEO;
+- políticas.
+
+## FASE 1
+
+Preparar:
+
+- Soluções Corporativas;
+- landings de precatórios;
+- landings de crédito;
+- automações CRM.
+
+## FASE 2
+
+GovTech somente após:
+- contrato;
+- parceria formalizada;
+- disponibilidade operacional.
+
+## FASE 3
+
+Área do Cliente:
+- oportunidades;
+- documentos;
+- propostas;
+- alertas;
+- relatórios;
+- integrações;
+- autenticação.
+
+NÃO publicar funcionalidades futuras como se já estivessem disponíveis.
+
+---
+
+# 6. HOME
+
+Rota:
+
+`/`
+
+## HERO
+
+Descriptor:
+
+**Originação • Crédito • Soluções Corporativas**
+
+Headline:
+
+**Conectamos empresas, ativos e capital a parceiros capazes de executar.**
+
+Texto:
+
+**A MACK é uma plataforma B2B de originação, crédito e soluções corporativas, que identifica oportunidades, qualifica demandas e conecta empresas, ativos e capital a parceiros especializados.**
+
+Criar três grandes portas de entrada:
+
+### CARD 1
+
+**Tenho um ativo**
+
+CTA:
+
+**Enviar oportunidade**
+
+### CARD 2
+
+**Preciso de crédito/solução**
+
+CTA:
+
+**Enviar oportunidade**
+
+### CARD 3
+
+**Quero ser parceiro**
+
+CTA:
+
+**Enviar oportunidade**
+
+Cada card deve abrir:
+
+`/enviar-oportunidade`
+
+com o tipo correspondente já selecionado.
+
+---
+
+# 7. QUATRO VERTICAIS
+
+Criar seção:
+
+**Nossas verticais de atuação**
+
+### 01 — Originação & Special Situations
+
+Precatórios, legal claims, direitos creditórios, oportunidades especiais/distressed e ativos imobiliários para compradores institucionais.
+
+Prioridade visual máxima.
+
+### 02 — Crédito PJ & Agro
+
+Capital de giro, garantias, home equity, crédito agro, consórcios e soluções estruturadas encaminhadas a parceiros habilitados.
+
+### 03 — Soluções Corporativas
+
+Soluções B2B organizadas por problema:
+
+- eficiência operacional;
+- tecnologia;
+- análise de risco;
+- serviços financeiros/fintech;
+- reorganização.
+
+### 04 — GovTech & Mercado Público
+
+Representação comercial e desenvolvimento de mercado para soluções voltadas ao setor público.
+
+IMPORTANTE:
+
+Se ainda não estiver liberada comercialmente, mostrar como:
+
+**Em ativação**
+
+ou manter o módulo oculto.
+
+Não mencionar parceiros ou fornecedores não autorizados.
+
+---
+
+# 8. SEÇÃO “COMO FUNCIONA”
+
+Criar uma linha visual com quatro etapas:
+
+### 01 — Entender
+
+Compreendemos a necessidade, ativo ou oportunidade.
+
+### 02 — Qualificar
+
+Analisamos informações, documentação, perfil e aderência.
+
+### 03 — Conectar
+
+Direcionamos a oportunidade ao parceiro adequado.
+
+### 04 — Acompanhar
+
+Acompanhamos a evolução comercial da demanda.
+
+Usar ícones sofisticados e minimalistas.
+
+---
+
+# 9. AVISO REGULATÓRIO NA HOME
+
+Exibir de forma discreta:
+
+**Atuação comercial e de originação. Soluções executadas com parceiros especializados. Crédito e aquisição dependem de análise e aprovação.**
+
+---
+
+# 10. CTA FINAL HOME
+
+Headline:
+
+**Tem uma oportunidade para discutir?**
+
+Botão:
+
+**Enviar oportunidade**
+
+Levar para:
+
+`/enviar-oportunidade`
+
+---
+
+# 11. PÁGINA QUEM SOMOS
+
+Rota:
+
+`/quem-somos`
+
+Título:
+
+**Quem Somos**
+
+Descriptor:
+
+**Originação • Crédito • Soluções Corporativas**
+
+Frase:
+
+**Conectamos empresas, ativos e capital a parceiros capazes de executar.**
+
+Texto institucional:
+
+**A MACK atua como plataforma B2B de originação e soluções empresariais, organizando oportunidades, qualificando demandas e conectando clientes e parceiros com capacidade de análise e execução.**
+
+### Missão
+
+**Estruturar conexões e soluções para empresas, investidores e instituições.**
+
+### Visão
+
+**Ser referência em originação, crédito e soluções corporativas no Centro-Oeste e no Brasil.**
+
+### Princípios
+
+- Credibilidade;
+- discrição;
+- estratégia;
+- execução responsável;
+- relacionamento de longo prazo.
+
+### Fundador
+
+**Marcos Aguiar**
+
+Texto:
+
+**Advogado, engenheiro florestal e empresário, com atuação em negócios, crédito, precatórios e soluções corporativas.**
+
+Adicionar a foto profissional fornecida pela empresa.
+
+Não aplicar filtros artificiais.
+
+Adicionar links:
+
+- LinkedIn;
+- Instagram;
+- Facebook.
+
+Ecossistema:
+
+**A MACK atua com rede de parceiros especializados e expansão modular das soluções conforme formalização e disponibilidade operacional.**
+
+---
+
+# 12. ORIGINAÇÃO & ATIVOS
+
+Rota:
+
+`/originacao-ativos`
+
+Esta é a página de MAIOR PRIORIDADE comercial.
+
+Título:
+
+**Originação & Ativos**
+
+Subtítulo:
+
+**Estruturamos e conectamos oportunidades a compradores e parceiros com capacidade de execução.**
+
+Criar quatro blocos:
+
+### Precatórios
+
+**Originação e triagem comercial de oportunidades envolvendo precatórios federais, estaduais e municipais, para encaminhamento a compradores institucionais conforme critérios de elegibilidade.**
+
+### Legal Claims
+
+**Originação de direitos litigiosos e créditos judiciais com potencial de monetização, sujeitos à análise do comprador e à documentação aplicável.**
+
+### Direitos Creditórios
+
+**Carteiras, recebíveis e créditos empresariais passíveis de análise e estruturação.**
+
+### Oportunidades Especiais
+
+**Ativos e situações não convencionais, inclusive ativos imobiliários e situações distressed, conforme aderência ao perfil de compradores/parceiros.**
+
+---
+
+# 13. CRITÉRIOS DE ANÁLISE
+
+Criar seção:
+
+**O que analisamos**
+
+Cards:
+
+- Ente devedor/contraparte;
+- estágio/estrutura;
+- documentação;
+- valor/ticket;
+- prazo/elegibilidade.
+
+---
+
+# 14. DISCLAIMER DE ORIGINAÇÃO
+
+Exibir:
+
+**A MACK atua na originação e estruturação comercial. Não há promessa de aquisição, preço ou fechamento sem análise e aprovação da contraparte.**
+
+NUNCA escrever:
+
+“Compramos precatórios.”
+
+NUNCA escrever:
+
+“Garantimos aquisição.”
+
+---
+
+# 15. ÂNCORAS DA PÁGINA
+
+Criar:
+
+```text
+#precatorios
+#legal-claims
+#direitos-creditorios
+#oportunidades-especiais
+```
+
+Preparar estrutura para futura landing:
+
+`/precatorios`
+
+---
+
+# 16. FORMULÁRIO DE ORIGINAÇÃO
+
+Campos:
+
+- Tipo de ativo/operação — obrigatório;
+- Valor estimado — obrigatório;
+- Ente devedor/contraparte — obrigatório quando aplicável;
+- Estágio/situação atual — obrigatório;
+- Documentos disponíveis — seleção + upload;
+- Mensagem — obrigatório.
+
+---
+
+# 17. CRÉDITO PJ & AGRO
+
+Rota:
+
+`/credito-pj-agro`
+
+Título:
+
+**Crédito PJ & Agro**
+
+Headline:
+
+**Conectamos empresas e produtores a soluções de crédito estruturadas com parceiros habilitados.**
+
+Criar cards:
+
+- Capital de giro;
+- Crédito com garantia;
+- Home equity;
+- Crédito agro;
+- Consórcios;
+- Soluções estruturadas.
+
+---
+
+# 18. COMO A MACK ATUA NO CRÉDITO
+
+Fluxo:
+
+**Entender a necessidade → Qualificar o perfil → Conectar à solução aderente → Acompanhar a operação**
+
+---
+
+# 19. O QUE ANALISAMOS
+
+- Perfil da empresa/produtor;
+- finalidade;
+- garantias;
+- ticket;
+- urgência;
+- documentação.
+
+---
+
+# 20. DISCLAIMER DE CRÉDITO
+
+Exibir:
+
+**A MACK não é instituição financeira. Conecta demandas a instituições e parceiros habilitados. Aprovação, taxa, prazo, garantia e liberação dependem da análise e contratação com o parceiro responsável.**
+
+Não criar consórcio como página principal.
+
+Consórcio deve permanecer dentro de Crédito PJ & Agro.
+
+---
+
+# 21. FORMULÁRIO CRÉDITO
+
+Campos:
+
+- Nome / empresa / CNPJ — obrigatório;
+- Telefone/WhatsApp / e-mail — obrigatório;
+- Perfil — Empresa / produtor / outro;
+- Finalidade — capital de giro / expansão / investimento / agro / garantia / consórcio / outro;
+- Valor estimado — obrigatório;
+- Garantia disponível — sim/não + tipo opcional;
+- Urgência — faixa de prazo;
+- Mensagem — opcional.
+
+---
+
+# 22. SOLUÇÕES CORPORATIVAS
+
+Rota:
+
+`/solucoes-corporativas`
+
+Título:
+
+**Soluções Corporativas**
+
+Subtítulo:
+
+**Portfólio de soluções empresariais estruturadas com apoio de parceiros especializados.**
+
+Organizar por problema:
+
+### Eficiência tributária e operacional
+
+### Tecnologia & automação
+
+### Análise de risco e informações
+
+### Estruturação de negócios
+
+### Fintech & serviços financeiros B2B
+
+### Recuperação e reorganização
+
+Fluxo:
+
+**Identificamos a dor → qualificamos a demanda → direcionamos à solução.**
+
+Benefícios:
+
+- Cross-sell em um único relacionamento;
+- baixo custo fixo;
+- solução sob medida;
+- execução coordenada com parceiros.
+
+IMPORTANTE:
+
+Somente exibir serviços efetivamente disponíveis.
+
+Módulos futuros devem existir no CMS como:
+
+`inativos`
+
+e não aparecer no site.
+
+---
+
+# 23. MÓDULOS FUTUROS
+
+Preparar arquitetura para:
+
+- pesquisa e monitoramento CPF/CNPJ;
+- análise de risco/KYC comercial;
+- plataforma financeira white label;
+- planejamento patrimonial/wealth;
+- soluções corporativas/agro adicionais.
+
+Não apresentar como disponíveis antes da formalização.
+
+---
+
+# 24. FORMULÁRIO SOLUÇÕES CORPORATIVAS
+
+Campos:
+
+- Empresa / CNPJ — obrigatório;
+- Contato / cargo — obrigatório;
+- Desafio principal — obrigatório;
+- Descrição da demanda — obrigatório;
+- Porte/faturamento estimado — opcional;
+- Prazo/urgência — opcional.
+
+Não citar nomes, logos ou condições comerciais de parceiros sem autorização.
+
+---
+
+# 25. GOVTECH & MERCADO PÚBLICO
+
+Rota:
+
+`/govtech`
+
+Criar tecnicamente, mas inicialmente:
+
+- fora do menu;
+- noindex;
+- sem CTA público;
+- não disponível comercialmente.
+
+Quando ativada:
+
+Título:
+
+**GovTech & Mercado Público**
+
+Subtítulo:
+
+**Representação comercial, desenvolvimento de mercado e estruturação de canais para soluções voltadas ao setor público.**
+
+Frentes:
+
+- Representação comercial;
+- desenvolvimento de mercado;
+- inteligência de oportunidades;
+- apoio à estratégia comercial.
+
+Compromisso:
+
+**Atuação com compliance, linguagem técnica e seleção criteriosa de oportunidades.**
+
+Público:
+
+- fornecedores de tecnologia;
+- empresas de software;
+- soluções de IA;
+- plataformas;
+- outras soluções empresariais com aderência ao setor público.
+
+Aviso:
+
+**A MACK atua na frente comercial e estratégica. A contratação pública depende do processo legal aplicável, e a implementação técnica é responsabilidade do fornecedor da solução.**
+
+Nunca usar linguagem de:
+- influência;
+- facilitação indevida;
+- garantia de contratação.
+
+---
+
+# 26. FORMULÁRIO GOVTECH
+
+Campos:
+
+- Empresa fornecedora — obrigatório;
+- Responsável/cargo — obrigatório;
+- E-mail/telefone — obrigatório;
+- Descrição da solução — obrigatório;
+- Órgão/mercado-alvo — opcional;
+- Diferenciais e referências — opcional;
+- Material de apresentação — upload futuro.
+
+---
+
+# 27. PARCEIROS
+
+Rota:
+
+`/parceiros`
+
+Título:
+
+**Parceiros**
+
+Headline:
+
+**A MACK funciona como hub comercial que identifica a oportunidade, qualifica a demanda e aciona o parceiro certo.**
+
+Categorias:
+
+- Compradores Institucionais;
+- Instituições & Soluções de Crédito;
+- Soluções Corporativas;
+- Soluções para Setor Público.
+
+Fluxo:
+
+**Cadastro → qualificação → oportunidade → execução/acompanhamento**
+
+CTA:
+
+**Seja um parceiro da MACK**
+
+NÃO criar carrossel de logos vazio.
+
+Só mostrar logos depois de autorização.
+
+---
+
+# 28. FORMULÁRIO PARCEIROS
+
+Campos:
+
+- Nome — obrigatório;
+- Empresa — obrigatório;
+- Segmento — obrigatório;
+- Cidade/UF — obrigatório;
+- E-mail — obrigatório;
+- Telefone — obrigatório;
+- Tipo de parceria — originação / crédito / solução corporativa / setor público / outro;
+- Como pode agregar? — obrigatório.
+
+---
+
+# 29. ENVIAR OPORTUNIDADE
+
+Rota:
+
+`/enviar-oportunidade`
+
+Esta é a página principal de conversão do site.
+
+Título:
+
+**Enviar Oportunidade**
+
+Subtítulo:
+
+**Apresente seu ativo, operação ou demanda empresarial para avaliação inicial.**
+
+Criar três opções:
+
+### Tenho um ativo
+
+### Preciso de crédito/solução
+
+### Quero ser parceiro
+
+---
+
+# 30. CONFIDENCIALIDADE
+
+Exibir:
+
+**As informações serão tratadas com confidencialidade e finalidade restrita à análise e encaminhamento da demanda.**
+
+Aviso:
+
+**O envio não gera obrigação de fechamento, aquisição, aprovação de crédito ou contratação.**
+
+---
+
+# 31. FORMULÁRIO CONDICIONAL
+
+O formulário deve mudar dinamicamente conforme a opção escolhida.
+
+Campos gerais:
+
+- Nome / empresa / cargo — obrigatório;
+- E-mail / telefone / WhatsApp — obrigatório;
+- Tipo de ativo/operação — condicional;
+- Valor estimado — condicional;
+- Ente devedor/contraparte — condicional;
+- Documentos disponíveis — condicional;
+- Mensagem — obrigatório;
+- NDA — opcional;
+- Consentimento LGPD — obrigatório.
+
+NDA:
+
+**Desejo avaliar assinatura de NDA antes do compartilhamento de documentos sensíveis.**
+
+NÃO gerar NDA automaticamente.
+
+---
+
+# 32. REGRA CRÍTICA DO FUNIL
+
+Todos os CTAs:
+
+**Tenho um ativo**
+
+**Preciso de crédito/solução**
+
+**Quero ser parceiro**
+
+devem direcionar para:
+
+`/enviar-oportunidade`
+
+com a opção correta já selecionada.
+
+---
+
+# 33. CRM / BASE CENTRAL
+
+Nenhum formulário pode simplesmente enviar e-mail.
+
+Todo envio deve ser gravado em uma base centralizada e exportável.
+
+Se ainda não houver CRM contratado:
+
+usar backend estruturado ou planilha integrada.
+
+Preparar arquitetura para integração futura com CRM.
+
+Campos mínimos:
+
+- ID;
+- data;
+- hora;
+- origem do lead;
+- URL;
+- UTM source;
+- UTM medium;
+- UTM campaign;
+- UTM content;
+- UTM term;
+- nome;
+- empresa;
+- CNPJ;
+- cargo;
+- telefone;
+- e-mail;
+- tipo de demanda;
+- vertical;
+- valor/ticket potencial;
+- estágio;
+- responsável;
+- próxima ação;
+- data da próxima ação;
+- parceiro/rota interna;
+- consentimento;
+- versão da política LGPD.
+
+Estágios:
+
+```text
+Novo
+↓
+Qualificação
+↓
+Oportunidade
+↓
+Proposta
+↓
+Negociação
+↓
+Fechado
+```
+
+Também permitir:
+
+- Perdido;
+- Nutrição.
+
+---
+
+# 34. CAMPO INTERNO
+
+O campo:
+
+**Parceiro/rota interna**
+
+é exclusivamente interno.
+
+Nunca exibir publicamente.
+
+---
+
+# 35. CONTEÚDO
+
+Rota:
+
+`/conteudo`
+
+Título:
+
+**Conteúdo**
+
+Subtítulo:
+
+**Insights, artigos e análises sobre originação, crédito, negócios e soluções empresariais.**
+
+Categorias:
+
+- Originação & Ativos;
+- Crédito PJ & Agro;
+- Soluções Corporativas;
+- GovTech;
+- Mercado;
+- Parceiros.
+
+GovTech somente aparece publicamente quando a vertical estiver ativa.
+
+---
+
+# 36. ARTIGOS INICIAIS
+
+Criar estrutura para:
+
+- Como identificar oportunidades com maior potencial;
+- Como preparar informações para análise de crédito;
+- O papel da originação B2B;
+- Governança em soluções corporativas;
+- Boas práticas de abordagem institucional;
+- Documentos necessários para envio de oportunidade.
+
+Não criar conteúdo adicional inventando dados da MACK.
+
+---
+
+# 37. CMS
+
+O CMS deve permitir editar sem código:
+
+- textos;
+- headlines;
+- CTAs;
+- cards;
+- imagens;
+- artigos;
+- categorias;
+- slugs;
+- títulos SEO;
+- descrições SEO;
+- status ativo/inativo;
+- logos autorizados;
+- número do WhatsApp;
+- links sociais;
+- módulos futuros.
+
+O administrador deve conseguir ativar/desativar módulos.
+
+---
+
+# 38. NEWSLETTER
+
+Título:
+
+**Receba novos insights da MACK**
+
+Campos:
+
+- E-mail corporativo — obrigatório;
+- Nome — opcional;
+- Consentimento — obrigatório quando utilizado para comunicações recorrentes.
+
+---
+
+# 39. ÁREA DO CLIENTE
+
+Rota:
+
+`/area-do-cliente`
+
+É FUTURA.
+
+NÃO criar login fictício.
+
+NÃO mostrar tela de login enquanto não houver autenticação real.
+
+A arquitetura deve prever futuramente:
+
+- Oportunidades;
+- Documentos;
+- Propostas;
+- Alertas & Acompanhamento;
+- Relatórios;
+- Consultas/monitoramentos quando contratados.
+
+Futuro backend:
+
+- CRM;
+- autenticação;
+- armazenamento seguro;
+- APIs;
+- trilha de auditoria.
+
+Quando implementado:
+
+- RBAC;
+- perfis de acesso;
+- MFA para administradores;
+- logs;
+- recuperação de senha;
+- política de documentos.
+
+Consultas CPF/CNPJ somente com:
+- base legal;
+- perfil autorizado;
+- registro de uso.
+
+---
+
+# 40. RODAPÉ
+
+Todas as páginas públicas devem possuir rodapé institucional.
+
+Exibir:
+
+**MACK Estratégias e Negócios**
+
+**Originação • Crédito • Soluções Corporativas**
+
+CNPJ:
+**Inserir somente o número oficial fornecido pela MACK.**
+
+Links:
+
+- Quem Somos;
+- Originação & Ativos;
+- Crédito PJ & Agro;
+- Soluções Corporativas;
+- Parceiros;
+- Conteúdo;
+- Enviar Oportunidade;
+- Política de Privacidade/LGPD;
+- Termos de Uso;
+- Aviso regulatório.
+
+Redes:
+
+- LinkedIn;
+- Instagram;
+- Facebook.
+
+Contato:
+
+- e-mail institucional;
+- WhatsApp.
+
+---
+
+# 41. DISCLAIMER GERAL
+
+Utilizar no rodapé:
+
+**A MACK Estratégias e Negócios atua em originação, desenvolvimento de negócios e conexão com parceiros especializados. Não é instituição financeira, gestora de recursos ou consultoria de valores mobiliários. Operações de crédito, aquisição de ativos e demais soluções estão sujeitas à análise, aprovação, contratação e condições dos respectivos parceiros responsáveis.**
+
+---
+
+# 42. CONTATOS
+
+Prever:
+
+**contato@mackfinancas.com.br**
+
+Para oportunidades:
+
+**oportunidades@mackfinancas.com.br**
+
+ou
+
+**originacao@mackfinancas.com.br**
+
+Para parceiros:
+
+**parceiros@mackfinancas.com.br**
+
+Redes:
+
+LinkedIn:
+`linkedin.com/in/marcosaguiar`
+
+Instagram:
+`@marcosaguiar80`
+
+Facebook:
+`@marcosaguiar80`
+
+---
+
+# 43. SEO
+
+Domínio canônico:
+
+**https://www.mackfinancas.com.br/**
+
+Escolher uma única versão canônica:
+- www;
+- ou sem www.
+
+A outra deve redirecionar com 301.
+
+Implementar:
+
+- sitemap.xml;
+- robots.txt;
+- Google Search Console;
+- canonical;
+- meta title;
+- meta description;
+- Open Graph;
+- imagem social por página;
+- URLs amigáveis;
+- redirects 301 do domínio/URLs antigos quando aplicável.
+
+GovTech e módulos futuros:
+
+**noindex + fora do sitemap enquanto não estiverem ativos.**
+
+Titles e descriptions devem refletir posicionamento B2B.
+
+Não usar promessas de resultado.
+
+---
+
+# 44. ANALYTICS
+
+Implementar Analytics/Tag Manager.
+
+Registrar eventos:
+
+- clique CTA;
+- início do formulário;
+- conclusão do formulário;
+- clique WhatsApp;
+- envio de parceiro;
+- inscrição newsletter.
+
+Capturar:
+
+- UTM source;
+- UTM medium;
+- UTM campaign;
+- UTM content;
+- UTM term.
+
+Enviar esses dados para CRM/base.
+
+---
+
+# 45. SEGURANÇA
+
+Implementar:
+
+- HTTPS/SSL;
+- proteção contra spam;
+- validação server-side;
+- validação client-side;
+- proteção dos formulários;
+- sanitização dos dados;
+- controle seguro de uploads;
+- backup;
+- exportação de leads.
+
+Nenhum dado crítico deve ficar somente em e-mail.
+
+---
+
+# 46. RESPONSIVIDADE
+
+Mobile-first.
+
+Testar obrigatoriamente em:
+
+- 360px;
+- 768px;
+- 1024px;
+- 1440px.
+
+Garantir:
+
+- menu mobile;
+- formulários funcionais;
+- CTAs acessíveis;
+- cards adaptáveis;
+- tipografia responsiva;
+- imagens otimizadas;
+- espaçamentos consistentes;
+- nenhuma quebra horizontal.
+
+---
+
+# 47. EXPERIÊNCIA DE USUÁRIO
+
+A navegação deve ser extremamente clara.
+
+O usuário precisa entender em poucos segundos:
+
+1. O que é a MACK;
+2. O que a MACK faz;
+3. Para quem ela trabalha;
+4. Como pode ajudá-lo;
+5. Como enviar uma oportunidade.
+
+O CTA principal deve sempre estar evidente.
+
+Prioridade de conversão:
+
+**Enviar oportunidade**
+
+---
+
+# 48. HIERARQUIA COMERCIAL
+
+A hierarquia visual deve seguir:
+
+### PRIORIDADE 1
+Originação & Ativos
+
+### PRIORIDADE 2
+Crédito PJ & Agro
+
+### PRIORIDADE 3
+Soluções Corporativas
+
+### PRIORIDADE 4
+Parceiros
+
+### PRIORIDADE 5
+GovTech & Mercado Público
+
+GovTech só deve ganhar destaque público após liberação.
+
+---
+
+# 49. FOTOGRAFIA E IMAGENS
+
+Utilizar imagens institucionais de alta qualidade.
+
+Priorizar:
+
+- arquitetura corporativa;
+- centros urbanos;
+- reuniões empresariais;
+- executivos;
+- infraestrutura;
+- ativos;
+- agronegócio quando relacionado ao crédito agro;
+- ambientes corporativos;
+- negócios B2B.
+
+Evitar:
+
+- dinheiro voando;
+- pessoas segurando cartões;
+- moedas;
+- cofres genéricos;
+- gráficos de bolsa;
+- imagens excessivamente artificiais;
+- estética de banco digital;
+- imagens com aparência de banco de imagens barato.
+
+As imagens devem transmitir:
+
+**credibilidade + estratégia + negócios + capital + conexão + execução.**
+
+---
+
+# 50. MICROINTERAÇÕES
+
+Usar animações discretas:
+
+- fade-in;
+- reveal;
+- hover;
+- transições suaves;
+- cards elevando levemente;
+- underline nos links;
+- microinterações nos CTAs.
+
+NÃO exagerar.
+
+O site deve parecer premium e institucional.
+
+---
+
+# 51. PERFORMANCE
+
+O site deve ser rápido.
+
+Implementar:
+
+- lazy loading;
+- imagens WebP/AVIF;
+- compressão;
+- code splitting;
+- carregamento otimizado;
+- fontes otimizadas;
+- CSS eficiente;
+- JavaScript mínimo;
+- cache.
+
+Priorizar Core Web Vitals.
+
+---
+
+# 52. ARQUITETURA TÉCNICA
+
+Construir o projeto de forma modular.
+
+Separar:
+
+```text
+Layout
+Header
+Footer
+Hero
+Cards
+CTA
+Forms
+CRM
+CMS
+Content
+SEO
+Analytics
+Compliance
+```
+
+Criar componentes reutilizáveis.
+
+O conteúdo deve ser separado da estrutura visual sempre que possível.
+
+Permitir futura expansão sem reconstruir o site.
+
+---
+
+# 53. SISTEMA DE STATUS DOS MÓDULOS
+
+Cada serviço/módulo deve possuir status:
+
+```text
+ACTIVE
+INACTIVE
+DRAFT
+FUTURE
+```
+
+Somente:
+
+`ACTIVE`
+
+deve aparecer publicamente.
+
+`DRAFT`, `INACTIVE` e `FUTURE` não devem aparecer para usuários públicos.
+
+---
+
+# 54. REGRA DE PARCEIROS
+
+Nunca publicar:
+
+- nome de parceiro;
+- logo;
+- marca;
+- condição;
+- taxa;
+- produto;
+- promessa;
+
+sem autorização expressa.
+
+A página deve vender:
+
+**a capacidade da MACK de identificar, qualificar e conectar a solução correta.**
+
+---
+
+# 55. REGRA ABSOLUTA DE CONTEÚDO
+
+Se algo não estiver definido nas diretrizes:
+
+**NÃO INVENTAR.**
+
+Em vez disso:
+
+- criar campo editável no CMS;
+- deixar o módulo inativo;
+- utilizar placeholder técnico apenas no painel administrativo;
+- não exibir placeholder no site público.
+
+Nunca preencher lacunas com informações fictícias.
+
+---
+
+# 56. CHECKLIST DE ACEITE
+
+Antes de considerar o projeto concluído, validar:
+
+[ ] Domínio configurado.
+
+[ ] SSL ativo.
+
+[ ] Descriptor aplicado.
+
+[ ] Home funcionando.
+
+[ ] Três portas de entrada funcionando.
+
+[ ] CTAs direcionam ao formulário correto.
+
+[ ] Originação & Ativos em destaque.
+
+[ ] Precatórios dentro da vertical prioritária.
+
+[ ] Crédito PJ & Agro sem apresentar MACK como banco.
+
+[ ] Soluções Corporativas organizadas por problema.
+
+[ ] Parceiros sem logos não autorizados.
+
+[ ] GovTech em rascunho/noindex.
+
+[ ] Enviar Oportunidade com formulário condicional.
+
+[ ] LGPD funcionando.
+
+[ ] Leads salvos na base central.
+
+[ ] UTM capturada.
+
+[ ] Analytics funcionando.
+
+[ ] WhatsApp configurável.
+
+[ ] CMS funcionando.
+
+[ ] Conteúdo funcionando.
+
+[ ] Área do Cliente sem login fictício.
+
+[ ] Rodapé completo.
+
+[ ] Política de privacidade.
+
+[ ] Termos de uso.
+
+[ ] Disclaimer.
+
+[ ] CNPJ somente quando fornecido.
+
+[ ] Redes sociais configuradas.
+
+[ ] Mobile 360px testado.
+
+[ ] Tablet 768px testado.
+
+[ ] Desktop 1024px testado.
+
+[ ] Desktop 1440px testado.
+
+[ ] Formulários testados.
+
+[ ] Uploads protegidos.
+
+[ ] Backup configurado.
+
+[ ] Exportação de leads funcionando.
+
+[ ] Nenhum parceiro inventado.
+
+[ ] Nenhum resultado inventado.
+
+[ ] Nenhuma certificação inventada.
+
+[ ] Nenhuma promessa de crédito.
+
+[ ] Nenhuma promessa de aquisição.
+
+[ ] Nenhuma promessa de rentabilidade.
+
+[ ] Nenhuma funcionalidade futura apresentada como ativa.
+
+---
+
+# 57. ENTREGA FINAL
+
+Entregar o site completo, publicado e responsivo.
+
+A Fase 0 deve estar funcional.
+
+Os módulos futuros devem estar arquiteturalmente preparados, porém inativos.
+
+Os formulários devem estar conectados à base central.
+
+O CMS deve estar funcional.
+
+O Analytics deve estar configurado.
+
+O SEO técnico deve estar implementado.
+
+Todos os acessos administrativos devem permanecer sob controle da MACK.
+
+O resultado final deve transmitir:
+
+**MACK ESTRATÉGIAS E NEGÓCIOS**
+
+**ORIGINAÇÃO • CRÉDITO • SOLUÇÕES CORPORATIVAS**
+
+**Conectamos empresas, ativos e capital a parceiros capazes de executar.**
+
+Prioridade máxima:
+
+**CONVERSÃO + CREDIBILIDADE + COMPLIANCE + ESCALABILIDADE.**
+
+Não simplifique a arquitetura.
+
+Não substitua os textos aprovados.
+
+Não altere a nomenclatura das verticais.
+
+Não invente informações.
+
+Não crie funcionalidades fictícias.
+
+Construa o site exatamente dentro destas diretrizes.

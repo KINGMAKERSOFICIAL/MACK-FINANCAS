@@ -1,0 +1,19 @@
+# robots.txt para MACK Estratégias e Negócios
+# Domínio canônico: https://www.mackfinancas.com.br/
+
+User-agent: *
+Allow: /
+Allow: /originacao-ativos
+Allow: /credito-pj-agro
+Allow: /solucoes-corporativas
+Allow: /parceiros
+Allow: /conteudo
+Allow: /enviar-oportunidade
+Allow: /quem-somos
+
+# GovTech e módulos futuros: noindex + fora do sitemap enquanto não estiverem ativos (Seção 43)
+Disallow: /govtech
+Disallow: /area-do-cliente
+Disallow: /admin
+
+Sitemap: https://www.mackfinancas.com.br/sitemap.xml
