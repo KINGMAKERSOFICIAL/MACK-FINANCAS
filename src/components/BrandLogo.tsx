@@ -22,8 +22,15 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
     <div className={`flex flex-col select-none ${className}`}>
       <div className="flex items-center gap-2.5">
         {/* Emblem */}
-        <div className="w-8 h-8 rounded bg-[#0B1728] flex items-center justify-center border border-[#C5A869]/30 shadow-xs shrink-0">
-          <svg viewBox="0 0 32 32" fill="none" className="w-5 h-5">
+        <div className="emblem-gold w-9 h-9 rounded-lg flex items-center justify-center shrink-0">
+          <svg viewBox="0 0 32 32" fill="none" className="relative w-5 h-5">
+            <defs>
+              <linearGradient id="mack-gold" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stopColor="#F4E4BC" />
+                <stop offset="55%" stopColor={goldColor} />
+                <stop offset="100%" stopColor="#9C7F43" />
+              </linearGradient>
+            </defs>
             {/* Geometric M with subtle gold pillar */}
             <path
               d="M6 24V8L16 17L26 8V24"
@@ -34,7 +41,7 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
             />
             <path
               d="M16 17V24"
-              stroke={goldColor}
+              stroke="url(#mack-gold)"
               strokeWidth="2.5"
               strokeLinecap="round"
             />
@@ -44,7 +51,7 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
         {/* Wordmark */}
         <div className="flex flex-col leading-none">
           <div className="flex items-baseline gap-1.5">
-            <span className={`text-xl font-bold tracking-wider font-serif ${textColor}`}>
+            <span className={`text-xl font-bold tracking-[0.12em] font-serif ${textColor}`}>
               MACK
             </span>
             <span className="text-[10px] font-semibold tracking-widest text-[#C5A869] uppercase font-sans">

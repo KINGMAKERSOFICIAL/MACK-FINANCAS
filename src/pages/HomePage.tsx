@@ -38,7 +38,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, settings }) => {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-14 lg:gap-10 items-center">
             {/* Left Column: Proposition */}
-            <div className="lg:col-span-7 space-y-7">
+            <div className="lg:col-span-7 space-y-7 scroll-drift">
               {/* Quiet Descriptor (Unboxed metadata style) */}
               <div className="animate-fade-up flex items-center gap-3 text-[11px] font-semibold tracking-[0.3em] uppercase text-[#C5A869]">
                 <span className="w-10 h-px bg-[#C5A869]/70" />
@@ -105,7 +105,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, settings }) => {
 
             {/* Right Column: Founder portrait */}
             <div className="lg:col-span-5 animate-fade-up [animation-delay:300ms]">
-              <div className="relative max-w-sm sm:max-w-md mx-auto lg:ml-auto">
+              <div className="relative max-w-sm sm:max-w-md mx-auto lg:ml-auto scroll-parallax">
                 <FounderPortrait />
 
                 {/* Floating credential badge */}
@@ -474,7 +474,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, settings }) => {
 
       {/* 4. COMO FUNCIONA (PROCESS) */}
       <Reveal>
-      <section className="bg-slate-100/70 border-y border-slate-200/80 py-16">
+      <section className="bg-[#F4EFE4]/70 border-y border-[#C5A869]/15 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto space-y-2 mb-12">
             <div className="inline-flex items-center gap-3 text-[11px] uppercase tracking-[0.3em] font-semibold text-[#A88B4F]">

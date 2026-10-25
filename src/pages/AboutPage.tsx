@@ -29,21 +29,25 @@ export const AboutPage: React.FC<AboutPageProps> = ({
   return (
     <div className="space-y-16 pb-20">
       {/* 1. HERO HEADER */}
-      <section className="bg-[#050B14] text-white pt-16 pb-20 relative overflow-hidden grain">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-[#C5A869]/10 rounded-full blur-3xl pointer-events-none" />
+      <section className="bg-[#050B14] text-white pt-20 pb-24 sm:pt-24 sm:pb-28 relative overflow-hidden grain">
+        <div className="absolute -top-40 -left-40 w-[40rem] h-[40rem] rounded-full bg-[#15345A]/60 blur-[120px] animate-aurora pointer-events-none" />
+        <div className="absolute top-10 right-[-12rem] w-[34rem] h-[34rem] rounded-full bg-[#C5A869]/15 blur-[120px] animate-aurora [animation-delay:-9s] pointer-events-none" />
+        <div className="absolute inset-0 opacity-[0.06] bg-[linear-gradient(to_right,#C5A869_1px,transparent_1px),linear-gradient(to_bottom,#C5A869_1px,transparent_1px)] [background-size:88px_88px] [mask-image:radial-gradient(ellipse_at_30%_40%,black_20%,transparent_70%)] pointer-events-none" />
+        <div className="absolute inset-x-0 bottom-0 gold-hairline" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-3xl space-y-4">
-            <div className="flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-[#C5A869]">
+          <div className="max-w-3xl space-y-4 scroll-drift">
+            <div className="animate-fade-up flex flex-wrap items-center gap-x-3 gap-y-1 text-[11px] font-semibold tracking-[0.28em] uppercase text-[#C5A869]">
+              <span className="w-10 h-px bg-[#C5A869]/70" />
               <span>Institucional</span>
               <span className="text-slate-600">·</span>
               <span>Originação • Crédito • Soluções Corporativas</span>
             </div>
 
-            <h1 className="text-3xl sm:text-5xl font-bold font-serif text-white tracking-tight leading-tight">
+            <h1 className="animate-fade-up [animation-delay:120ms] text-4xl sm:text-6xl font-semibold font-serif text-white tracking-tight leading-[1.05] text-balance">
               Quem Somos
             </h1>
 
-            <p className="text-lg sm:text-2xl text-[#C5A869] font-serif italic">
+            <p className="animate-fade-up [animation-delay:240ms] text-lg sm:text-2xl text-[#C5A869] font-serif italic">
               “Conectamos empresas, ativos e capital a parceiros capazes de executar.”
             </p>
 
@@ -60,7 +64,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({
           {/* Missão */}
           <Reveal delay={0} variant="fade-up">
             <div className="card-lux h-full bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm space-y-3">
-              <div className="w-10 h-10 rounded-lg bg-[#0B1728] text-[#C5A869] flex items-center justify-center">
+              <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#15273F] to-[#050B14] text-[#C5A869] ring-1 ring-[#C5A869]/30 shadow-lg flex items-center justify-center">
                 <Compass className="w-5 h-5" />
               </div>
               <h3 className="text-lg font-bold font-serif text-slate-900">
@@ -75,7 +79,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({
           {/* Visão */}
           <Reveal delay={120} variant="fade-up">
             <div className="card-lux h-full bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm space-y-3">
-              <div className="w-10 h-10 rounded-lg bg-[#0B1728] text-[#C5A869] flex items-center justify-center">
+              <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#15273F] to-[#050B14] text-[#C5A869] ring-1 ring-[#C5A869]/30 shadow-lg flex items-center justify-center">
                 <Eye className="w-5 h-5" />
               </div>
               <h3 className="text-lg font-bold font-serif text-slate-900">
@@ -90,7 +94,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({
           {/* Princípios */}
           <Reveal delay={240} variant="fade-up">
             <div className="card-lux h-full bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm space-y-3">
-              <div className="w-10 h-10 rounded-lg bg-[#0B1728] text-[#C5A869] flex items-center justify-center">
+              <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#15273F] to-[#050B14] text-[#C5A869] ring-1 ring-[#C5A869]/30 shadow-lg flex items-center justify-center">
                 <ShieldCheck className="w-5 h-5" />
               </div>
               <h3 className="text-lg font-bold font-serif text-slate-900">
@@ -190,8 +194,10 @@ export const AboutPage: React.FC<AboutPageProps> = ({
 
       {/* 4. ECOSSISTEMA MACK (SECTION 5) */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
-        <div className="bg-[#0B1728] text-white p-8 sm:p-10 rounded-2xl border border-slate-800 space-y-4">
-          <div className="text-xs uppercase tracking-widest font-semibold text-[#C5A869] font-mono">
+        <div className="relative isolate overflow-hidden grain bg-[#050B14] text-white p-8 sm:p-14 rounded-3xl border border-[#C5A869]/20 space-y-4 shadow-[0_40px_80px_-40px_rgba(5,11,20,0.9)]">
+          <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-[#C5A869]/20 blur-[100px] animate-aurora pointer-events-none -z-10" />
+          <div className="absolute -bottom-32 -left-24 w-96 h-96 rounded-full bg-[#15345A]/70 blur-[100px] animate-aurora [animation-delay:-8s] pointer-events-none -z-10" />
+          <div className="text-[11px] uppercase tracking-[0.3em] font-semibold text-[#A88B4F]">
             Expansão Modular
           </div>
           <h3 className="text-2xl font-bold font-serif text-white">

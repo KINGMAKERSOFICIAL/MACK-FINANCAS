@@ -41,11 +41,15 @@ export const OriginationPage: React.FC<OriginationPageProps> = ({
   return (
     <div className="space-y-16 pb-20">
       {/* 1. HERO HEADER */}
-      <section className="bg-[#0B1728] text-white pt-16 pb-20 border-b border-slate-800 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-[#C5A869]/10 rounded-full blur-3xl pointer-events-none" />
+      <section className="bg-[#050B14] text-white pt-20 pb-24 sm:pt-24 sm:pb-28 relative overflow-hidden grain">
+        <div className="absolute -top-40 -left-40 w-[40rem] h-[40rem] rounded-full bg-[#15345A]/60 blur-[120px] animate-aurora pointer-events-none" />
+        <div className="absolute top-10 right-[-12rem] w-[34rem] h-[34rem] rounded-full bg-[#C5A869]/15 blur-[120px] animate-aurora [animation-delay:-9s] pointer-events-none" />
+        <div className="absolute inset-0 opacity-[0.06] bg-[linear-gradient(to_right,#C5A869_1px,transparent_1px),linear-gradient(to_bottom,#C5A869_1px,transparent_1px)] [background-size:88px_88px] [mask-image:radial-gradient(ellipse_at_30%_40%,black_20%,transparent_70%)] pointer-events-none" />
+        <div className="absolute inset-x-0 bottom-0 gold-hairline" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-3xl space-y-4">
-            <div className="flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-[#C5A869]">
+          <div className="max-w-3xl space-y-4 scroll-drift">
+            <div className="animate-fade-up flex flex-wrap items-center gap-x-3 gap-y-1 text-[11px] font-semibold tracking-[0.28em] uppercase text-[#C5A869]">
+              <span className="w-10 h-px bg-[#C5A869]/70" />
               <span>Ativos Reais</span>
               <span className="text-slate-600">·</span>
               <span>Oportunidades Concretas</span>
@@ -53,11 +57,11 @@ export const OriginationPage: React.FC<OriginationPageProps> = ({
               <span className="text-emerald-400 font-mono">Prioridade Máxima</span>
             </div>
 
-            <h1 className="text-3xl sm:text-5xl font-bold font-serif text-white tracking-tight leading-tight">
+            <h1 className="animate-fade-up [animation-delay:120ms] text-4xl sm:text-6xl font-semibold font-serif text-white tracking-tight leading-[1.05] text-balance">
               Originação & Ativos
             </h1>
 
-            <p className="text-base sm:text-xl text-slate-300 font-light leading-relaxed">
+            <p className="animate-fade-up [animation-delay:240ms] text-base sm:text-xl text-slate-300 font-light leading-relaxed">
               Estruturamos e conectamos oportunidades a compradores e parceiros com capacidade de execução.
             </p>
 
@@ -66,25 +70,25 @@ export const OriginationPage: React.FC<OriginationPageProps> = ({
               <span className="text-xs text-slate-400 mr-2">Frentes:</span>
               <button
                 onClick={() => scrollToAnchor('precatorios')}
-                className="px-3 py-1.5 rounded bg-slate-900 border border-slate-700 text-xs text-slate-300 hover:text-[#C5A869] hover:border-[#C5A869]/50 transition-colors cursor-pointer"
+                className="btn-glass px-4 py-2 rounded-full text-xs text-slate-200 hover:text-[#E9D6A4] cursor-pointer"
               >
                 Precatórios
               </button>
               <button
                 onClick={() => scrollToAnchor('legal-claims')}
-                className="px-3 py-1.5 rounded bg-slate-900 border border-slate-700 text-xs text-slate-300 hover:text-[#C5A869] hover:border-[#C5A869]/50 transition-colors cursor-pointer"
+                className="btn-glass px-4 py-2 rounded-full text-xs text-slate-200 hover:text-[#E9D6A4] cursor-pointer"
               >
                 Legal Claims
               </button>
               <button
                 onClick={() => scrollToAnchor('direitos-creditorios')}
-                className="px-3 py-1.5 rounded bg-slate-900 border border-slate-700 text-xs text-slate-300 hover:text-[#C5A869] hover:border-[#C5A869]/50 transition-colors cursor-pointer"
+                className="btn-glass px-4 py-2 rounded-full text-xs text-slate-200 hover:text-[#E9D6A4] cursor-pointer"
               >
                 Direitos Creditórios
               </button>
               <button
                 onClick={() => scrollToAnchor('oportunidades-especiais')}
-                className="px-3 py-1.5 rounded bg-slate-900 border border-slate-700 text-xs text-slate-300 hover:text-[#C5A869] hover:border-[#C5A869]/50 transition-colors cursor-pointer"
+                className="btn-glass px-4 py-2 rounded-full text-xs text-slate-200 hover:text-[#E9D6A4] cursor-pointer"
               >
                 Oportunidades Especiais & Imóveis
               </button>
@@ -130,7 +134,7 @@ export const OriginationPage: React.FC<OriginationPageProps> = ({
                 />
                 <div className="p-8 space-y-4">
                   <div className="flex items-center justify-between">
-                    <div className="w-10 h-10 rounded-lg bg-[#0B1728] text-[#C5A869] flex items-center justify-center">
+                    <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#15273F] to-[#050B14] text-[#C5A869] ring-1 ring-[#C5A869]/30 shadow-lg flex items-center justify-center">
                       <Landmark className="w-5 h-5" />
                     </div>
                     <span className="text-[11px] font-mono text-slate-500 uppercase">
@@ -182,7 +186,7 @@ export const OriginationPage: React.FC<OriginationPageProps> = ({
                 />
                 <div className="p-8 space-y-4">
                   <div className="flex items-center justify-between">
-                    <div className="w-10 h-10 rounded-lg bg-[#0B1728] text-[#C5A869] flex items-center justify-center">
+                    <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#15273F] to-[#050B14] text-[#C5A869] ring-1 ring-[#C5A869]/30 shadow-lg flex items-center justify-center">
                       <Scale className="w-5 h-5" />
                     </div>
                     <span className="text-[11px] font-mono text-slate-500 uppercase">
@@ -234,7 +238,7 @@ export const OriginationPage: React.FC<OriginationPageProps> = ({
                 />
                 <div className="p-8 space-y-4">
                   <div className="flex items-center justify-between">
-                    <div className="w-10 h-10 rounded-lg bg-[#0B1728] text-[#C5A869] flex items-center justify-center">
+                    <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#15273F] to-[#050B14] text-[#C5A869] ring-1 ring-[#C5A869]/30 shadow-lg flex items-center justify-center">
                       <FileCheck2 className="w-5 h-5" />
                     </div>
                     <span className="text-[11px] font-mono text-slate-500 uppercase">
@@ -286,7 +290,7 @@ export const OriginationPage: React.FC<OriginationPageProps> = ({
                 />
                 <div className="p-8 space-y-4">
                   <div className="flex items-center justify-between">
-                    <div className="w-10 h-10 rounded-lg bg-[#0B1728] text-[#C5A869] flex items-center justify-center">
+                    <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#15273F] to-[#050B14] text-[#C5A869] ring-1 ring-[#C5A869]/30 shadow-lg flex items-center justify-center">
                       <Building className="w-5 h-5" />
                     </div>
                     <span className="text-[11px] font-mono text-slate-500 uppercase">
@@ -326,10 +330,10 @@ export const OriginationPage: React.FC<OriginationPageProps> = ({
       </section>
 
       {/* 4. CRITÉRIOS EXIBIDOS (MANDATORY SECTION 6) */}
-      <section className="bg-slate-100/70 py-16 border-y border-slate-200">
+      <section className="bg-[#F4EFE4]/70 py-20 border-y border-[#C5A869]/15">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
           <div className="text-center max-w-2xl mx-auto space-y-2">
-            <div className="text-xs uppercase tracking-widest font-semibold text-[#C5A869] font-mono">
+            <div className="text-[11px] uppercase tracking-[0.3em] font-semibold text-[#A88B4F]">
               Due Diligence Preliminar
             </div>
             <h2 className="text-2xl sm:text-3xl font-bold font-serif text-slate-900">
@@ -342,7 +346,7 @@ export const OriginationPage: React.FC<OriginationPageProps> = ({
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
             {/* Criteria 1 */}
-            <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-2xs space-y-2">
+            <div className="card-lux bg-white rounded-2xl p-5 border border-slate-200/80 shadow-[0_18px_45px_-32px_rgba(11,23,40,0.45)] space-y-2">
               <span className="text-[10px] font-mono uppercase text-[#C5A869] font-semibold">
                 Critério 01
               </span>
@@ -355,7 +359,7 @@ export const OriginationPage: React.FC<OriginationPageProps> = ({
             </div>
 
             {/* Criteria 2 */}
-            <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-2xs space-y-2">
+            <div className="card-lux bg-white rounded-2xl p-5 border border-slate-200/80 shadow-[0_18px_45px_-32px_rgba(11,23,40,0.45)] space-y-2">
               <span className="text-[10px] font-mono uppercase text-[#C5A869] font-semibold">
                 Critério 02
               </span>
@@ -368,7 +372,7 @@ export const OriginationPage: React.FC<OriginationPageProps> = ({
             </div>
 
             {/* Criteria 3 */}
-            <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-2xs space-y-2">
+            <div className="card-lux bg-white rounded-2xl p-5 border border-slate-200/80 shadow-[0_18px_45px_-32px_rgba(11,23,40,0.45)] space-y-2">
               <span className="text-[10px] font-mono uppercase text-[#C5A869] font-semibold">
                 Critério 03
               </span>
@@ -381,7 +385,7 @@ export const OriginationPage: React.FC<OriginationPageProps> = ({
             </div>
 
             {/* Criteria 4 */}
-            <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-2xs space-y-2">
+            <div className="card-lux bg-white rounded-2xl p-5 border border-slate-200/80 shadow-[0_18px_45px_-32px_rgba(11,23,40,0.45)] space-y-2">
               <span className="text-[10px] font-mono uppercase text-[#C5A869] font-semibold">
                 Critério 04
               </span>
@@ -394,7 +398,7 @@ export const OriginationPage: React.FC<OriginationPageProps> = ({
             </div>
 
             {/* Criteria 5 */}
-            <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-2xs space-y-2">
+            <div className="card-lux bg-white rounded-2xl p-5 border border-slate-200/80 shadow-[0_18px_45px_-32px_rgba(11,23,40,0.45)] space-y-2">
               <span className="text-[10px] font-mono uppercase text-[#C5A869] font-semibold">
                 Critério 05
               </span>
@@ -431,7 +435,9 @@ export const OriginationPage: React.FC<OriginationPageProps> = ({
 
       {/* 6. CALL TO ACTION CONTAINER */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-[#0B1728] rounded-2xl p-8 sm:p-12 border border-slate-800 text-white flex flex-col md:flex-row items-center justify-between gap-8">
+        <div className="relative isolate overflow-hidden grain bg-[#050B14] text-white rounded-3xl p-8 sm:p-14 border border-[#C5A869]/20 shadow-[0_40px_80px_-40px_rgba(5,11,20,0.9)] flex flex-col md:flex-row items-center justify-between gap-8">
+          <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-[#C5A869]/20 blur-[100px] animate-aurora pointer-events-none -z-10" />
+          <div className="absolute -bottom-32 -left-24 w-96 h-96 rounded-full bg-[#15345A]/70 blur-[100px] animate-aurora [animation-delay:-8s] pointer-events-none -z-10" />
           <div className="space-y-2">
             <h3 className="text-2xl font-bold font-serif text-white">
               Possui um ativo para avaliação inicial?
@@ -443,7 +449,7 @@ export const OriginationPage: React.FC<OriginationPageProps> = ({
 
           <button
             onClick={() => onNavigate('/enviar-oportunidade', undefined, 'ativo')}
-            className="px-6 py-3.5 text-xs font-semibold uppercase tracking-wider text-[#0B1728] btn-gold rounded-md transition-all shadow-md cursor-pointer whitespace-nowrap flex items-center gap-2"
+            className="px-6 py-3.5 text-xs font-semibold uppercase tracking-wider text-[#0B1728] btn-gold rounded-full transition-all shadow-md cursor-pointer whitespace-nowrap flex items-center gap-2"
           >
             <span>Enviar ativo para análise</span>
             <ArrowUpRight className="w-4 h-4" />
@@ -751,7 +757,7 @@ const OriginationInlineForm: React.FC<{ onNavigate: (path: string) => void }> = 
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full py-3.5 px-6 btn-gold text-[#0B1728] font-bold text-xs uppercase tracking-wider rounded-lg shadow-sm transition-all cursor-pointer flex items-center justify-center gap-2"
+        className="w-full py-3.5 px-6 btn-gold text-[#0B1728] font-bold text-xs uppercase tracking-wider rounded-full shadow-sm transition-all cursor-pointer flex items-center justify-center gap-2"
       >
         <span>{isSubmitting ? 'Gravando no CRM...' : 'Enviar Ativo para Triagem'}</span>
         <ArrowUpRight className="w-4 h-4" />

@@ -12,6 +12,7 @@ import {
   HelpCircle,
 } from 'lucide-react';
 import { SiteSettings } from '../types';
+import { Reveal } from '../components/Reveal';
 
 interface ClientAreaPageProps {
   onNavigate: (path: string) => void;
@@ -25,21 +26,24 @@ export const ClientAreaPage: React.FC<ClientAreaPageProps> = ({
   return (
     <div className="space-y-16 pb-20">
       {/* 1. HERO HEADER */}
-      <section className="bg-[#0B1728] text-white pt-16 pb-20 border-b border-slate-800 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-[#C5A869]/10 rounded-full blur-3xl pointer-events-none" />
+      <section className="bg-[#050B14] text-white pt-20 pb-24 sm:pt-24 sm:pb-28 relative overflow-hidden grain">
+        <div className="absolute -top-40 -left-40 w-[40rem] h-[40rem] rounded-full bg-[#15345A]/60 blur-[120px] animate-aurora pointer-events-none" />
+        <div className="absolute top-10 right-[-12rem] w-[34rem] h-[34rem] rounded-full bg-[#C5A869]/15 blur-[120px] animate-aurora [animation-delay:-9s] pointer-events-none" />
+        <div className="absolute inset-0 opacity-[0.06] bg-[linear-gradient(to_right,#C5A869_1px,transparent_1px),linear-gradient(to_bottom,#C5A869_1px,transparent_1px)] [background-size:88px_88px] [mask-image:radial-gradient(ellipse_at_30%_40%,black_20%,transparent_70%)] pointer-events-none" />
+        <div className="absolute inset-x-0 bottom-0 gold-hairline" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-3xl space-y-4">
+          <div className="max-w-3xl space-y-4 scroll-drift">
             <div className="flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-[#C5A869] font-mono">
               <span className="bg-slate-900 border border-[#C5A869]/30 px-2 py-0.5 rounded">
                 Ambiente em Implantação Técnica · Fase 3
               </span>
             </div>
 
-            <h1 className="text-3xl sm:text-5xl font-bold font-serif text-white tracking-tight leading-tight">
+            <h1 className="animate-fade-up [animation-delay:120ms] text-4xl sm:text-6xl font-semibold font-serif text-white tracking-tight leading-[1.05] text-balance">
               Área do Cliente / Sistema
             </h1>
 
-            <p className="text-base sm:text-xl text-slate-300 font-light leading-relaxed">
+            <p className="animate-fade-up [animation-delay:240ms] text-base sm:text-xl text-slate-300 font-light leading-relaxed">
               Ambiente reservado para acompanhamento de demandas, documentos e interações com a equipe MACK.
             </p>
           </div>
@@ -47,6 +51,7 @@ export const ClientAreaPage: React.FC<ClientAreaPageProps> = ({
       </section>
 
       {/* 2. TRANSPARENT NOTICE (STRICT REGULATORY RULE) */}
+      <Reveal>
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6">
         <div className="bg-slate-900 text-white p-6 sm:p-8 rounded-2xl border border-slate-800 shadow-xl space-y-4">
           <div className="flex items-start gap-3.5">
@@ -86,11 +91,13 @@ export const ClientAreaPage: React.FC<ClientAreaPageProps> = ({
           </div>
         </div>
       </section>
+      </Reveal>
 
       {/* 3. MÓDULOS PREVISTOS (SECTION 13) */}
+      <Reveal>
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         <div className="border-b border-slate-200 pb-4">
-          <div className="text-xs uppercase tracking-widest font-semibold text-[#C5A869] font-mono">
+          <div className="text-[11px] uppercase tracking-[0.3em] font-semibold text-[#A88B4F]">
             Roadmap do Sistema
           </div>
           <h2 className="text-2xl font-bold font-serif text-slate-900 mt-1">
@@ -102,7 +109,7 @@ export const ClientAreaPage: React.FC<ClientAreaPageProps> = ({
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-2">
+          <div className="card-lux bg-white rounded-2xl p-6 border border-slate-200/80 shadow-[0_18px_45px_-32px_rgba(11,23,40,0.45)] space-y-2">
             <div className="w-8 h-8 rounded bg-slate-100 text-slate-700 flex items-center justify-center">
               <FileText className="w-4 h-4" />
             </div>
@@ -112,7 +119,7 @@ export const ClientAreaPage: React.FC<ClientAreaPageProps> = ({
             </p>
           </div>
 
-          <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-2">
+          <div className="card-lux bg-white rounded-2xl p-6 border border-slate-200/80 shadow-[0_18px_45px_-32px_rgba(11,23,40,0.45)] space-y-2">
             <div className="w-8 h-8 rounded bg-slate-100 text-slate-700 flex items-center justify-center">
               <ShieldCheck className="w-4 h-4" />
             </div>
@@ -122,7 +129,7 @@ export const ClientAreaPage: React.FC<ClientAreaPageProps> = ({
             </p>
           </div>
 
-          <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-2">
+          <div className="card-lux bg-white rounded-2xl p-6 border border-slate-200/80 shadow-[0_18px_45px_-32px_rgba(11,23,40,0.45)] space-y-2">
             <div className="w-8 h-8 rounded bg-slate-100 text-slate-700 flex items-center justify-center">
               <BarChart3 className="w-4 h-4" />
             </div>
@@ -132,7 +139,7 @@ export const ClientAreaPage: React.FC<ClientAreaPageProps> = ({
             </p>
           </div>
 
-          <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-2">
+          <div className="card-lux bg-white rounded-2xl p-6 border border-slate-200/80 shadow-[0_18px_45px_-32px_rgba(11,23,40,0.45)] space-y-2">
             <div className="w-8 h-8 rounded bg-slate-100 text-slate-700 flex items-center justify-center">
               <Bell className="w-4 h-4" />
             </div>
@@ -143,6 +150,7 @@ export const ClientAreaPage: React.FC<ClientAreaPageProps> = ({
           </div>
         </div>
       </section>
+      </Reveal>
     </div>
   );
 };

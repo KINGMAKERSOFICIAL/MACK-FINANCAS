@@ -81,21 +81,25 @@ export const PartnersPage: React.FC<PartnersPageProps> = ({
   return (
     <div className="space-y-16 pb-20">
       {/* 1. HERO HEADER */}
-      <section className="bg-[#0B1728] text-white pt-16 pb-20 border-b border-slate-800 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-[#C5A869]/10 rounded-full blur-3xl pointer-events-none" />
+      <section className="bg-[#050B14] text-white pt-20 pb-24 sm:pt-24 sm:pb-28 relative overflow-hidden grain">
+        <div className="absolute -top-40 -left-40 w-[40rem] h-[40rem] rounded-full bg-[#15345A]/60 blur-[120px] animate-aurora pointer-events-none" />
+        <div className="absolute top-10 right-[-12rem] w-[34rem] h-[34rem] rounded-full bg-[#C5A869]/15 blur-[120px] animate-aurora [animation-delay:-9s] pointer-events-none" />
+        <div className="absolute inset-0 opacity-[0.06] bg-[linear-gradient(to_right,#C5A869_1px,transparent_1px),linear-gradient(to_bottom,#C5A869_1px,transparent_1px)] [background-size:88px_88px] [mask-image:radial-gradient(ellipse_at_30%_40%,black_20%,transparent_70%)] pointer-events-none" />
+        <div className="absolute inset-x-0 bottom-0 gold-hairline" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-3xl space-y-4">
-            <div className="flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-[#C5A869]">
+          <div className="max-w-3xl space-y-4 scroll-drift">
+            <div className="animate-fade-up flex flex-wrap items-center gap-x-3 gap-y-1 text-[11px] font-semibold tracking-[0.28em] uppercase text-[#C5A869]">
+              <span className="w-10 h-px bg-[#C5A869]/70" />
               <span>Rede Institucional B2B</span>
               <span className="text-slate-600">·</span>
               <span>Parcerias que Geram Resultados</span>
             </div>
 
-            <h1 className="text-3xl sm:text-5xl font-bold font-serif text-white tracking-tight leading-tight">
+            <h1 className="animate-fade-up [animation-delay:120ms] text-4xl sm:text-6xl font-semibold font-serif text-white tracking-tight leading-[1.05] text-balance">
               Parceiros
             </h1>
 
-            <p className="text-base sm:text-xl text-slate-300 font-light leading-relaxed">
+            <p className="animate-fade-up [animation-delay:240ms] text-base sm:text-xl text-slate-300 font-light leading-relaxed">
               A MACK funciona como hub comercial que identifica a oportunidade, qualifica a demanda e aciona o parceiro certo.
             </p>
 
@@ -109,7 +113,7 @@ export const PartnersPage: React.FC<PartnersPageProps> = ({
       {/* 2. CATEGORIAS DE PARCEIROS (SECTION 10) */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         <div className="border-b border-slate-200 pb-4">
-          <div className="text-xs uppercase tracking-widest font-semibold text-[#C5A869] font-mono">
+          <div className="text-[11px] uppercase tracking-[0.3em] font-semibold text-[#A88B4F]">
             Ecossistema Estruturado
           </div>
           <h2 className="text-2xl font-bold font-serif text-slate-900 mt-1">
@@ -124,7 +128,7 @@ export const PartnersPage: React.FC<PartnersPageProps> = ({
           {/* Categoria 1 */}
           <Reveal delay={0} variant="fade-up">
             <div className="card-lux h-full bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm space-y-3">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#15273F] to-[#050B14] text-[#C5A869] ring-1 ring-[#C5A869]/30 flex items-center justify-center">
+              <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#15273F] to-[#050B14] text-[#C5A869] ring-1 ring-[#C5A869]/30 shadow-lg flex items-center justify-center">
                 <Building2 className="w-5 h-5" />
               </div>
               <h3 className="text-base font-bold text-slate-900 font-serif">
@@ -139,7 +143,7 @@ export const PartnersPage: React.FC<PartnersPageProps> = ({
           {/* Categoria 2 */}
           <Reveal delay={100} variant="fade-up">
             <div className="card-lux h-full bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm space-y-3">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#15273F] to-[#050B14] text-[#C5A869] ring-1 ring-[#C5A869]/30 flex items-center justify-center">
+              <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#15273F] to-[#050B14] text-[#C5A869] ring-1 ring-[#C5A869]/30 shadow-lg flex items-center justify-center">
                 <Coins className="w-5 h-5" />
               </div>
               <h3 className="text-base font-bold text-slate-900 font-serif">
@@ -154,7 +158,7 @@ export const PartnersPage: React.FC<PartnersPageProps> = ({
           {/* Categoria 3 */}
           <Reveal delay={200} variant="fade-up">
             <div className="card-lux h-full bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm space-y-3">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#15273F] to-[#050B14] text-[#C5A869] ring-1 ring-[#C5A869]/30 flex items-center justify-center">
+              <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#15273F] to-[#050B14] text-[#C5A869] ring-1 ring-[#C5A869]/30 shadow-lg flex items-center justify-center">
                 <Briefcase className="w-5 h-5" />
               </div>
               <h3 className="text-base font-bold text-slate-900 font-serif">
@@ -169,7 +173,7 @@ export const PartnersPage: React.FC<PartnersPageProps> = ({
           {/* Categoria 4 */}
           <Reveal delay={300} variant="fade-up">
             <div className="card-lux h-full bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm space-y-3">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#15273F] to-[#050B14] text-[#C5A869] ring-1 ring-[#C5A869]/30 flex items-center justify-center">
+              <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#15273F] to-[#050B14] text-[#C5A869] ring-1 ring-[#C5A869]/30 shadow-lg flex items-center justify-center">
                 <Landmark className="w-5 h-5" />
               </div>
               <h3 className="text-base font-bold text-slate-900 font-serif">
@@ -220,13 +224,13 @@ export const PartnersPage: React.FC<PartnersPageProps> = ({
       </section>
 
       {/* 3. FLUXO DE PARCERIA & FORMULÁRIO DE CREDENCIAMENTO */}
-      <section className="bg-slate-100/70 py-16 border-y border-slate-200">
+      <section className="bg-[#F4EFE4]/70 py-20 border-y border-[#C5A869]/15">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             {/* Left: Fluxo */}
             <div className="lg:col-span-5 space-y-8">
               <div className="space-y-2">
-                <div className="text-xs uppercase tracking-widest font-semibold text-[#C5A869] font-mono">
+                <div className="text-[11px] uppercase tracking-[0.3em] font-semibold text-[#A88B4F]">
                   Processo de Adesão
                 </div>
                 <h2 className="text-2xl sm:text-3xl font-bold font-serif text-slate-900">
@@ -238,9 +242,9 @@ export const PartnersPage: React.FC<PartnersPageProps> = ({
               </div>
 
               <div className="space-y-4">
-                <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-2xs space-y-1">
+                <div className="card-lux bg-white rounded-2xl p-5 border border-slate-200/80 shadow-[0_18px_45px_-32px_rgba(11,23,40,0.45)] space-y-1">
                   <div className="flex items-center gap-2 font-bold text-slate-900 text-sm">
-                    <span className="w-6 h-6 rounded-full bg-[#0B1728] text-white text-xs font-mono flex items-center justify-center">1</span>
+                    <span className="w-8 h-8 rounded-full bg-gradient-to-br from-[#E9D6A4] via-[#C5A869] to-[#9C7F43] text-[#0B1728] text-xs font-mono font-bold shadow-[0_8px_20px_-8px_rgba(197,168,105,0.9)] flex items-center justify-center">1</span>
                     <span>Cadastro Inicial</span>
                   </div>
                   <p className="text-xs text-slate-600 pl-8">
@@ -248,9 +252,9 @@ export const PartnersPage: React.FC<PartnersPageProps> = ({
                   </p>
                 </div>
 
-                <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-2xs space-y-1">
+                <div className="card-lux bg-white rounded-2xl p-5 border border-slate-200/80 shadow-[0_18px_45px_-32px_rgba(11,23,40,0.45)] space-y-1">
                   <div className="flex items-center gap-2 font-bold text-slate-900 text-sm">
-                    <span className="w-6 h-6 rounded-full bg-[#0B1728] text-white text-xs font-mono flex items-center justify-center">2</span>
+                    <span className="w-8 h-8 rounded-full bg-gradient-to-br from-[#E9D6A4] via-[#C5A869] to-[#9C7F43] text-[#0B1728] text-xs font-mono font-bold shadow-[0_8px_20px_-8px_rgba(197,168,105,0.9)] flex items-center justify-center">2</span>
                     <span>Qualificação & Alinhamento</span>
                   </div>
                   <p className="text-xs text-slate-600 pl-8">
@@ -258,9 +262,9 @@ export const PartnersPage: React.FC<PartnersPageProps> = ({
                   </p>
                 </div>
 
-                <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-2xs space-y-1">
+                <div className="card-lux bg-white rounded-2xl p-5 border border-slate-200/80 shadow-[0_18px_45px_-32px_rgba(11,23,40,0.45)] space-y-1">
                   <div className="flex items-center gap-2 font-bold text-slate-900 text-sm">
-                    <span className="w-6 h-6 rounded-full bg-[#0B1728] text-white text-xs font-mono flex items-center justify-center">3</span>
+                    <span className="w-8 h-8 rounded-full bg-gradient-to-br from-[#E9D6A4] via-[#C5A869] to-[#9C7F43] text-[#0B1728] text-xs font-mono font-bold shadow-[0_8px_20px_-8px_rgba(197,168,105,0.9)] flex items-center justify-center">3</span>
                     <span>Envio de Oportunidades</span>
                   </div>
                   <p className="text-xs text-slate-600 pl-8">
@@ -268,9 +272,9 @@ export const PartnersPage: React.FC<PartnersPageProps> = ({
                   </p>
                 </div>
 
-                <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-2xs space-y-1">
+                <div className="card-lux bg-white rounded-2xl p-5 border border-slate-200/80 shadow-[0_18px_45px_-32px_rgba(11,23,40,0.45)] space-y-1">
                   <div className="flex items-center gap-2 font-bold text-slate-900 text-sm">
-                    <span className="w-6 h-6 rounded-full bg-[#0B1728] text-white text-xs font-mono flex items-center justify-center">4</span>
+                    <span className="w-8 h-8 rounded-full bg-gradient-to-br from-[#E9D6A4] via-[#C5A869] to-[#9C7F43] text-[#0B1728] text-xs font-mono font-bold shadow-[0_8px_20px_-8px_rgba(197,168,105,0.9)] flex items-center justify-center">4</span>
                     <span>Execução Coordenada</span>
                   </div>
                   <p className="text-xs text-slate-600 pl-8">
@@ -508,7 +512,7 @@ export const PartnersPage: React.FC<PartnersPageProps> = ({
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full py-3.5 px-6 btn-gold text-[#0B1728] font-bold text-xs uppercase tracking-wider rounded-lg shadow-sm hover:shadow-md transition-all cursor-pointer flex items-center justify-center gap-2 mt-4"
+                    className="w-full py-3.5 px-6 btn-gold text-[#0B1728] font-bold text-xs uppercase tracking-wider rounded-full shadow-sm hover:shadow-md transition-all cursor-pointer flex items-center justify-center gap-2 mt-4"
                   >
                     <span>{isSubmitting ? 'Registrando...' : 'Quero ser parceiro da MACK'}</span>
                     <ArrowUpRight className="w-4 h-4" />

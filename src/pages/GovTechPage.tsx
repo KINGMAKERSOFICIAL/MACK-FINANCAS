@@ -13,6 +13,7 @@ import {
   CheckCircle,
 } from 'lucide-react';
 import { SiteSettings } from '../types';
+import { Reveal } from '../components/Reveal';
 import { saveLead, parseUtmsFromUrl } from '../services/crmStorage';
 import { trackEvent } from '../services/analytics';
 
@@ -28,10 +29,13 @@ export const GovTechPage: React.FC<GovTechPageProps> = ({
   return (
     <div className="space-y-16 pb-20">
       {/* 1. HERO HEADER */}
-      <section className="bg-[#0B1728] text-white pt-16 pb-20 border-b border-slate-800 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-[#C5A869]/10 rounded-full blur-3xl pointer-events-none" />
+      <section className="bg-[#050B14] text-white pt-20 pb-24 sm:pt-24 sm:pb-28 relative overflow-hidden grain">
+        <div className="absolute -top-40 -left-40 w-[40rem] h-[40rem] rounded-full bg-[#15345A]/60 blur-[120px] animate-aurora pointer-events-none" />
+        <div className="absolute top-10 right-[-12rem] w-[34rem] h-[34rem] rounded-full bg-[#C5A869]/15 blur-[120px] animate-aurora [animation-delay:-9s] pointer-events-none" />
+        <div className="absolute inset-0 opacity-[0.06] bg-[linear-gradient(to_right,#C5A869_1px,transparent_1px),linear-gradient(to_bottom,#C5A869_1px,transparent_1px)] [background-size:88px_88px] [mask-image:radial-gradient(ellipse_at_30%_40%,black_20%,transparent_70%)] pointer-events-none" />
+        <div className="absolute inset-x-0 bottom-0 gold-hairline" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-3xl space-y-4">
+          <div className="max-w-3xl space-y-4 scroll-drift">
             <div className="flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-amber-400">
               <span className="bg-amber-950/80 border border-amber-600/50 px-2 py-0.5 rounded font-mono">
                 Módulo em Estruturação · Fase 2
@@ -40,11 +44,11 @@ export const GovTechPage: React.FC<GovTechPageProps> = ({
               <span>Do Setor Público para um Brasil mais Eficiente</span>
             </div>
 
-            <h1 className="text-3xl sm:text-5xl font-bold font-serif text-white tracking-tight leading-tight">
+            <h1 className="animate-fade-up [animation-delay:120ms] text-4xl sm:text-6xl font-semibold font-serif text-white tracking-tight leading-[1.05] text-balance">
               GovTech & Mercado Público
             </h1>
 
-            <p className="text-base sm:text-xl text-slate-300 font-light leading-relaxed">
+            <p className="animate-fade-up [animation-delay:240ms] text-base sm:text-xl text-slate-300 font-light leading-relaxed">
               Representação comercial, desenvolvimento de mercado e estruturação de canais para soluções voltadas ao setor público.
             </p>
 
@@ -56,6 +60,7 @@ export const GovTechPage: React.FC<GovTechPageProps> = ({
       </section>
 
       {/* 2. REGULATORY & COMPLIANCE BANNER */}
+      <Reveal>
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6">
         <div className="bg-amber-50 border border-amber-200 rounded-xl p-5 text-xs text-amber-950 flex items-start gap-3 shadow-2xs">
           <AlertTriangle className="w-5 h-5 text-amber-800 shrink-0 mt-0.5" />
@@ -67,8 +72,10 @@ export const GovTechPage: React.FC<GovTechPageProps> = ({
           </div>
         </div>
       </section>
+      </Reveal>
 
       {/* 3. QUATRO FRENTES DE ATUAÇÃO */}
+      <Reveal>
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         <div className="border-b border-slate-200 pb-4">
           <h2 className="text-2xl font-bold font-serif text-slate-900">
@@ -80,8 +87,8 @@ export const GovTechPage: React.FC<GovTechPageProps> = ({
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-3">
-            <div className="w-10 h-10 rounded-lg bg-[#0B1728] text-[#C5A869] flex items-center justify-center">
+          <div className="card-lux bg-white rounded-2xl p-6 border border-slate-200/80 shadow-[0_18px_45px_-32px_rgba(11,23,40,0.45)] space-y-3">
+            <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#15273F] to-[#050B14] text-[#C5A869] ring-1 ring-[#C5A869]/30 shadow-lg flex items-center justify-center">
               <Users2 className="w-5 h-5" />
             </div>
             <h3 className="text-base font-bold text-slate-900 font-serif">
@@ -92,8 +99,8 @@ export const GovTechPage: React.FC<GovTechPageProps> = ({
             </p>
           </div>
 
-          <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-3">
-            <div className="w-10 h-10 rounded-lg bg-[#0B1728] text-[#C5A869] flex items-center justify-center">
+          <div className="card-lux bg-white rounded-2xl p-6 border border-slate-200/80 shadow-[0_18px_45px_-32px_rgba(11,23,40,0.45)] space-y-3">
+            <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#15273F] to-[#050B14] text-[#C5A869] ring-1 ring-[#C5A869]/30 shadow-lg flex items-center justify-center">
               <Building className="w-5 h-5" />
             </div>
             <h3 className="text-base font-bold text-slate-900 font-serif">
@@ -104,8 +111,8 @@ export const GovTechPage: React.FC<GovTechPageProps> = ({
             </p>
           </div>
 
-          <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-3">
-            <div className="w-10 h-10 rounded-lg bg-[#0B1728] text-[#C5A869] flex items-center justify-center">
+          <div className="card-lux bg-white rounded-2xl p-6 border border-slate-200/80 shadow-[0_18px_45px_-32px_rgba(11,23,40,0.45)] space-y-3">
+            <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#15273F] to-[#050B14] text-[#C5A869] ring-1 ring-[#C5A869]/30 shadow-lg flex items-center justify-center">
               <Search className="w-5 h-5" />
             </div>
             <h3 className="text-base font-bold text-slate-900 font-serif">
@@ -116,8 +123,8 @@ export const GovTechPage: React.FC<GovTechPageProps> = ({
             </p>
           </div>
 
-          <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-3">
-            <div className="w-10 h-10 rounded-lg bg-[#0B1728] text-[#C5A869] flex items-center justify-center">
+          <div className="card-lux bg-white rounded-2xl p-6 border border-slate-200/80 shadow-[0_18px_45px_-32px_rgba(11,23,40,0.45)] space-y-3">
+            <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#15273F] to-[#050B14] text-[#C5A869] ring-1 ring-[#C5A869]/30 shadow-lg flex items-center justify-center">
               <Cpu className="w-5 h-5" />
             </div>
             <h3 className="text-base font-bold text-slate-900 font-serif">
@@ -129,9 +136,11 @@ export const GovTechPage: React.FC<GovTechPageProps> = ({
           </div>
         </div>
       </section>
+      </Reveal>
 
       {/* 4. COMPROMISSO E PÚBLICO ALVO */}
-      <section className="bg-slate-100/70 py-16 border-y border-slate-200">
+      <Reveal>
+      <section className="bg-[#F4EFE4]/70 py-20 border-y border-[#C5A869]/15">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           {/* Compromisso */}
           <div className="space-y-4">
@@ -145,7 +154,7 @@ export const GovTechPage: React.FC<GovTechPageProps> = ({
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-              <div className="bg-white p-5 rounded-xl border border-slate-200 space-y-2">
+              <div className="card-lux bg-white rounded-2xl p-5 border border-slate-200/80 shadow-[0_18px_45px_-32px_rgba(11,23,40,0.45)] space-y-2">
                 <ShieldCheck className="w-5 h-5 text-emerald-700" />
                 <h4 className="text-sm font-bold text-slate-900">Compliance & Ética</h4>
                 <p className="text-xs text-slate-600">
@@ -153,7 +162,7 @@ export const GovTechPage: React.FC<GovTechPageProps> = ({
                 </p>
               </div>
 
-              <div className="bg-white p-5 rounded-xl border border-slate-200 space-y-2">
+              <div className="card-lux bg-white rounded-2xl p-5 border border-slate-200/80 shadow-[0_18px_45px_-32px_rgba(11,23,40,0.45)] space-y-2">
                 <FileCode2 className="w-5 h-5 text-[#C5A869]" />
                 <h4 className="text-sm font-bold text-slate-900">Linguagem Técnica</h4>
                 <p className="text-xs text-slate-600">
@@ -161,7 +170,7 @@ export const GovTechPage: React.FC<GovTechPageProps> = ({
                 </p>
               </div>
 
-              <div className="bg-white p-5 rounded-xl border border-slate-200 space-y-2">
+              <div className="card-lux bg-white rounded-2xl p-5 border border-slate-200/80 shadow-[0_18px_45px_-32px_rgba(11,23,40,0.45)] space-y-2">
                 <CheckCircle className="w-5 h-5 text-[#0B1728]" />
                 <h4 className="text-sm font-bold text-slate-900">Atuação Seletiva</h4>
                 <p className="text-xs text-slate-600">
@@ -196,8 +205,10 @@ export const GovTechPage: React.FC<GovTechPageProps> = ({
           </div>
         </div>
       </section>
+      </Reveal>
 
       {/* 5. FORMULÁRIO GOVTECH DEDICADO (SEÇÃO 26) */}
+      <Reveal>
       <section id="formulario-govtech" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-white rounded-2xl p-8 sm:p-10 border border-slate-200 shadow-xl max-w-4xl mx-auto space-y-6">
           <div className="border-b border-slate-200 pb-4">
@@ -216,10 +227,14 @@ export const GovTechPage: React.FC<GovTechPageProps> = ({
           <GovTechInlineForm onNavigate={onNavigate} />
         </div>
       </section>
+      </Reveal>
 
       {/* 6. CALL TO ACTION CONTAINER */}
+      <Reveal>
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-[#0B1728] rounded-2xl p-8 sm:p-12 border border-slate-800 text-white flex flex-col md:flex-row items-center justify-between gap-8">
+        <div className="relative isolate overflow-hidden grain bg-[#050B14] text-white rounded-3xl p-8 sm:p-14 border border-[#C5A869]/20 shadow-[0_40px_80px_-40px_rgba(5,11,20,0.9)] flex flex-col md:flex-row items-center justify-between gap-8">
+          <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-[#C5A869]/20 blur-[100px] animate-aurora pointer-events-none -z-10" />
+          <div className="absolute -bottom-32 -left-24 w-96 h-96 rounded-full bg-[#15345A]/70 blur-[100px] animate-aurora [animation-delay:-8s] pointer-events-none -z-10" />
           <div className="space-y-2">
             <h3 className="text-2xl font-bold font-serif text-white">
               Vamos levar sua solução ao setor público?
@@ -232,7 +247,7 @@ export const GovTechPage: React.FC<GovTechPageProps> = ({
           <div className="flex flex-col sm:flex-row items-center gap-3">
             <button
               onClick={() => onNavigate('/enviar-oportunidade', undefined, 'parceiro')}
-              className="px-6 py-3.5 text-xs font-semibold uppercase tracking-wider text-[#0B1728] btn-gold rounded-md transition-all shadow-md cursor-pointer whitespace-nowrap flex items-center gap-2"
+              className="px-6 py-3.5 text-xs font-semibold uppercase tracking-wider text-[#0B1728] btn-gold rounded-full transition-all shadow-md cursor-pointer whitespace-nowrap flex items-center gap-2"
             >
               <span>Apresentar solução</span>
               <ArrowUpRight className="w-4 h-4" />
@@ -248,6 +263,7 @@ export const GovTechPage: React.FC<GovTechPageProps> = ({
           </div>
         </div>
       </section>
+      </Reveal>
     </div>
   );
 };
@@ -464,7 +480,7 @@ const GovTechInlineForm: React.FC<{ onNavigate: (path: string) => void }> = ({ o
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full py-3.5 px-6 btn-gold text-[#0B1728] font-bold text-xs uppercase tracking-wider rounded-lg shadow-sm transition-all cursor-pointer flex items-center justify-center gap-2"
+        className="w-full py-3.5 px-6 btn-gold text-[#0B1728] font-bold text-xs uppercase tracking-wider rounded-full shadow-sm transition-all cursor-pointer flex items-center justify-center gap-2"
       >
         <span>{isSubmitting ? 'Registrando no CRM...' : 'Cadastrar Solução GovTech'}</span>
         <ArrowUpRight className="w-4 h-4" />

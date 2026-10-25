@@ -94,21 +94,25 @@ export const CreditPage: React.FC<CreditPageProps> = ({
   return (
     <div className="space-y-16 pb-20">
       {/* 1. HERO HEADER */}
-      <section className="bg-[#0B1728] text-white pt-16 pb-20 border-b border-slate-800 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-[#C5A869]/10 rounded-full blur-3xl pointer-events-none" />
+      <section className="bg-[#050B14] text-white pt-20 pb-24 sm:pt-24 sm:pb-28 relative overflow-hidden grain">
+        <div className="absolute -top-40 -left-40 w-[40rem] h-[40rem] rounded-full bg-[#15345A]/60 blur-[120px] animate-aurora pointer-events-none" />
+        <div className="absolute top-10 right-[-12rem] w-[34rem] h-[34rem] rounded-full bg-[#C5A869]/15 blur-[120px] animate-aurora [animation-delay:-9s] pointer-events-none" />
+        <div className="absolute inset-0 opacity-[0.06] bg-[linear-gradient(to_right,#C5A869_1px,transparent_1px),linear-gradient(to_bottom,#C5A869_1px,transparent_1px)] [background-size:88px_88px] [mask-image:radial-gradient(ellipse_at_30%_40%,black_20%,transparent_70%)] pointer-events-none" />
+        <div className="absolute inset-x-0 bottom-0 gold-hairline" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-3xl space-y-4">
-            <div className="flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-[#C5A869]">
+          <div className="max-w-3xl space-y-4 scroll-drift">
+            <div className="animate-fade-up flex flex-wrap items-center gap-x-3 gap-y-1 text-[11px] font-semibold tracking-[0.28em] uppercase text-[#C5A869]">
+              <span className="w-10 h-px bg-[#C5A869]/70" />
               <span>Crédito Corporativo & Rural</span>
               <span className="text-slate-600">·</span>
               <span>Parceiros Habilitados</span>
             </div>
 
-            <h1 className="text-3xl sm:text-5xl font-bold font-serif text-white tracking-tight leading-tight">
+            <h1 className="animate-fade-up [animation-delay:120ms] text-4xl sm:text-6xl font-semibold font-serif text-white tracking-tight leading-[1.05] text-balance">
               Crédito PJ & Agro
             </h1>
 
-            <p className="text-base sm:text-xl text-slate-300 font-light leading-relaxed">
+            <p className="animate-fade-up [animation-delay:240ms] text-base sm:text-xl text-slate-300 font-light leading-relaxed">
               Conectamos empresas e produtores a soluções de crédito estruturadas com parceiros habilitados.
             </p>
 
@@ -182,11 +186,11 @@ export const CreditPage: React.FC<CreditPageProps> = ({
             return (
               <Reveal key={item.id} delay={index * 80} variant="fade-up">
                 <div
-                  className="card-lux h-full bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm hover:border-[#C5A869]/60 hover:shadow-md transition-all flex flex-col justify-between"
+                  className="card-lux h-full bg-white rounded-2xl p-6 border border-slate-200/80 shadow-[0_18px_45px_-32px_rgba(11,23,40,0.45)] flex flex-col justify-between"
                 >
                   <div className="space-y-3">
                     <div className="flex items-center justify-between">
-                      <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#15273F] to-[#050B14] text-[#C5A869] ring-1 ring-[#C5A869]/30 flex items-center justify-center">
+                      <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#15273F] to-[#050B14] text-[#C5A869] ring-1 ring-[#C5A869]/30 shadow-lg flex items-center justify-center">
                         <Icon className="w-5 h-5" />
                       </div>
                       <span className="text-[10px] font-mono uppercase bg-slate-100 text-slate-700 px-2 py-0.5 rounded">
@@ -258,10 +262,10 @@ export const CreditPage: React.FC<CreditPageProps> = ({
       </section>
 
       {/* 4. COMO A MACK ATUA */}
-      <section className="bg-slate-100/70 py-16 border-y border-slate-200">
+      <section className="bg-[#F4EFE4]/70 py-20 border-y border-[#C5A869]/15">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           <div className="text-center max-w-2xl mx-auto space-y-2">
-            <div className="text-xs uppercase tracking-widest font-semibold text-[#C5A869] font-mono">
+            <div className="text-[11px] uppercase tracking-[0.3em] font-semibold text-[#A88B4F]">
               Fluxo Estruturado
             </div>
             <h2 className="text-2xl sm:text-3xl font-bold font-serif text-slate-900">
@@ -273,8 +277,8 @@ export const CreditPage: React.FC<CreditPageProps> = ({
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-            <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-2xs space-y-2">
-              <span className="w-7 h-7 rounded-full bg-[#0B1728] text-white text-xs font-mono font-bold flex items-center justify-center">
+            <div className="card-lux bg-white rounded-2xl p-6 border border-slate-200/80 shadow-[0_18px_45px_-32px_rgba(11,23,40,0.45)] space-y-2">
+              <span className="w-8 h-8 rounded-full bg-gradient-to-br from-[#E9D6A4] via-[#C5A869] to-[#9C7F43] text-[#0B1728] text-xs font-mono font-bold shadow-[0_8px_20px_-8px_rgba(197,168,105,0.9)] font-bold flex items-center justify-center">
                 1
               </span>
               <h4 className="text-sm font-bold text-slate-900">
@@ -285,8 +289,8 @@ export const CreditPage: React.FC<CreditPageProps> = ({
               </p>
             </div>
 
-            <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-2xs space-y-2">
-              <span className="w-7 h-7 rounded-full bg-[#0B1728] text-white text-xs font-mono font-bold flex items-center justify-center">
+            <div className="card-lux bg-white rounded-2xl p-6 border border-slate-200/80 shadow-[0_18px_45px_-32px_rgba(11,23,40,0.45)] space-y-2">
+              <span className="w-8 h-8 rounded-full bg-gradient-to-br from-[#E9D6A4] via-[#C5A869] to-[#9C7F43] text-[#0B1728] text-xs font-mono font-bold shadow-[0_8px_20px_-8px_rgba(197,168,105,0.9)] font-bold flex items-center justify-center">
                 2
               </span>
               <h4 className="text-sm font-bold text-slate-900">
@@ -297,8 +301,8 @@ export const CreditPage: React.FC<CreditPageProps> = ({
               </p>
             </div>
 
-            <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-2xs space-y-2">
-              <span className="w-7 h-7 rounded-full bg-[#0B1728] text-white text-xs font-mono font-bold flex items-center justify-center">
+            <div className="card-lux bg-white rounded-2xl p-6 border border-slate-200/80 shadow-[0_18px_45px_-32px_rgba(11,23,40,0.45)] space-y-2">
+              <span className="w-8 h-8 rounded-full bg-gradient-to-br from-[#E9D6A4] via-[#C5A869] to-[#9C7F43] text-[#0B1728] text-xs font-mono font-bold shadow-[0_8px_20px_-8px_rgba(197,168,105,0.9)] font-bold flex items-center justify-center">
                 3
               </span>
               <h4 className="text-sm font-bold text-slate-900">
@@ -309,8 +313,8 @@ export const CreditPage: React.FC<CreditPageProps> = ({
               </p>
             </div>
 
-            <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-2xs space-y-2">
-              <span className="w-7 h-7 rounded-full bg-[#0B1728] text-white text-xs font-mono font-bold flex items-center justify-center">
+            <div className="card-lux bg-white rounded-2xl p-6 border border-slate-200/80 shadow-[0_18px_45px_-32px_rgba(11,23,40,0.45)] space-y-2">
+              <span className="w-8 h-8 rounded-full bg-gradient-to-br from-[#E9D6A4] via-[#C5A869] to-[#9C7F43] text-[#0B1728] text-xs font-mono font-bold shadow-[0_8px_20px_-8px_rgba(197,168,105,0.9)] font-bold flex items-center justify-center">
                 4
               </span>
               <h4 className="text-sm font-bold text-slate-900">
@@ -336,7 +340,7 @@ export const CreditPage: React.FC<CreditPageProps> = ({
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div className="bg-white p-5 rounded-xl border border-slate-200 space-y-2">
+          <div className="card-lux bg-white rounded-2xl p-5 border border-slate-200/80 shadow-[0_18px_45px_-32px_rgba(11,23,40,0.45)] space-y-2">
             <h4 className="text-sm font-bold text-slate-900 flex items-center gap-2">
               <Building2 className="w-4 h-4 text-[#C5A869]" />
               <span>Perfil da empresa / produtor</span>
@@ -346,7 +350,7 @@ export const CreditPage: React.FC<CreditPageProps> = ({
             </p>
           </div>
 
-          <div className="bg-white p-5 rounded-xl border border-slate-200 space-y-2">
+          <div className="card-lux bg-white rounded-2xl p-5 border border-slate-200/80 shadow-[0_18px_45px_-32px_rgba(11,23,40,0.45)] space-y-2">
             <h4 className="text-sm font-bold text-slate-900 flex items-center gap-2">
               <Coins className="w-4 h-4 text-[#C5A869]" />
               <span>Finalidade do crédito</span>
@@ -356,7 +360,7 @@ export const CreditPage: React.FC<CreditPageProps> = ({
             </p>
           </div>
 
-          <div className="bg-white p-5 rounded-xl border border-slate-200 space-y-2">
+          <div className="card-lux bg-white rounded-2xl p-5 border border-slate-200/80 shadow-[0_18px_45px_-32px_rgba(11,23,40,0.45)] space-y-2">
             <h4 className="text-sm font-bold text-slate-900 flex items-center gap-2">
               <ShieldCheck className="w-4 h-4 text-[#C5A869]" />
               <span>Garantias disponíveis</span>
@@ -366,7 +370,7 @@ export const CreditPage: React.FC<CreditPageProps> = ({
             </p>
           </div>
 
-          <div className="bg-white p-5 rounded-xl border border-slate-200 space-y-2">
+          <div className="card-lux bg-white rounded-2xl p-5 border border-slate-200/80 shadow-[0_18px_45px_-32px_rgba(11,23,40,0.45)] space-y-2">
             <h4 className="text-sm font-bold text-slate-900 flex items-center gap-2">
               <PieChart className="w-4 h-4 text-[#C5A869]" />
               <span>Ticket / Volume</span>
@@ -376,7 +380,7 @@ export const CreditPage: React.FC<CreditPageProps> = ({
             </p>
           </div>
 
-          <div className="bg-white p-5 rounded-xl border border-slate-200 space-y-2">
+          <div className="card-lux bg-white rounded-2xl p-5 border border-slate-200/80 shadow-[0_18px_45px_-32px_rgba(11,23,40,0.45)] space-y-2">
             <h4 className="text-sm font-bold text-slate-900 flex items-center gap-2">
               <Clock className="w-4 h-4 text-[#C5A869]" />
               <span>Urgência e horizonte temporal</span>
@@ -386,7 +390,7 @@ export const CreditPage: React.FC<CreditPageProps> = ({
             </p>
           </div>
 
-          <div className="bg-white p-5 rounded-xl border border-slate-200 space-y-2">
+          <div className="card-lux bg-white rounded-2xl p-5 border border-slate-200/80 shadow-[0_18px_45px_-32px_rgba(11,23,40,0.45)] space-y-2">
             <h4 className="text-sm font-bold text-slate-900 flex items-center gap-2">
               <FileText className="w-4 h-4 text-[#C5A869]" />
               <span>Documentação preliminar</span>
@@ -420,7 +424,9 @@ export const CreditPage: React.FC<CreditPageProps> = ({
 
       {/* 7. CALL TO ACTION CONTAINER */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-[#0B1728] rounded-2xl p-8 sm:p-12 border border-slate-800 text-white flex flex-col md:flex-row items-center justify-between gap-8">
+        <div className="relative isolate overflow-hidden grain bg-[#050B14] text-white rounded-3xl p-8 sm:p-14 border border-[#C5A869]/20 shadow-[0_40px_80px_-40px_rgba(5,11,20,0.9)] flex flex-col md:flex-row items-center justify-between gap-8">
+          <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-[#C5A869]/20 blur-[100px] animate-aurora pointer-events-none -z-10" />
+          <div className="absolute -bottom-32 -left-24 w-96 h-96 rounded-full bg-[#15345A]/70 blur-[100px] animate-aurora [animation-delay:-8s] pointer-events-none -z-10" />
           <div className="space-y-2">
             <h3 className="text-2xl font-bold font-serif text-white">
               Pronto para apresentar sua demanda de crédito?
@@ -432,7 +438,7 @@ export const CreditPage: React.FC<CreditPageProps> = ({
 
           <button
             onClick={() => onNavigate('/enviar-oportunidade', undefined, 'credito')}
-            className="px-6 py-3.5 text-xs font-semibold uppercase tracking-wider text-[#0B1728] btn-gold rounded-md transition-all shadow-md cursor-pointer whitespace-nowrap flex items-center gap-2"
+            className="px-6 py-3.5 text-xs font-semibold uppercase tracking-wider text-[#0B1728] btn-gold rounded-full transition-all shadow-md cursor-pointer whitespace-nowrap flex items-center gap-2"
           >
             <span>Enviar demanda de crédito</span>
             <ArrowUpRight className="w-4 h-4" />
@@ -729,7 +735,7 @@ const CreditInlineForm: React.FC<{ onNavigate: (path: string) => void }> = ({ on
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full py-3.5 px-6 btn-gold text-[#0B1728] font-bold text-xs uppercase tracking-wider rounded-lg shadow-sm transition-all cursor-pointer flex items-center justify-center gap-2"
+        className="w-full py-3.5 px-6 btn-gold text-[#0B1728] font-bold text-xs uppercase tracking-wider rounded-full shadow-sm transition-all cursor-pointer flex items-center justify-center gap-2"
       >
         <span>{isSubmitting ? 'Registrando no CRM...' : 'Enviar Demanda de Crédito'}</span>
         <ArrowUpRight className="w-4 h-4" />

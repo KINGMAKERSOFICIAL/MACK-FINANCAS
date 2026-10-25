@@ -45,6 +45,40 @@ export default function App() {
     return () => window.removeEventListener('popstate', handlePopState);
   }, []);
 
+  // Feed pointer position to the spotlight effect on .card-lux elements
+  useEffect(() => {
+    const handlePointerMove = (e: PointerEvent) => {
+      const card = (e.target as Element | null)?.closest?.('.card-lux') as HTMLElement | null;
+      if (!card) return;
+      const rect = card.getBoundingClientRect();
+      card.style.setProperty('--mx', `${e.clientX - rect.left}px`);
+      card.style.setProperty('--my', `${e.clientY - rect.top}px`);
+    };
+    window.addEventListener('pointermove', handlePointerMove, { passive: true });
+    return () => window.removeEventListener('pointermove', handlePointerMove);
+  }, []);
+
+  // Reading progress for the gold line at the top of the page
+  useEffect(() => {
+    let frame = 0;
+    const update = () => {
+      frame = 0;
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      document.documentElement.style.setProperty('--scroll', String(max > 0 ? window.scrollY / max : 0));
+    };
+    const handleScroll = () => {
+      if (!frame) frame = requestAnimationFrame(update);
+    };
+    update();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('resize', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleScroll);
+      cancelAnimationFrame(frame);
+    };
+  }, [currentPath]);
+
   // Update leads count
   useEffect(() => {
     const updateCount = () => {
@@ -125,7 +159,9 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50 text-slate-900 font-sans selection:bg-[#C5A869]/20 selection:text-[#0B1728]">
+    <div className="min-h-screen flex flex-col bg-[#FAF8F3] text-slate-900 font-sans selection:bg-[#C5A869]/20 selection:text-[#0B1728]">
+      <div className="scroll-progress" aria-hidden="true" />
+
       {/* Main Top Bar */}
       <Navbar
         currentPath={currentPath}

@@ -12,6 +12,7 @@ import {
 } from 'lucide-react';
 import { Article, SiteSettings } from '../types';
 import { getArticles, saveLead, parseUtmsFromUrl } from '../services/crmStorage';
+import { Reveal } from '../components/Reveal';
 
 interface ContentPageProps {
   onNavigate: (path: string) => void;
@@ -73,21 +74,25 @@ export const ContentPage: React.FC<ContentPageProps> = ({
   return (
     <div className="space-y-16 pb-20">
       {/* 1. HERO HEADER */}
-      <section className="bg-[#0B1728] text-white pt-16 pb-20 border-b border-slate-800 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-[#C5A869]/10 rounded-full blur-3xl pointer-events-none" />
+      <section className="bg-[#050B14] text-white pt-20 pb-24 sm:pt-24 sm:pb-28 relative overflow-hidden grain">
+        <div className="absolute -top-40 -left-40 w-[40rem] h-[40rem] rounded-full bg-[#15345A]/60 blur-[120px] animate-aurora pointer-events-none" />
+        <div className="absolute top-10 right-[-12rem] w-[34rem] h-[34rem] rounded-full bg-[#C5A869]/15 blur-[120px] animate-aurora [animation-delay:-9s] pointer-events-none" />
+        <div className="absolute inset-0 opacity-[0.06] bg-[linear-gradient(to_right,#C5A869_1px,transparent_1px),linear-gradient(to_bottom,#C5A869_1px,transparent_1px)] [background-size:88px_88px] [mask-image:radial-gradient(ellipse_at_30%_40%,black_20%,transparent_70%)] pointer-events-none" />
+        <div className="absolute inset-x-0 bottom-0 gold-hairline" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-3xl space-y-4">
-            <div className="flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-[#C5A869]">
+          <div className="max-w-3xl space-y-4 scroll-drift">
+            <div className="animate-fade-up flex flex-wrap items-center gap-x-3 gap-y-1 text-[11px] font-semibold tracking-[0.28em] uppercase text-[#C5A869]">
+              <span className="w-10 h-px bg-[#C5A869]/70" />
               <span>Conhecimento & Mercado</span>
               <span className="text-slate-600">·</span>
               <span>Análises Técnicas</span>
             </div>
 
-            <h1 className="text-3xl sm:text-5xl font-bold font-serif text-white tracking-tight leading-tight">
+            <h1 className="animate-fade-up [animation-delay:120ms] text-4xl sm:text-6xl font-semibold font-serif text-white tracking-tight leading-[1.05] text-balance">
               Conteúdo
             </h1>
 
-            <p className="text-base sm:text-xl text-slate-300 font-light leading-relaxed">
+            <p className="animate-fade-up [animation-delay:240ms] text-base sm:text-xl text-slate-300 font-light leading-relaxed">
               Insights, artigos e análises sobre originação, crédito, negócios e soluções empresariais.
             </p>
           </div>
@@ -95,6 +100,7 @@ export const ContentPage: React.FC<ContentPageProps> = ({
       </section>
 
       {/* 2. FILTER BAR */}
+      <Reveal>
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6">
         <div className="bg-white p-3 rounded-xl border border-slate-200 shadow-sm flex items-center gap-2 overflow-x-auto">
           <span className="text-xs font-semibold text-slate-500 uppercase tracking-wider px-2 shrink-0">
@@ -115,14 +121,16 @@ export const ContentPage: React.FC<ContentPageProps> = ({
           ))}
         </div>
       </section>
+      </Reveal>
 
       {/* 3. ARTICLES GRID */}
+      <Reveal>
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredArticles.map((article) => (
             <div
               key={article.id}
-              className="bg-white rounded-xl p-6 border border-slate-200 shadow-sm hover:shadow-md hover:border-[#C5A869]/60 transition-all flex flex-col justify-between"
+              className="card-lux bg-white rounded-2xl p-6 border border-slate-200/80 shadow-[0_18px_45px_-32px_rgba(11,23,40,0.45)] flex flex-col justify-between"
             >
               <div className="space-y-3">
                 {/* Clean unboxed metadata with dot separators */}
@@ -159,10 +167,14 @@ export const ContentPage: React.FC<ContentPageProps> = ({
           ))}
         </div>
       </section>
+      </Reveal>
 
       {/* 4. NEWSLETTER BLOCK (SECTION 12) */}
+      <Reveal>
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-[#0B1728] rounded-2xl p-8 sm:p-12 border border-slate-800 text-white">
+        <div className="relative isolate overflow-hidden grain bg-[#050B14] text-white rounded-3xl p-8 sm:p-14 border border-[#C5A869]/20 shadow-[0_40px_80px_-40px_rgba(5,11,20,0.9)]">
+          <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-[#C5A869]/20 blur-[100px] animate-aurora pointer-events-none -z-10" />
+          <div className="absolute -bottom-32 -left-24 w-96 h-96 rounded-full bg-[#15345A]/70 blur-[100px] animate-aurora [animation-delay:-8s] pointer-events-none -z-10" />
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-6 space-y-2">
               <div className="text-xs font-semibold text-[#C5A869] uppercase tracking-wider font-mono">
@@ -222,7 +234,7 @@ export const ContentPage: React.FC<ContentPageProps> = ({
 
                   <button
                     type="submit"
-                    className="w-full py-3 px-6 btn-gold text-[#0B1728] font-bold text-xs uppercase tracking-wider rounded-lg shadow-sm transition-colors cursor-pointer"
+                    className="w-full py-3 px-6 btn-gold text-[#0B1728] font-bold text-xs uppercase tracking-wider rounded-full shadow-sm transition-colors cursor-pointer"
                   >
                     Inscrever-se na Newsletter
                   </button>
@@ -232,6 +244,7 @@ export const ContentPage: React.FC<ContentPageProps> = ({
           </div>
         </div>
       </section>
+      </Reveal>
 
       {/* ARTICLE READER MODAL */}
       {readingArticle && (
@@ -277,7 +290,7 @@ export const ContentPage: React.FC<ContentPageProps> = ({
                     setReadingArticle(null);
                     onNavigate(readingArticle.ctaLink);
                   }}
-                  className="w-full py-3 px-4 btn-gold text-[#0B1728] font-bold text-xs uppercase tracking-wider rounded-lg shadow-sm transition-colors flex items-center justify-center gap-2 cursor-pointer"
+                  className="w-full py-3 px-4 btn-gold text-[#0B1728] font-bold text-xs uppercase tracking-wider rounded-full shadow-sm transition-colors flex items-center justify-center gap-2 cursor-pointer"
                 >
                   <span>{readingArticle.ctaText}</span>
                   <ArrowUpRight className="w-4 h-4" />
