@@ -470,7 +470,7 @@ export const PartnersPage: React.FC<PartnersPageProps> = ({
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full py-3.5 px-6 bg-[#C5A869] hover:bg-[#B59858] text-[#0B1728] font-bold text-xs uppercase tracking-wider rounded-lg shadow-sm hover:shadow-md transition-all cursor-pointer flex items-center justify-center gap-2 mt-4"
+                    className="w-full py-3.5 px-6 btn-gold text-[#0B1728] font-bold text-xs uppercase tracking-wider rounded-lg shadow-sm hover:shadow-md transition-all cursor-pointer flex items-center justify-center gap-2 mt-4"
                   >
                     <span>{isSubmitting ? 'Registrando...' : 'Quero ser parceiro da MACK'}</span>
                     <ArrowUpRight className="w-4 h-4" />

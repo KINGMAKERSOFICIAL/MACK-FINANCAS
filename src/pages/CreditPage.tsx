@@ -391,7 +391,7 @@ export const CreditPage: React.FC<CreditPageProps> = ({
 
           <button
             onClick={() => onNavigate('/enviar-oportunidade', undefined, 'credito')}
-            className="px-6 py-3.5 text-xs font-semibold uppercase tracking-wider text-[#0B1728] bg-[#C5A869] hover:bg-[#B59858] rounded-md transition-all shadow-md cursor-pointer whitespace-nowrap flex items-center gap-2"
+            className="px-6 py-3.5 text-xs font-semibold uppercase tracking-wider text-[#0B1728] btn-gold rounded-md transition-all shadow-md cursor-pointer whitespace-nowrap flex items-center gap-2"
           >
             <span>Enviar demanda de crédito</span>
             <ArrowUpRight className="w-4 h-4" />
@@ -688,7 +688,7 @@ const CreditInlineForm: React.FC<{ onNavigate: (path: string) => void }> = ({ on
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full py-3.5 px-6 bg-[#C5A869] hover:bg-[#B59858] text-[#0B1728] font-bold text-xs uppercase tracking-wider rounded-lg shadow-sm transition-all cursor-pointer flex items-center justify-center gap-2"
+        className="w-full py-3.5 px-6 btn-gold text-[#0B1728] font-bold text-xs uppercase tracking-wider rounded-lg shadow-sm transition-all cursor-pointer flex items-center justify-center gap-2"
       >
         <span>{isSubmitting ? 'Registrando no CRM...' : 'Enviar Demanda de Crédito'}</span>
         <ArrowUpRight className="w-4 h-4" />

@@ -222,7 +222,7 @@ export const ContentPage: React.FC<ContentPageProps> = ({
 
                   <button
                     type="submit"
-                    className="w-full py-3 px-6 bg-[#C5A869] hover:bg-[#B59858] text-[#0B1728] font-bold text-xs uppercase tracking-wider rounded-lg shadow-sm transition-colors cursor-pointer"
+                    className="w-full py-3 px-6 btn-gold text-[#0B1728] font-bold text-xs uppercase tracking-wider rounded-lg shadow-sm transition-colors cursor-pointer"
                   >
                     Inscrever-se na Newsletter
                   </button>
@@ -277,7 +277,7 @@ export const ContentPage: React.FC<ContentPageProps> = ({
                     setReadingArticle(null);
                     onNavigate(readingArticle.ctaLink);
                   }}
-                  className="w-full py-3 px-4 bg-[#C5A869] hover:bg-[#B59858] text-[#0B1728] font-bold text-xs uppercase tracking-wider rounded-lg shadow-sm transition-colors flex items-center justify-center gap-2 cursor-pointer"
+                  className="w-full py-3 px-4 btn-gold text-[#0B1728] font-bold text-xs uppercase tracking-wider rounded-lg shadow-sm transition-colors flex items-center justify-center gap-2 cursor-pointer"
                 >
                   <span>{readingArticle.ctaText}</span>
                   <ArrowUpRight className="w-4 h-4" />

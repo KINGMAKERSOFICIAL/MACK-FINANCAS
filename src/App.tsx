@@ -127,7 +127,7 @@ export default function App() {
   return (
     <div className="min-h-screen flex flex-col bg-slate-50 text-slate-900 font-sans selection:bg-[#C5A869]/20 selection:text-[#0B1728]">
       {/* Top Banner indicating official 2026 alignment */}
-      <div className="bg-[#070F1B] text-slate-400 text-[11px] py-1.5 px-4 text-center border-b border-slate-800 flex items-center justify-center gap-2">
+      <div className="bg-[#03070D] text-slate-400 text-[11px] py-1.5 px-4 text-center border-b border-white/5 flex items-center justify-center gap-2">
         <span className="text-[#C5A869] font-semibold font-mono">mackfinancas.com.br</span>
         <span className="text-slate-600">·</span>
         <span>Plataforma B2B de Originação, Crédito e Soluções Corporativas</span>
@@ -151,7 +151,7 @@ export default function App() {
       />
 
       {/* Page Content */}
-      <main className="flex-1">{renderContent()}</main>
+      <main key={currentPath} className="flex-1 animate-fade-up">{renderContent()}</main>
 
       {/* Mandatory Footer */}
       <Footer

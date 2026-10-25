@@ -15,6 +15,8 @@ import {
   Compass,
 } from 'lucide-react';
 import { SiteSettings } from '../types';
+import { FounderPortrait } from '../components/FounderPortrait';
+import { Reveal } from '../components/Reveal';
 
 interface HomePageProps {
   onNavigate: (path: string, hash?: string, initialType?: string) => void;
@@ -25,47 +27,43 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, settings }) => {
   return (
     <div className="space-y-20 pb-20">
       {/* 1. HERO SECTION */}
-      <section className="relative bg-[#0B1728] text-white overflow-hidden pt-16 pb-24 md:py-28 border-b border-slate-800">
-        {/* Subtle geometric grid background */}
-        <div className="absolute inset-0 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:24px_24px] opacity-25" />
-        <div className="absolute top-0 right-0 w-96 h-96 bg-[#C5A869]/10 rounded-full blur-3xl pointer-events-none" />
+      <section className="relative bg-[#050B14] text-white overflow-hidden grain pt-14 pb-28 md:pt-20 md:pb-36 border-b border-[#C5A869]/10">
+        {/* Aurora lights */}
+        <div className="absolute -top-40 -left-40 w-[42rem] h-[42rem] rounded-full bg-[#15345A]/60 blur-[120px] animate-aurora pointer-events-none" />
+        <div className="absolute top-20 right-[-10rem] w-[36rem] h-[36rem] rounded-full bg-[#C5A869]/15 blur-[120px] animate-aurora [animation-delay:-9s] pointer-events-none" />
+        {/* Fine architectural grid */}
+        <div className="absolute inset-0 opacity-[0.07] bg-[linear-gradient(to_right,#C5A869_1px,transparent_1px),linear-gradient(to_bottom,#C5A869_1px,transparent_1px)] [background-size:88px_88px] [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_75%)]" />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-14 lg:gap-10 items-center">
             {/* Left Column: Proposition */}
-            <div className="lg:col-span-7 space-y-6">
+            <div className="lg:col-span-7 space-y-7">
               {/* Quiet Descriptor (Unboxed metadata style) */}
-              <div className="flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-[#C5A869]">
+              <div className="animate-fade-up flex items-center gap-3 text-[11px] font-semibold tracking-[0.3em] uppercase text-[#C5A869]">
+                <span className="w-10 h-px bg-[#C5A869]/70" />
                 <span>Originação</span>
-                <span className="text-slate-600">·</span>
+                <span className="text-[#C5A869]/40">◆</span>
                 <span>Crédito</span>
-                <span className="text-slate-600">·</span>
-                <span>Soluções Corporativas</span>
+                <span className="text-[#C5A869]/40">◆</span>
+                <span className="hidden sm:inline">Soluções Corporativas</span>
               </div>
 
               {/* Main Headline */}
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white font-serif leading-[1.15] text-balance">
-                Conectamos empresas, ativos e capital a parceiros capazes de executar.
+              <h1 className="animate-fade-up [animation-delay:120ms] text-4xl sm:text-5xl lg:text-[3.6rem] font-semibold tracking-tight text-white font-serif leading-[1.08] text-balance">
+                Conectamos empresas, ativos e capital a{' '}
+                <span className="text-gold-foil italic">parceiros capazes de executar.</span>
               </h1>
 
               {/* Mandatory Support Text */}
-              <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl font-light">
+              <p className="animate-fade-up [animation-delay:240ms] text-base sm:text-lg text-slate-300/90 leading-relaxed max-w-2xl font-light">
                 A MACK é uma plataforma B2B de originação, crédito e soluções corporativas, que identifica oportunidades, qualifica demandas e conecta empresas, ativos e capital a parceiros especializados.
               </p>
 
-              {/* Short Regulatory Notice */}
-              <div className="flex items-center gap-2 pt-2 text-xs text-slate-400">
-                <ShieldCheck className="w-4 h-4 text-[#C5A869] shrink-0" />
-                <span>
-                  Atuação comercial e de originação. Soluções executadas com parceiros especializados. Crédito e aquisição dependem de análise e aprovação.
-                </span>
-              </div>
-
               {/* CTAs */}
-              <div className="flex flex-wrap items-center gap-4 pt-4">
+              <div className="animate-fade-up [animation-delay:360ms] flex flex-wrap items-center gap-4 pt-2">
                 <button
                   onClick={() => onNavigate('/enviar-oportunidade')}
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-xs font-semibold uppercase tracking-wider text-[#0B1728] bg-[#C5A869] hover:bg-[#B59858] rounded-md transition-all shadow-md cursor-pointer whitespace-nowrap"
+                  className="btn-gold inline-flex items-center justify-center gap-2 px-7 py-4 text-xs font-bold uppercase tracking-[0.18em] text-[#0B1728] rounded-full cursor-pointer whitespace-nowrap"
                 >
                   <span>Enviar Oportunidade</span>
                   <ArrowUpRight className="w-4 h-4" />
@@ -73,60 +71,62 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, settings }) => {
 
                 <button
                   onClick={() => onNavigate('/originacao-ativos')}
-                  className="inline-flex items-center justify-center gap-2 px-5 py-3.5 text-xs font-semibold uppercase tracking-wider text-slate-200 hover:text-white bg-slate-900/80 hover:bg-slate-800 border border-slate-700 rounded-md transition-all cursor-pointer whitespace-nowrap"
+                  className="btn-glass inline-flex items-center justify-center gap-2 px-6 py-4 text-xs font-semibold uppercase tracking-[0.18em] text-slate-100 rounded-full cursor-pointer whitespace-nowrap"
                 >
                   <span>Conhecer Ativos e Originação</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </button>
               </div>
+
+              {/* Short Regulatory Notice */}
+              <div className="animate-fade-up [animation-delay:480ms] flex items-start gap-2 pt-3 text-xs text-slate-400 max-w-xl">
+                <ShieldCheck className="w-4 h-4 text-[#C5A869] shrink-0 mt-0.5" />
+                <span>
+                  Atuação comercial e de originação. Soluções executadas com parceiros especializados. Crédito e aquisição dependem de análise e aprovação.
+                </span>
+              </div>
+
+              {/* Core pillars */}
+              <div className="animate-fade-up [animation-delay:600ms] grid grid-cols-1 sm:grid-cols-3 gap-px rounded-2xl overflow-hidden border border-white/5 bg-white/5 mt-4">
+                {[
+                  { icon: Scale, title: 'Originação & Special Situations', text: 'Precatórios, créditos judiciais e ativos.' },
+                  { icon: Coins, title: 'Crédito PJ & Agronegócio', text: 'Giro, garantias reais e crédito agro.' },
+                  { icon: Briefcase, title: 'Soluções Corporativas', text: 'Eficiência, riscos e reestruturação.' },
+                ].map(({ icon: Icon, title, text }) => (
+                  <div key={title} className="group bg-[#050B14]/80 backdrop-blur p-4 hover:bg-[#0B1728] transition-colors duration-500">
+                    <Icon className="w-4 h-4 text-[#C5A869] mb-2 transition-transform duration-500 group-hover:-translate-y-0.5" />
+                    <h4 className="text-[13px] font-semibold text-white leading-snug">{title}</h4>
+                    <p className="text-[11px] text-slate-400 mt-1">{text}</p>
+                  </div>
+                ))}
+              </div>
             </div>
 
-            {/* Right Column: Hero Visual Institutional Carrier */}
-            <div className="lg:col-span-5">
-              <div className="relative rounded-2xl bg-gradient-to-br from-slate-900 to-[#102033] border border-slate-800 p-8 shadow-2xl space-y-6">
-                <div className="flex items-center justify-between border-b border-slate-800 pb-4">
-                  <div className="text-xs uppercase tracking-widest text-[#C5A869] font-mono">
-                    Ecossistema B2B Integrado
-                  </div>
-                  <span className="text-[11px] text-slate-400">Repositório Oficial 2026</span>
-                </div>
+            {/* Right Column: Founder portrait */}
+            <div className="lg:col-span-5 animate-fade-up [animation-delay:300ms]">
+              <div className="relative max-w-sm sm:max-w-md mx-auto lg:ml-auto">
+                <FounderPortrait />
 
-                {/* 3 Core Pillars representation */}
-                <div className="space-y-4">
-                  <div className="p-4 rounded-lg bg-slate-800/40 border border-slate-800 flex items-start gap-3.5">
-                    <div className="w-8 h-8 rounded bg-[#C5A869]/10 text-[#C5A869] flex items-center justify-center shrink-0 mt-0.5">
-                      <Scale className="w-4 h-4" />
+                {/* Floating credential badge */}
+                <div className="absolute -left-4 sm:-left-10 top-10 animate-float">
+                  <div className="flex items-center gap-3 rounded-2xl bg-[#0B1728]/80 backdrop-blur-xl border border-[#C5A869]/30 px-4 py-3 shadow-2xl">
+                    <div className="w-9 h-9 rounded-full bg-gradient-to-br from-[#E9D6A4] to-[#9C7F43] text-[#0B1728] flex items-center justify-center">
+                      <ShieldCheck className="w-4 h-4" />
                     </div>
-                    <div>
-                      <h4 className="text-sm font-semibold text-white">Originação & Special Situations</h4>
-                      <p className="text-xs text-slate-400 mt-0.5">Precatórios, créditos judiciais e ativos para compradores institucionais.</p>
-                    </div>
-                  </div>
-
-                  <div className="p-4 rounded-lg bg-slate-800/40 border border-slate-800 flex items-start gap-3.5">
-                    <div className="w-8 h-8 rounded bg-[#C5A869]/10 text-[#C5A869] flex items-center justify-center shrink-0 mt-0.5">
-                      <Coins className="w-4 h-4" />
-                    </div>
-                    <div>
-                      <h4 className="text-sm font-semibold text-white">Crédito PJ & Agronegócio</h4>
-                      <p className="text-xs text-slate-400 mt-0.5">Giro, garantias reais, home equity e crédito agro com parceiros habilitados.</p>
-                    </div>
-                  </div>
-
-                  <div className="p-4 rounded-lg bg-slate-800/40 border border-slate-800 flex items-start gap-3.5">
-                    <div className="w-8 h-8 rounded bg-[#C5A869]/10 text-[#C5A869] flex items-center justify-center shrink-0 mt-0.5">
-                      <Briefcase className="w-4 h-4" />
-                    </div>
-                    <div>
-                      <h4 className="text-sm font-semibold text-white">Soluções Corporativas</h4>
-                      <p className="text-xs text-slate-400 mt-0.5">Eficiência operacional, mitigação de riscos, reestruturação e tecnologia.</p>
+                    <div className="leading-tight">
+                      <div className="text-[10px] uppercase tracking-[0.2em] text-[#C5A869]">Estruturação</div>
+                      <div className="text-xs font-semibold text-white">Sigilosa & responsável</div>
                     </div>
                   </div>
                 </div>
 
-                <div className="pt-2 border-t border-slate-800 text-[11px] text-slate-400 flex items-center justify-between">
-                  <span>Estruturação sigilosa e responsável</span>
-                  <span className="text-[#C5A869] font-medium font-mono">mackfinancas.com.br</span>
+                {/* Floating signature quote */}
+                <div className="absolute -right-2 sm:-right-8 -bottom-14 animate-float [animation-delay:-3.5s] max-w-[15rem]">
+                  <div className="rounded-2xl bg-white/[0.04] backdrop-blur-xl border border-white/10 px-4 py-3 shadow-2xl">
+                    <p className="font-serif italic text-[13px] text-slate-200 leading-snug">
+                      “Conectar oportunidades é acreditar no potencial das pessoas.”
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -135,15 +135,16 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, settings }) => {
       </section>
 
       {/* 2. TRÊS PORTAS DE ENTRADA (MANDATORY SECTION 4 & 5) */}
+      <Reveal>
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-10 sm:-mt-14 relative z-20">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Porta 1: Tenho um ativo */}
           <div
             onClick={() => onNavigate('/enviar-oportunidade', undefined, 'ativo')}
-            className="group bg-white rounded-xl p-8 border border-slate-200 shadow-md hover:shadow-xl hover:border-[#C5A869]/60 transition-all duration-300 cursor-pointer flex flex-col justify-between"
+            className="card-lux group h-full bg-white rounded-2xl p-8 border border-slate-200/80 shadow-[0_24px_60px_-35px_rgba(11,23,40,0.45)] cursor-pointer flex flex-col justify-between"
           >
             <div className="space-y-4">
-              <div className="w-12 h-12 rounded-lg bg-[#0B1728] text-[#C5A869] flex items-center justify-center transition-transform group-hover:scale-105">
+              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#15273F] to-[#050B14] text-[#C5A869] ring-1 ring-[#C5A869]/30 flex items-center justify-center shadow-lg transition-all duration-500 group-hover:scale-110 group-hover:rotate-[-4deg] group-hover:ring-[#C5A869]">
                 <Scale className="w-6 h-6" />
               </div>
               <div className="space-y-1">
@@ -168,10 +169,10 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, settings }) => {
           {/* Porta 2: Preciso de crédito/solução */}
           <div
             onClick={() => onNavigate('/enviar-oportunidade', undefined, 'credito')}
-            className="group bg-white rounded-xl p-8 border border-slate-200 shadow-md hover:shadow-xl hover:border-[#C5A869]/60 transition-all duration-300 cursor-pointer flex flex-col justify-between"
+            className="card-lux group h-full bg-white rounded-2xl p-8 border border-slate-200/80 shadow-[0_24px_60px_-35px_rgba(11,23,40,0.45)] cursor-pointer flex flex-col justify-between"
           >
             <div className="space-y-4">
-              <div className="w-12 h-12 rounded-lg bg-[#0B1728] text-[#C5A869] flex items-center justify-center transition-transform group-hover:scale-105">
+              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#15273F] to-[#050B14] text-[#C5A869] ring-1 ring-[#C5A869]/30 flex items-center justify-center shadow-lg transition-all duration-500 group-hover:scale-110 group-hover:rotate-[-4deg] group-hover:ring-[#C5A869]">
                 <Coins className="w-6 h-6" />
               </div>
               <div className="space-y-1">
@@ -196,10 +197,10 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, settings }) => {
           {/* Porta 3: Quero ser parceiro */}
           <div
             onClick={() => onNavigate('/enviar-oportunidade', undefined, 'parceiro')}
-            className="group bg-white rounded-xl p-8 border border-slate-200 shadow-md hover:shadow-xl hover:border-[#C5A869]/60 transition-all duration-300 cursor-pointer flex flex-col justify-between"
+            className="card-lux group h-full bg-white rounded-2xl p-8 border border-slate-200/80 shadow-[0_24px_60px_-35px_rgba(11,23,40,0.45)] cursor-pointer flex flex-col justify-between"
           >
             <div className="space-y-4">
-              <div className="w-12 h-12 rounded-lg bg-[#0B1728] text-[#C5A869] flex items-center justify-center transition-transform group-hover:scale-105">
+              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#15273F] to-[#050B14] text-[#C5A869] ring-1 ring-[#C5A869]/30 flex items-center justify-center shadow-lg transition-all duration-500 group-hover:scale-110 group-hover:rotate-[-4deg] group-hover:ring-[#C5A869]">
                 <Users className="w-6 h-6" />
               </div>
               <div className="space-y-1">
@@ -222,11 +223,13 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, settings }) => {
           </div>
         </div>
       </section>
+      </Reveal>
 
       {/* 3. QUATRO VERTICAIS DE ATUAÇÃO (SECTION 1.1 & 4) */}
+      <Reveal>
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
         <div className="text-center max-w-2xl mx-auto space-y-3 mb-12">
-          <div className="text-xs uppercase tracking-widest font-semibold text-[#C5A869] font-mono">
+          <div className="inline-flex items-center gap-3 text-[11px] uppercase tracking-[0.3em] font-semibold text-[#A88B4F]">
             Arquitetura de Negócios
           </div>
           <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 font-serif">
@@ -239,7 +242,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, settings }) => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {/* Vertical 1: Originação & Special Situations (Maior Destaque) */}
-          <div className="bg-white rounded-xl p-6 border-2 border-[#C5A869]/40 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+          <div className="card-lux h-full bg-gradient-to-b from-[#FBF8F1] to-white rounded-2xl p-6 border border-[#C5A869]/50 shadow-[0_20px_50px_-35px_rgba(197,168,105,0.8)] flex flex-col justify-between">
             <div className="space-y-3">
               <div className="flex items-center justify-between">
                 <span className="text-[10px] font-mono font-semibold uppercase text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">
@@ -273,7 +276,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, settings }) => {
           </div>
 
           {/* Vertical 2: Crédito PJ & Agro */}
-          <div className="bg-white rounded-xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+          <div className="card-lux h-full bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm flex flex-col justify-between">
             <div className="space-y-3">
               <div className="flex items-center justify-between">
                 <span className="text-[10px] font-mono font-semibold uppercase text-slate-600 bg-slate-100 px-2 py-0.5 rounded">
@@ -307,7 +310,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, settings }) => {
           </div>
 
           {/* Vertical 3: Soluções Corporativas */}
-          <div className="bg-white rounded-xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+          <div className="card-lux h-full bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm flex flex-col justify-between">
             <div className="space-y-3">
               <div className="flex items-center justify-between">
                 <span className="text-[10px] font-mono font-semibold uppercase text-slate-600 bg-slate-100 px-2 py-0.5 rounded">
@@ -341,7 +344,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, settings }) => {
           </div>
 
           {/* Vertical 4: GovTech & Mercado Público (Em ativação) */}
-          <div className="bg-white rounded-xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+          <div className="card-lux h-full bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm flex flex-col justify-between">
             <div className="space-y-3">
               <div className="flex items-center justify-between">
                 <span className="text-[10px] font-mono font-semibold uppercase text-amber-800 bg-amber-50 px-2 py-0.5 rounded">
@@ -375,12 +378,14 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, settings }) => {
           </div>
         </div>
       </section>
+      </Reveal>
 
       {/* 4. COMO FUNCIONA (PROCESS) */}
+      <Reveal>
       <section className="bg-slate-100/70 border-y border-slate-200/80 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto space-y-2 mb-12">
-            <div className="text-xs uppercase tracking-widest font-semibold text-[#C5A869] font-mono">
+            <div className="inline-flex items-center gap-3 text-[11px] uppercase tracking-[0.3em] font-semibold text-[#A88B4F]">
               Metodologia de Atuação
             </div>
             <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 font-serif">
@@ -393,9 +398,9 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, settings }) => {
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             {/* Step 1 */}
-            <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-2xs space-y-3 relative">
+            <div className="card-lux h-full bg-white p-6 rounded-2xl border border-slate-200/80 shadow-2xs space-y-3 relative">
               <div className="flex items-center gap-3">
-                <span className="w-7 h-7 rounded-full bg-[#0B1728] text-white text-xs font-mono font-bold flex items-center justify-center">
+                <span className="w-9 h-9 rounded-full bg-gradient-to-br from-[#E9D6A4] via-[#C5A869] to-[#9C7F43] text-[#0B1728] text-xs font-mono font-bold flex items-center justify-center shadow-[0_8px_20px_-8px_rgba(197,168,105,0.9)]">
                   1
                 </span>
                 <h4 className="text-base font-bold text-slate-900 font-serif">
@@ -408,9 +413,9 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, settings }) => {
             </div>
 
             {/* Step 2 */}
-            <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-2xs space-y-3 relative">
+            <div className="card-lux h-full bg-white p-6 rounded-2xl border border-slate-200/80 shadow-2xs space-y-3 relative">
               <div className="flex items-center gap-3">
-                <span className="w-7 h-7 rounded-full bg-[#0B1728] text-white text-xs font-mono font-bold flex items-center justify-center">
+                <span className="w-9 h-9 rounded-full bg-gradient-to-br from-[#E9D6A4] via-[#C5A869] to-[#9C7F43] text-[#0B1728] text-xs font-mono font-bold flex items-center justify-center shadow-[0_8px_20px_-8px_rgba(197,168,105,0.9)]">
                   2
                 </span>
                 <h4 className="text-base font-bold text-slate-900 font-serif">
@@ -423,9 +428,9 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, settings }) => {
             </div>
 
             {/* Step 3 */}
-            <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-2xs space-y-3 relative">
+            <div className="card-lux h-full bg-white p-6 rounded-2xl border border-slate-200/80 shadow-2xs space-y-3 relative">
               <div className="flex items-center gap-3">
-                <span className="w-7 h-7 rounded-full bg-[#0B1728] text-white text-xs font-mono font-bold flex items-center justify-center">
+                <span className="w-9 h-9 rounded-full bg-gradient-to-br from-[#E9D6A4] via-[#C5A869] to-[#9C7F43] text-[#0B1728] text-xs font-mono font-bold flex items-center justify-center shadow-[0_8px_20px_-8px_rgba(197,168,105,0.9)]">
                   3
                 </span>
                 <h4 className="text-base font-bold text-slate-900 font-serif">
@@ -438,9 +443,9 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, settings }) => {
             </div>
 
             {/* Step 4 */}
-            <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-2xs space-y-3 relative">
+            <div className="card-lux h-full bg-white p-6 rounded-2xl border border-slate-200/80 shadow-2xs space-y-3 relative">
               <div className="flex items-center gap-3">
-                <span className="w-7 h-7 rounded-full bg-[#0B1728] text-white text-xs font-mono font-bold flex items-center justify-center">
+                <span className="w-9 h-9 rounded-full bg-gradient-to-br from-[#E9D6A4] via-[#C5A869] to-[#9C7F43] text-[#0B1728] text-xs font-mono font-bold flex items-center justify-center shadow-[0_8px_20px_-8px_rgba(197,168,105,0.9)]">
                   4
                 </span>
                 <h4 className="text-base font-bold text-slate-900 font-serif">
@@ -458,23 +463,27 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, settings }) => {
           </div>
         </div>
       </section>
+      </Reveal>
 
       {/* 5. CTA FINAL BLOCK (SECTION 4) */}
+      <Reveal>
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-[#0B1728] text-white rounded-2xl p-8 sm:p-12 border border-slate-800 shadow-xl flex flex-col md:flex-row items-center justify-between gap-8">
-          <div className="space-y-2 text-center md:text-left">
+        <div className="relative overflow-hidden grain bg-[#050B14] text-white rounded-3xl p-8 sm:p-14 border border-[#C5A869]/20 shadow-[0_40px_80px_-40px_rgba(5,11,20,0.9)] flex flex-col md:flex-row items-center justify-between gap-8">
+          <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-[#C5A869]/20 blur-[100px] animate-aurora pointer-events-none" />
+          <div className="absolute -bottom-32 -left-24 w-96 h-96 rounded-full bg-[#15345A]/70 blur-[100px] animate-aurora [animation-delay:-8s] pointer-events-none" />
+          <div className="relative space-y-3 text-center md:text-left">
             <h3 className="text-2xl sm:text-3xl font-bold font-serif text-white">
-              Tem uma oportunidade para discutir?
+              Tem uma oportunidade <span className="text-gold-foil italic">para discutir?</span>
             </h3>
             <p className="text-xs sm:text-sm text-slate-300 max-w-xl">
               Envie as informações e nossa equipe entrará em contato para avaliar, com confidencialidade e agilidade, os próximos passos.
             </p>
           </div>
 
-          <div className="flex flex-col sm:flex-row items-center gap-4 shrink-0">
+          <div className="relative flex flex-col sm:flex-row items-center gap-4 shrink-0">
             <button
               onClick={() => onNavigate('/enviar-oportunidade')}
-              className="px-6 py-3.5 text-xs font-semibold uppercase tracking-wider text-[#0B1728] bg-[#C5A869] hover:bg-[#B59858] rounded-md transition-all shadow-md cursor-pointer whitespace-nowrap flex items-center gap-2"
+              className="btn-gold px-7 py-4 text-xs font-bold uppercase tracking-[0.18em] text-[#0B1728] rounded-full cursor-pointer whitespace-nowrap flex items-center gap-2"
             >
               <span>Enviar oportunidade</span>
               <ArrowUpRight className="w-4 h-4" />
@@ -483,13 +492,14 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, settings }) => {
               href={`https://wa.me/${settings.whatsappNumber.replace(/\D/g, '')}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-5 py-3.5 text-xs font-semibold uppercase tracking-wider text-slate-300 hover:text-white bg-slate-900 border border-slate-700 rounded-md transition-all cursor-pointer whitespace-nowrap"
+              className="btn-glass px-6 py-4 text-xs font-semibold uppercase tracking-[0.18em] text-slate-200 hover:text-white rounded-full cursor-pointer whitespace-nowrap"
             >
               Falar com a equipe
             </a>
           </div>
         </div>
       </section>
+      </Reveal>
     </div>
   );
 };

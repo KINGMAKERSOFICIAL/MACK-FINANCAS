@@ -14,6 +14,8 @@ import {
   CheckCircle,
 } from 'lucide-react';
 import { SiteSettings } from '../types';
+import { FounderPortrait } from '../components/FounderPortrait';
+import { Reveal } from '../components/Reveal';
 
 interface AboutPageProps {
   onNavigate: (path: string) => void;
@@ -27,7 +29,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({
   return (
     <div className="space-y-16 pb-20">
       {/* 1. HERO HEADER */}
-      <section className="bg-[#0B1728] text-white pt-16 pb-20 border-b border-slate-800 relative overflow-hidden">
+      <section className="bg-[#050B14] text-white pt-16 pb-20 relative overflow-hidden grain">
         <div className="absolute top-0 right-0 w-96 h-96 bg-[#C5A869]/10 rounded-full blur-3xl pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl space-y-4">
@@ -56,7 +58,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Missão */}
-          <div className="bg-white p-8 rounded-xl border border-slate-200 shadow-sm space-y-3">
+          <div className="card-lux bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm space-y-3">
             <div className="w-10 h-10 rounded-lg bg-[#0B1728] text-[#C5A869] flex items-center justify-center">
               <Compass className="w-5 h-5" />
             </div>
@@ -69,7 +71,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({
           </div>
 
           {/* Visão */}
-          <div className="bg-white p-8 rounded-xl border border-slate-200 shadow-sm space-y-3">
+          <div className="card-lux bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm space-y-3">
             <div className="w-10 h-10 rounded-lg bg-[#0B1728] text-[#C5A869] flex items-center justify-center">
               <Eye className="w-5 h-5" />
             </div>
@@ -82,7 +84,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({
           </div>
 
           {/* Princípios */}
-          <div className="bg-white p-8 rounded-xl border border-slate-200 shadow-sm space-y-3">
+          <div className="card-lux bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm space-y-3">
             <div className="w-10 h-10 rounded-lg bg-[#0B1728] text-[#C5A869] flex items-center justify-center">
               <ShieldCheck className="w-5 h-5" />
             </div>
@@ -100,37 +102,25 @@ export const AboutPage: React.FC<AboutPageProps> = ({
       </section>
 
       {/* 3. NOSSO FUNDADOR: MARCOS AGUIAR (SECTION 5) */}
-      <section className="bg-slate-100/70 py-16 border-y border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-2xl border border-slate-200 p-8 sm:p-12 shadow-sm">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-              {/* Photo & Socials Column */}
-              <div className="lg:col-span-5 flex flex-col items-center text-center space-y-4">
-                <div className="relative w-56 h-56 sm:w-64 sm:h-64 rounded-2xl overflow-hidden bg-[#0B1728] border-2 border-[#C5A869]/40 shadow-xl flex items-center justify-center">
-                  {/* Subtle Executive Gradient Emblem Motif */}
-                  <div className="absolute inset-0 bg-gradient-to-tr from-[#0B1728] via-[#15273F] to-[#203a5e] flex flex-col items-center justify-center p-6 text-center">
-                    <div className="w-20 h-20 rounded-full bg-[#C5A869]/20 border border-[#C5A869] flex items-center justify-center text-[#C5A869] mb-3">
-                      <span className="font-serif font-bold text-3xl">MA</span>
-                    </div>
-                    <div className="font-serif font-bold text-white text-lg">Marcos Aguiar</div>
-                    <div className="text-[11px] text-[#C5A869] uppercase tracking-wider font-mono mt-1">Fundador & Diretor</div>
-                  </div>
-                </div>
-
-                <div className="space-y-1">
-                  <h4 className="text-lg font-bold font-serif text-slate-900">Marcos Aguiar</h4>
-                  <p className="text-xs text-slate-500">Fundador MACK Estratégias e Negócios</p>
-                </div>
+      <section className="relative bg-[#050B14] text-white py-20 sm:py-28 overflow-hidden grain">
+        <div className="absolute -top-40 right-0 w-[36rem] h-[36rem] rounded-full bg-[#C5A869]/15 blur-[120px] animate-aurora pointer-events-none" />
+        <div className="absolute -bottom-40 -left-20 w-[36rem] h-[36rem] rounded-full bg-[#15345A]/60 blur-[120px] animate-aurora [animation-delay:-9s] pointer-events-none" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-14 items-center">
+            {/* Photo & Socials Column */}
+            <Reveal className="lg:col-span-5">
+              <div className="max-w-sm mx-auto space-y-8">
+                <FounderPortrait />
 
                 {/* Social media links */}
-                <div className="flex items-center gap-3 pt-1">
+                <div className="flex items-center justify-center gap-3">
                   <a
                     href={settings.linkedinUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-50 border border-slate-200 text-xs text-slate-700 hover:text-[#0B1728] hover:border-[#C5A869] transition-colors"
+                    className="btn-glass flex items-center gap-1.5 px-4 py-2 rounded-full text-xs text-slate-200 hover:text-white"
                   >
-                    <Linkedin className="w-3.5 h-3.5 text-[#0077B5]" />
+                    <Linkedin className="w-3.5 h-3.5 text-[#C5A869]" />
                     <span>LinkedIn</span>
                   </a>
 
@@ -138,9 +128,9 @@ export const AboutPage: React.FC<AboutPageProps> = ({
                     href={`https://instagram.com/${settings.instagramHandle.replace('@', '')}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-50 border border-slate-200 text-xs text-slate-700 hover:text-[#0B1728] hover:border-[#C5A869] transition-colors"
+                    className="btn-glass flex items-center gap-1.5 px-4 py-2 rounded-full text-xs text-slate-200 hover:text-white"
                   >
-                    <Instagram className="w-3.5 h-3.5 text-[#E4405F]" />
+                    <Instagram className="w-3.5 h-3.5 text-[#C5A869]" />
                     <span>Instagram</span>
                   </a>
 
@@ -148,38 +138,46 @@ export const AboutPage: React.FC<AboutPageProps> = ({
                     href={`https://facebook.com/${settings.facebookHandle.replace('@', '')}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-50 border border-slate-200 text-xs text-slate-700 hover:text-[#0B1728] hover:border-[#C5A869] transition-colors"
+                    className="btn-glass flex items-center gap-1.5 px-4 py-2 rounded-full text-xs text-slate-200 hover:text-white"
                   >
-                    <Facebook className="w-3.5 h-3.5 text-[#1877F2]" />
+                    <Facebook className="w-3.5 h-3.5 text-[#C5A869]" />
                     <span>Facebook</span>
                   </a>
                 </div>
               </div>
+            </Reveal>
 
-              {/* Bio & Philosophy Column */}
-              <div className="lg:col-span-7 space-y-5">
-                <div className="text-xs font-semibold uppercase tracking-widest text-[#C5A869] font-mono">
-                  Nosso Fundador
-                </div>
-
-                <h3 className="text-2xl sm:text-3xl font-bold font-serif text-slate-900">
-                  Advocacia, Engenharia e Visão Empresarial
-                </h3>
-
-                <p className="text-sm text-slate-700 leading-relaxed">
-                  <strong>Marcos Aguiar</strong> é advogado, engenheiro florestal e empresário, com ampla trajetória de atuação no Centro-Oeste e no mercado nacional em negócios estratégicos, crédito, precatórios e soluções corporativas.
-                </p>
-
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                  Sua formação multidisciplinar alia a precisão jurídica e a visão técnica de engenharia e agronegócio à prática comercial assertiva, permitindo estruturar operações complexas com velocidade, discrição e segurança institucional para compradores, tomadores e investidores.
-                </p>
-
-                {/* Institutional quote box */}
-                <div className="p-4 rounded-xl bg-slate-50 border-l-4 border-[#C5A869] text-xs sm:text-sm text-slate-800 italic">
-                  “Conectar oportunidades é acreditar no potencial das pessoas, na força dos empreendedores e no desenvolvimento do Brasil.”
-                </div>
+            {/* Bio & Philosophy Column */}
+            <Reveal delay={150} className="lg:col-span-7 space-y-6">
+              <div className="flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.3em] text-[#C5A869]">
+                <span className="w-10 h-px bg-[#C5A869]/70" />
+                Nosso Fundador
               </div>
-            </div>
+
+              <h3 className="text-3xl sm:text-5xl font-semibold font-serif text-white leading-[1.1]">
+                Advocacia, Engenharia e{' '}
+                <span className="text-gold-foil italic">Visão Empresarial</span>
+              </h3>
+
+              <p className="text-base text-slate-200 leading-relaxed font-light">
+                <strong className="font-semibold text-white">Marcos Aguiar</strong> é advogado, engenheiro florestal e empresário, com ampla trajetória de atuação no Centro-Oeste e no mercado nacional em negócios estratégicos, crédito, precatórios e soluções corporativas.
+              </p>
+
+              <p className="text-sm text-slate-400 leading-relaxed">
+                Sua formação multidisciplinar alia a precisão jurídica e a visão técnica de engenharia e agronegócio à prática comercial assertiva, permitindo estruturar operações complexas com velocidade, discrição e segurança institucional para compradores, tomadores e investidores.
+              </p>
+
+              {/* Institutional quote box */}
+              <figure className="relative mt-4 p-7 rounded-2xl bg-white/[0.03] border border-[#C5A869]/20 backdrop-blur">
+                <span className="absolute -top-6 left-6 font-serif text-7xl leading-none text-gold-foil select-none">“</span>
+                <blockquote className="font-serif italic text-lg sm:text-xl text-slate-100 leading-snug">
+                  Conectar oportunidades é acreditar no potencial das pessoas, na força dos empreendedores e no desenvolvimento do Brasil.
+                </blockquote>
+                <figcaption className="mt-4 text-[10px] uppercase tracking-[0.3em] text-[#C5A869]">
+                  Marcos Aguiar
+                </figcaption>
+              </figure>
+            </Reveal>
           </div>
         </div>
       </section>
@@ -199,7 +197,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({
           <div className="pt-2">
             <button
               onClick={() => onNavigate('/enviar-oportunidade')}
-              className="px-6 py-3 text-xs font-semibold uppercase tracking-wider text-[#0B1728] bg-[#C5A869] hover:bg-[#B59858] rounded-md transition-all cursor-pointer inline-flex items-center gap-2"
+              className="btn-gold px-7 py-3.5 text-xs font-bold uppercase tracking-[0.18em] text-[#0B1728] rounded-full cursor-pointer inline-flex items-center gap-2"
             >
               <span>Falar com o nosso time</span>
               <ArrowUpRight className="w-4 h-4" />
