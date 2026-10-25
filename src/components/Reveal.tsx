@@ -62,15 +62,16 @@ export const Reveal: React.FC<RevealProps> = ({
           if (!reTrigger) {
             observer.disconnect();
           }
-        } else {
-          if (reTrigger) {
+        } else if (reTrigger) {
+          const rect = entry.boundingClientRect;
+          if (rect.bottom < -100 || rect.top > window.innerHeight + 100) {
             setIsVisible(false);
           }
         }
       },
       {
-        threshold: 0.15,
-        rootMargin: '0px 0px -40px 0px',
+        threshold: 0.04,
+        rootMargin: '60px 0px 60px 0px',
       }
     );
 

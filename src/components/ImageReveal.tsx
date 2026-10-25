@@ -60,13 +60,15 @@ export const ImageReveal: React.FC<ImageRevealProps> = ({
         if (entry.isIntersecting) {
           setIsVisible(true);
         } else {
-          // Re-triggers on scroll back up / down
-          setIsVisible(false);
+          const rect = entry.boundingClientRect;
+          if (rect.bottom < -100 || rect.top > window.innerHeight + 100) {
+            setIsVisible(false);
+          }
         }
       },
       {
-        threshold: 0.15,
-        rootMargin: '0px 0px -40px 0px',
+        threshold: 0.04,
+        rootMargin: '60px 0px 60px 0px',
       }
     );
 
@@ -92,7 +94,7 @@ export const ImageReveal: React.FC<ImageRevealProps> = ({
 
         {/* Ambient Dark Gradient Vignette for Readability */}
         {overlayGradient && (
-          <div className="absolute inset-0 bg-gradient-to-t from-[#050B14]/85 via-[#050B14]/30 to-transparent pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#050B14]/65 via-transparent to-transparent pointer-events-none" />
         )}
 
         {/* Dynamic Sweeping Light Beam when Visible */}

@@ -41,7 +41,6 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, settings }) => {
             <div className="lg:col-span-7 space-y-7 scroll-drift">
               {/* Quiet Descriptor (Unboxed metadata style) */}
               <div className="animate-fade-up flex items-center gap-3 text-[11px] font-semibold tracking-[0.3em] uppercase text-[#C5A869]">
-                <span className="w-10 h-px bg-[#C5A869]/70" />
                 <span>Originação</span>
                 <span className="text-[#C5A869]/40">◆</span>
                 <span>Crédito</span>

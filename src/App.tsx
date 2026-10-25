@@ -45,6 +45,68 @@ export default function App() {
     return () => window.removeEventListener('popstate', handlePopState);
   }, []);
 
+  // Dynamic SEO title & description updates based on Hero propositions & sections
+  useEffect(() => {
+    const routeSeo: Record<string, { title: string; desc: string }> = {
+      '/': {
+        title: 'MACK Estratégias e Negócios | Originação • Crédito • Soluções Corporativas',
+        desc: 'A MACK é uma plataforma B2B de originação, crédito e soluções corporativas. Conectamos empresas, ativos e capital a parceiros especializados e capazes de executar.',
+      },
+      '/originacao-ativos': {
+        title: 'Originação de Ativos & Negócios | MACK Estratégias',
+        desc: 'Identificação e originação qualificada de ativos imobiliários, precatórios e direitos creditórios para fundos e investidores institucionais.',
+      },
+      '/precatorios': {
+        title: 'Precatórios & Direitos Creditórios | MACK Estratégias',
+        desc: 'Originação e liquidez para precatórios judiciais federais e estaduais com governança e análise jurídica rigorosa.',
+      },
+      '/credito-pj-agro': {
+        title: 'Crédito Estruturado PJ & Agro | MACK Estratégias',
+        desc: 'Soluções de crédito sob medida, capital de giro e financiamento estruturado para médias e grandes empresas e produtores rurais.',
+      },
+      '/solucoes-corporativas': {
+        title: 'Soluções Corporativas & M&A Estratégico | MACK Estratégias',
+        desc: 'Consultoria estratégica em reestruturação financeira, M&A, fusões e aquisições e eficiência de balanço patrimonial.',
+      },
+      '/govtech': {
+        title: 'GovTech & Modernização Pública | MACK Estratégias',
+        desc: 'Soluções de tecnologia e governança para eficiência da gestão pública e modernização fiscal de municípios.',
+      },
+      '/parceiros': {
+        title: 'Rede de Parceiros & Co-Originação | MACK Estratégias',
+        desc: 'Conecte-se à nossa rede de parceiros estratégicos, originadores, escritórios e consultorias com modelo de co-originação transparente.',
+      },
+      '/enviar-oportunidade': {
+        title: 'Enviar Oportunidade & Demanda de Capital | MACK Estratégias',
+        desc: 'Envie sua oportunidade ou demanda de crédito e ativos corporativos para qualificação e conexão imediata com parceiros executores.',
+      },
+      '/conteudo': {
+        title: 'Inteligência de Mercado & Artigos | MACK Estratégias',
+        desc: 'Análises aprofundadas sobre mercado de crédito, originação de ativos, agronegócio e conjuntura econômica brasileira.',
+      },
+      '/quem-somos': {
+        title: 'Quem Somos & Governança Institucional | MACK Estratégias',
+        desc: 'Conheça o propósito, liderança e governança da MACK Estratégias e Negócios, plataforma B2B de conexão de capital e ativos.',
+      },
+      '/area-do-cliente': {
+        title: 'Área do Cliente & Acompanhamento | MACK Estratégias',
+        desc: 'Acesso seguro para clientes acompanharem o status de suas propostas, operações de crédito e ativos em originação.',
+      },
+      '/admin': {
+        title: 'Portal Administrativo & CRM | MACK Estratégias',
+        desc: 'Gestão institucional e monitoramento de pipeline de oportunidades e parceiros credenciados.',
+      },
+    };
+
+    const currentSeo = routeSeo[currentPath] || routeSeo['/'];
+    document.title = currentSeo.title;
+
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', currentSeo.desc);
+    }
+  }, [currentPath]);
+
   // Feed pointer position to the spotlight effect on .card-lux elements
   useEffect(() => {
     const handlePointerMove = (e: PointerEvent) => {
