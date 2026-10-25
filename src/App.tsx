@@ -45,6 +45,19 @@ export default function App() {
     return () => window.removeEventListener('popstate', handlePopState);
   }, []);
 
+  // Feed pointer position to the spotlight effect on .card-lux elements
+  useEffect(() => {
+    const handlePointerMove = (e: PointerEvent) => {
+      const card = (e.target as Element | null)?.closest?.('.card-lux') as HTMLElement | null;
+      if (!card) return;
+      const rect = card.getBoundingClientRect();
+      card.style.setProperty('--mx', `${e.clientX - rect.left}px`);
+      card.style.setProperty('--my', `${e.clientY - rect.top}px`);
+    };
+    window.addEventListener('pointermove', handlePointerMove, { passive: true });
+    return () => window.removeEventListener('pointermove', handlePointerMove);
+  }, []);
+
   // Update leads count
   useEffect(() => {
     const updateCount = () => {
@@ -125,7 +138,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50 text-slate-900 font-sans selection:bg-[#C5A869]/20 selection:text-[#0B1728]">
+    <div className="min-h-screen flex flex-col bg-[#FAF8F3] text-slate-900 font-sans selection:bg-[#C5A869]/20 selection:text-[#0B1728]">
       {/* Top Banner indicating official 2026 alignment */}
       <div className="bg-[#03070D] text-slate-400 text-[11px] py-1.5 px-4 text-center border-b border-white/5 flex items-center justify-center gap-2">
         <span className="text-[#C5A869] font-semibold font-mono">mackfinancas.com.br</span>

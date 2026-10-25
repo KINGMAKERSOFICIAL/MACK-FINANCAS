@@ -12,6 +12,7 @@ import {
   Upload,
 } from 'lucide-react';
 import { SiteSettings, DemandType } from '../types';
+import { Reveal } from '../components/Reveal';
 import { saveLead, parseUtmsFromUrl } from '../services/crmStorage';
 
 interface SubmitOpportunityPageProps {
@@ -147,21 +148,25 @@ export const SubmitOpportunityPage: React.FC<SubmitOpportunityPageProps> = ({
   return (
     <div className="space-y-16 pb-20">
       {/* 1. HERO HEADER */}
-      <section className="bg-[#0B1728] text-white pt-16 pb-20 border-b border-slate-800 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-[#C5A869]/10 rounded-full blur-3xl pointer-events-none" />
+      <section className="bg-[#050B14] text-white pt-20 pb-24 sm:pt-24 sm:pb-28 relative overflow-hidden grain">
+        <div className="absolute -top-40 -left-40 w-[40rem] h-[40rem] rounded-full bg-[#15345A]/60 blur-[120px] animate-aurora pointer-events-none" />
+        <div className="absolute top-10 right-[-12rem] w-[34rem] h-[34rem] rounded-full bg-[#C5A869]/15 blur-[120px] animate-aurora [animation-delay:-9s] pointer-events-none" />
+        <div className="absolute inset-0 opacity-[0.06] bg-[linear-gradient(to_right,#C5A869_1px,transparent_1px),linear-gradient(to_bottom,#C5A869_1px,transparent_1px)] [background-size:88px_88px] [mask-image:radial-gradient(ellipse_at_30%_40%,black_20%,transparent_70%)] pointer-events-none" />
+        <div className="absolute inset-x-0 bottom-0 gold-hairline" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl space-y-4">
-            <div className="flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-[#C5A869]">
+            <div className="animate-fade-up flex flex-wrap items-center gap-x-3 gap-y-1 text-[11px] font-semibold tracking-[0.28em] uppercase text-[#C5A869]">
+              <span className="w-10 h-px bg-[#C5A869]/70" />
               <span>Oportunidades Reais</span>
               <span className="text-slate-600">·</span>
               <span>Parceiros Certos</span>
             </div>
 
-            <h1 className="text-3xl sm:text-5xl font-bold font-serif text-white tracking-tight leading-tight">
+            <h1 className="animate-fade-up [animation-delay:120ms] text-4xl sm:text-6xl font-semibold font-serif text-white tracking-tight leading-[1.05] text-balance">
               Enviar Oportunidade
             </h1>
 
-            <p className="text-base sm:text-xl text-slate-300 font-light leading-relaxed">
+            <p className="animate-fade-up [animation-delay:240ms] text-base sm:text-xl text-slate-300 font-light leading-relaxed">
               Apresente seu ativo, operação ou demanda empresarial para avaliação inicial.
             </p>
           </div>
@@ -169,6 +174,7 @@ export const SubmitOpportunityPage: React.FC<SubmitOpportunityPageProps> = ({
       </section>
 
       {/* 2. MAIN CONVERSION SECTION */}
+      <Reveal>
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Left: Explanatory Column & Trust Elements */}
@@ -292,7 +298,7 @@ export const SubmitOpportunityPage: React.FC<SubmitOpportunityPageProps> = ({
                         estimatedValue: '',
                       });
                     }}
-                    className="px-6 py-3 text-xs font-semibold uppercase tracking-wider text-[#0B1728] btn-gold rounded-md transition-all cursor-pointer"
+                    className="px-6 py-3 text-xs font-semibold uppercase tracking-wider text-[#0B1728] btn-gold rounded-full transition-all cursor-pointer"
                   >
                     Submeter nova oportunidade
                   </button>
@@ -769,7 +775,7 @@ export const SubmitOpportunityPage: React.FC<SubmitOpportunityPageProps> = ({
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full py-4 px-6 btn-gold text-[#0B1728] font-bold text-xs uppercase tracking-wider rounded-lg shadow-md hover:shadow-lg transition-all cursor-pointer flex items-center justify-center gap-2"
+                    className="w-full py-4 px-6 btn-gold text-[#0B1728] font-bold text-xs uppercase tracking-wider rounded-full shadow-md hover:shadow-lg transition-all cursor-pointer flex items-center justify-center gap-2"
                   >
                     <span>{isSubmitting ? 'Gravando Oportunidade no CRM...' : 'Enviar oportunidade para avaliação'}</span>
                     <ArrowUpRight className="w-4 h-4" />
@@ -783,6 +789,7 @@ export const SubmitOpportunityPage: React.FC<SubmitOpportunityPageProps> = ({
           </div>
         </div>
       </section>
+      </Reveal>
     </div>
   );
 };

@@ -382,7 +382,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, settings }) => {
 
       {/* 4. COMO FUNCIONA (PROCESS) */}
       <Reveal>
-      <section className="bg-slate-100/70 border-y border-slate-200/80 py-16">
+      <section className="bg-[#F4EFE4]/70 border-y border-[#C5A869]/15 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto space-y-2 mb-12">
             <div className="inline-flex items-center gap-3 text-[11px] uppercase tracking-[0.3em] font-semibold text-[#A88B4F]">

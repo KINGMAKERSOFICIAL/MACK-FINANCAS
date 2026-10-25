@@ -25,10 +25,12 @@ export const Footer: React.FC<FooterProps> = ({
   settings,
 }) => {
   return (
-    <footer className="bg-[#070F1B] text-slate-400 border-t border-slate-800/80 pt-16 pb-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <footer className="relative overflow-hidden grain bg-[#03070D] text-slate-400 pt-20 pb-12">
+      <div className="absolute inset-x-0 top-0 gold-hairline" />
+      <div className="absolute -bottom-40 left-1/2 -translate-x-1/2 w-[50rem] h-[24rem] rounded-full bg-[#C5A869]/[0.06] blur-[120px] pointer-events-none" />
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-slate-800">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-white/5">
           {/* Col 1 & 2: Brand Lockup and Positioning */}
           <div className="lg:col-span-2 space-y-4">
             <BrandLogo variant="light" showDescriptor={true} size="md" />
@@ -50,7 +52,7 @@ export const Footer: React.FC<FooterProps> = ({
                 href={settings.linkedinUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-8 h-8 rounded bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-[#C5A869] hover:border-[#C5A869]/50 transition-colors"
+                className="btn-glass w-9 h-9 rounded-full flex items-center justify-center text-slate-300 hover:text-[#E9D6A4]"
                 aria-label="LinkedIn Marcos Aguiar"
               >
                 <Linkedin className="w-4 h-4" />
@@ -59,7 +61,7 @@ export const Footer: React.FC<FooterProps> = ({
                 href={`https://instagram.com/${settings.instagramHandle.replace('@', '')}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-8 h-8 rounded bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-[#C5A869] hover:border-[#C5A869]/50 transition-colors"
+                className="btn-glass w-9 h-9 rounded-full flex items-center justify-center text-slate-300 hover:text-[#E9D6A4]"
                 aria-label="Instagram Marcos Aguiar"
               >
                 <Instagram className="w-4 h-4" />
@@ -68,7 +70,7 @@ export const Footer: React.FC<FooterProps> = ({
                 href={`https://facebook.com/${settings.facebookHandle.replace('@', '')}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-8 h-8 rounded bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-[#C5A869] hover:border-[#C5A869]/50 transition-colors"
+                className="btn-glass w-9 h-9 rounded-full flex items-center justify-center text-slate-300 hover:text-[#E9D6A4]"
                 aria-label="Facebook Marcos Aguiar"
               >
                 <Facebook className="w-4 h-4" />
