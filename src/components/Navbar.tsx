@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { BrandLogo } from './BrandLogo';
-import { Menu, X, ArrowUpRight, ShieldCheck, Database } from 'lucide-react';
+import { Menu, X, ArrowUpRight, ShieldCheck } from 'lucide-react';
 import { SiteSettings } from '../types';
 
 import { trackEvent } from '../services/analytics';
@@ -96,25 +96,6 @@ export const Navbar: React.FC<NavbarProps> = ({
 
           {/* Zone 3: Primary Action */}
           <div className="hidden md:flex items-center gap-3 shrink-0 ml-auto 2xl:ml-0">
-            {/* Quick CRM Base Access */}
-            <button
-              onClick={() => handleLinkClick('/admin')}
-              className={`p-2 rounded-lg text-xs font-mono transition-colors flex items-center gap-1.5 border ${
-                currentPath === '/admin'
-                  ? 'bg-[#C5A869]/20 border-[#C5A869] text-[#C5A869]'
-                  : 'bg-slate-900/60 border-slate-800 text-slate-400 hover:text-slate-200 hover:border-slate-700'
-              }`}
-              title="Base Central / CRM & Painel de Controle"
-            >
-              <Database className="w-3.5 h-3.5" />
-              <span className="hidden lg:inline text-[11px] font-sans">CRM / Base</span>
-              {unreadLeadsCount > 0 && (
-                <span className="w-4 h-4 rounded-full bg-[#C5A869] text-[#0B1728] text-[9px] font-bold flex items-center justify-center">
-                  {unreadLeadsCount}
-                </span>
-              )}
-            </button>
-
             {/* Primary Action Button */}
             <button
               onClick={() => {
@@ -130,13 +111,6 @@ export const Navbar: React.FC<NavbarProps> = ({
 
           {/* Mobile menu trigger */}
           <div className="flex 2xl:hidden items-center gap-2">
-            <button
-              onClick={() => handleLinkClick('/admin')}
-              className="md:hidden p-2 text-slate-400 hover:text-white rounded"
-              title="Painel CRM"
-            >
-              <Database className="w-4 h-4" />
-            </button>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2 text-slate-300 hover:text-white focus:outline-hidden"

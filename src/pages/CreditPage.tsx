@@ -16,6 +16,8 @@ import {
 import { SiteSettings } from '../types';
 import { saveLead, parseUtmsFromUrl } from '../services/crmStorage';
 import { trackEvent } from '../services/analytics';
+import { Reveal } from '../components/Reveal';
+import { ImageReveal } from '../components/ImageReveal';
 
 interface CreditPageProps {
   onNavigate: (path: string, hash?: string, initialType?: string) => void;
@@ -175,44 +177,83 @@ export const CreditPage: React.FC<CreditPageProps> = ({
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredSolutions.map((item) => {
+          {filteredSolutions.map((item, index) => {
             const Icon = item.icon;
             return (
-              <div
-                key={item.id}
-                className="bg-white rounded-xl p-6 border border-slate-200 shadow-sm hover:border-[#C5A869]/60 hover:shadow-md transition-all flex flex-col justify-between"
-              >
-                <div className="space-y-3">
-                  <div className="flex items-center justify-between">
-                    <div className="w-10 h-10 rounded-lg bg-[#0B1728] text-[#C5A869] flex items-center justify-center">
-                      <Icon className="w-5 h-5" />
+              <Reveal key={item.id} delay={index * 80} variant="fade-up">
+                <div
+                  className="card-lux h-full bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm hover:border-[#C5A869]/60 hover:shadow-md transition-all flex flex-col justify-between"
+                >
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between">
+                      <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#15273F] to-[#050B14] text-[#C5A869] ring-1 ring-[#C5A869]/30 flex items-center justify-center">
+                        <Icon className="w-5 h-5" />
+                      </div>
+                      <span className="text-[10px] font-mono uppercase bg-slate-100 text-slate-700 px-2 py-0.5 rounded">
+                        {item.tag}
+                      </span>
                     </div>
-                    <span className="text-[10px] font-mono uppercase bg-slate-100 text-slate-700 px-2 py-0.5 rounded">
-                      {item.tag}
-                    </span>
+
+                    <h3 className="text-lg font-bold font-serif text-slate-900">
+                      {item.title}
+                    </h3>
+
+                    <p className="text-xs text-slate-600 leading-relaxed">
+                      {item.description}
+                    </p>
                   </div>
 
-                  <h3 className="text-lg font-bold font-serif text-slate-900">
-                    {item.title}
-                  </h3>
-
-                  <p className="text-xs text-slate-600 leading-relaxed">
-                    {item.description}
-                  </p>
+                  <div className="pt-6 mt-4 border-t border-slate-100">
+                    <button
+                      onClick={() => onNavigate('/enviar-oportunidade', undefined, 'credito')}
+                      className="text-xs font-semibold text-[#0B1728] hover:text-[#C5A869] flex items-center gap-1.5 transition-colors cursor-pointer"
+                    >
+                      <span>Solicitar estruturação</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </button>
+                  </div>
                 </div>
-
-                <div className="pt-6 mt-4 border-t border-slate-100">
-                  <button
-                    onClick={() => onNavigate('/enviar-oportunidade', undefined, 'credito')}
-                    className="text-xs font-semibold text-[#0B1728] hover:text-[#C5A869] flex items-center gap-1.5 transition-colors cursor-pointer"
-                  >
-                    <span>Solicitar estruturação</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </button>
-                </div>
-              </div>
+              </Reveal>
             );
           })}
+        </div>
+      </section>
+
+      {/* DESTAQUE VISUAL: CRÉDITO AGRO & INFRAESTRUTURA EMPRESARIAL */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+          <Reveal delay={0} variant="fade-up">
+            <div className="space-y-4">
+              <div className="inline-flex items-center gap-2 text-[10px] uppercase font-mono tracking-widest text-[#C5A869]">
+                Agro & Soluções com Garantia Real
+              </div>
+              <h3 className="text-2xl sm:text-3xl font-serif text-slate-900 leading-snug">
+                Capacidade de conexão no Centro-Oeste e eixos produtivos nacionais.
+              </h3>
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-light">
+                Com raízes e vivência prática no setor produtivo rural, a MACK qualifica operações de custeio, investimento, CPRs e crédito com garantias reais imobiliárias, conectando tomadores a fundos parceiros especializados.
+              </p>
+              <div className="pt-2">
+                <button
+                  onClick={() => onNavigate('/enviar-oportunidade', undefined, 'credito')}
+                  className="btn-gold inline-flex items-center gap-2 px-6 py-3 text-xs font-bold uppercase tracking-wider text-[#0B1728] rounded-full"
+                >
+                  <span>Simular demanda com a equipe</span>
+                  <ArrowUpRight className="w-3.5 h-3.5" />
+                </button>
+              </div>
+            </div>
+          </Reveal>
+
+          <Reveal delay={150} variant="scale">
+            <ImageReveal
+              src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=1000&q=80"
+              alt="Agronegócio e Crédito Rural Estruturado"
+              caption="Operações com garantias reais, terras produtivas e lavouras"
+              badge="Crédito Agro & PJ"
+              aspectRatio="aspect-[16/10]"
+            />
+          </Reveal>
         </div>
       </section>
 

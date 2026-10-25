@@ -159,18 +159,109 @@ body {
   animation: spin 9s linear infinite;
 }
 
-/* Scroll reveal (toggled by Reveal component) */
+/* Scroll reveal (bidirectional: down & up) */
 .reveal {
   opacity: 0;
-  transform: translateY(28px);
-  filter: blur(4px);
-  transition: opacity 1s cubic-bezier(0.22, 1, 0.36, 1), transform 1s cubic-bezier(0.22, 1, 0.36, 1), filter 1s ease;
+  transition: opacity 0.85s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.85s cubic-bezier(0.22, 1, 0.36, 1),
+              filter 0.85s ease;
   transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform, filter;
 }
+
+/* Default fade-up: entering while scrolling down */
+.reveal.from-down,
+.reveal.reveal-fade-up.from-down {
+  transform: translateY(34px);
+  filter: blur(4px);
+}
+
+/* Entering while scrolling up */
+.reveal.from-up,
+.reveal.reveal-fade-up.from-up {
+  transform: translateY(-34px);
+  filter: blur(4px);
+}
+
+/* Variant: Scale */
+.reveal.reveal-scale {
+  transform: scale(0.92);
+  filter: blur(4px);
+}
+
+/* Variant: Slide Left */
+.reveal.reveal-slide-left {
+  transform: translateX(-36px);
+  filter: blur(4px);
+}
+
+/* Variant: Slide Right */
+.reveal.reveal-slide-right {
+  transform: translateX(36px);
+  filter: blur(4px);
+}
+
+/* Variant: Image Reveal */
+.reveal.reveal-image {
+  transform: translateY(28px) scale(0.95);
+  filter: blur(6px);
+}
+
+/* Revealed active state (both scrolling down and scrolling up) */
 .reveal.is-visible {
   opacity: 1;
-  transform: none;
+  transform: translate3d(0, 0, 0) scale(1);
   filter: none;
+}
+
+/* ---------- Dedicated Image Reveal Component ---------- */
+.image-reveal-container {
+  opacity: 0;
+  transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.6s ease;
+  will-change: opacity, transform;
+}
+.image-reveal-container.from-down {
+  transform: translateY(40px) scale(0.96);
+}
+.image-reveal-container.from-up {
+  transform: translateY(-40px) scale(0.96);
+}
+.image-reveal-container.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
+/* Image zoom out effect on reveal */
+.image-reveal-img {
+  transform: scale(1.14);
+  transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1), filter 1s ease;
+}
+.image-reveal-container.is-visible .image-reveal-img {
+  transform: scale(1);
+}
+.image-reveal-container.is-visible:hover .image-reveal-img {
+  transform: scale(1.05);
+}
+
+/* Sweeping light beam */
+.image-reveal-shine {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    115deg,
+    transparent 35%,
+    rgba(255, 255, 255, 0.35) 50%,
+    rgba(197, 168, 105, 0.25) 55%,
+    transparent 70%
+  );
+  transform: translateX(-150%);
+  transition: transform 0s;
+}
+.image-reveal-container.is-visible .image-reveal-shine {
+  transform: translateX(150%);
+  transition: transform 1.3s cubic-bezier(0.22, 1, 0.36, 1) 0.15s;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -180,6 +271,8 @@ body {
     transition-duration: 0.01ms !important;
   }
   .reveal { opacity: 1; transform: none; filter: none; }
+  .image-reveal-container { opacity: 1; transform: none; }
+  .image-reveal-img { transform: none; }
 }
 
 /* Custom scrollbar */

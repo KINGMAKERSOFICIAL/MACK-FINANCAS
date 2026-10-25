@@ -126,22 +126,6 @@ export default function App() {
 
   return (
     <div className="min-h-screen flex flex-col bg-slate-50 text-slate-900 font-sans selection:bg-[#C5A869]/20 selection:text-[#0B1728]">
-      {/* Top Banner indicating official 2026 alignment */}
-      <div className="bg-[#03070D] text-slate-400 text-[11px] py-1.5 px-4 text-center border-b border-white/5 flex items-center justify-center gap-2">
-        <span className="text-[#C5A869] font-semibold font-mono">mackfinancas.com.br</span>
-        <span className="text-slate-600">·</span>
-        <span>Plataforma B2B de Originação, Crédito e Soluções Corporativas</span>
-        <span className="text-slate-600 hidden sm:inline">·</span>
-        <a
-          href="/assets/aistudio/Diretrizes_Implementacao_Site_MACK_Reposicionamento_2026_FINAL-1__2__f2dc01b4.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-slate-400 hover:text-white underline hidden sm:inline"
-        >
-          Ver Documento de Diretrizes (PDF)
-        </a>
-      </div>
-
       {/* Main Top Bar */}
       <Navbar
         currentPath={currentPath}

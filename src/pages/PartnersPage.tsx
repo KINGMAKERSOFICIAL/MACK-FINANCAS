@@ -13,6 +13,8 @@ import {
 } from 'lucide-react';
 import { SiteSettings } from '../types';
 import { saveLead, parseUtmsFromUrl } from '../services/crmStorage';
+import { Reveal } from '../components/Reveal';
+import { ImageReveal } from '../components/ImageReveal';
 
 interface PartnersPageProps {
   onNavigate: (path: string, hash?: string, initialType?: string) => void;
@@ -120,57 +122,93 @@ export const PartnersPage: React.FC<PartnersPageProps> = ({
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {/* Categoria 1 */}
-          <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-3">
-            <div className="w-10 h-10 rounded-lg bg-[#0B1728] text-[#C5A869] flex items-center justify-center">
-              <Building2 className="w-5 h-5" />
+          <Reveal delay={0} variant="fade-up">
+            <div className="card-lux h-full bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm space-y-3">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#15273F] to-[#050B14] text-[#C5A869] ring-1 ring-[#C5A869]/30 flex items-center justify-center">
+                <Building2 className="w-5 h-5" />
+              </div>
+              <h3 className="text-base font-bold text-slate-900 font-serif">
+                Compradores Institucionais
+              </h3>
+              <p className="text-xs text-slate-600 leading-relaxed">
+                Conectamos ativos e oportunidades a fundos de investimento, family offices, asset managers e outros investidores institucionais.
+              </p>
             </div>
-            <h3 className="text-base font-bold text-slate-900 font-serif">
-              Compradores Institucionais
-            </h3>
-            <p className="text-xs text-slate-600 leading-relaxed">
-              Conectamos ativos e oportunidades a fundos de investimento, family offices, asset managers e outros investidores institucionais.
-            </p>
-          </div>
+          </Reveal>
 
           {/* Categoria 2 */}
-          <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-3">
-            <div className="w-10 h-10 rounded-lg bg-[#0B1728] text-[#C5A869] flex items-center justify-center">
-              <Coins className="w-5 h-5" />
+          <Reveal delay={100} variant="fade-up">
+            <div className="card-lux h-full bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm space-y-3">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#15273F] to-[#050B14] text-[#C5A869] ring-1 ring-[#C5A869]/30 flex items-center justify-center">
+                <Coins className="w-5 h-5" />
+              </div>
+              <h3 className="text-base font-bold text-slate-900 font-serif">
+                Instituições & Soluções de Crédito
+              </h3>
+              <p className="text-xs text-slate-600 leading-relaxed">
+                Parceria com bancos, FIDCs, fintechs e estruturadores de crédito para viabilizar soluções sob medida para empresas e produtores.
+              </p>
             </div>
-            <h3 className="text-base font-bold text-slate-900 font-serif">
-              Instituições & Soluções de Crédito
-            </h3>
-            <p className="text-xs text-slate-600 leading-relaxed">
-              Parceria com bancos, FIDCs, fintechs e estruturadores de crédito para viabilizar soluções sob medida para empresas e produtores.
-            </p>
-          </div>
+          </Reveal>
 
           {/* Categoria 3 */}
-          <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-3">
-            <div className="w-10 h-10 rounded-lg bg-[#0B1728] text-[#C5A869] flex items-center justify-center">
-              <Briefcase className="w-5 h-5" />
+          <Reveal delay={200} variant="fade-up">
+            <div className="card-lux h-full bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm space-y-3">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#15273F] to-[#050B14] text-[#C5A869] ring-1 ring-[#C5A869]/30 flex items-center justify-center">
+                <Briefcase className="w-5 h-5" />
+              </div>
+              <h3 className="text-base font-bold text-slate-900 font-serif">
+                Soluções Corporativas
+              </h3>
+              <p className="text-xs text-slate-600 leading-relaxed">
+                Colaboração com consultorias, integradores e empresas especializadas para entregar soluções operacionais, estratégicas e tecnológicas.
+              </p>
             </div>
-            <h3 className="text-base font-bold text-slate-900 font-serif">
-              Soluções Corporativas
-            </h3>
-            <p className="text-xs text-slate-600 leading-relaxed">
-              Colaboração com consultorias, integradores e empresas especializadas para entregar soluções operacionais, estratégicas e tecnológicas.
-            </p>
-          </div>
+          </Reveal>
 
           {/* Categoria 4 */}
-          <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-3">
-            <div className="w-10 h-10 rounded-lg bg-[#0B1728] text-[#C5A869] flex items-center justify-center">
-              <Landmark className="w-5 h-5" />
+          <Reveal delay={300} variant="fade-up">
+            <div className="card-lux h-full bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm space-y-3">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#15273F] to-[#050B14] text-[#C5A869] ring-1 ring-[#C5A869]/30 flex items-center justify-center">
+                <Landmark className="w-5 h-5" />
+              </div>
+              <h3 className="text-base font-bold text-slate-900 font-serif">
+                Soluções para Setor Público
+              </h3>
+              <p className="text-xs text-slate-600 leading-relaxed">
+                Parceria com empresas e instituições que atuam no mercado público, para desenvolvimento e execução de soluções inovadoras e eficientes.
+              </p>
             </div>
-            <h3 className="text-base font-bold text-slate-900 font-serif">
-              Soluções para Setor Público
-            </h3>
-            <p className="text-xs text-slate-600 leading-relaxed">
-              Parceria com empresas e instituições que atuam no mercado público, para desenvolvimento e execução de soluções inovadoras e eficientes.
-            </p>
-          </div>
+          </Reveal>
         </div>
+
+        {/* DESTAQUE VISUAL: ALIANÇA E EXECUÇÃO B2B */}
+        <Reveal variant="scale">
+          <div className="rounded-3xl overflow-hidden bg-slate-900 border border-slate-800 p-8 sm:p-10 shadow-xl text-white">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              <div className="lg:col-span-7 space-y-3">
+                <div className="text-[10px] font-mono uppercase tracking-widest text-[#C5A869]">
+                  Ecossistema B2B Qualificado
+                </div>
+                <h3 className="text-2xl sm:text-3xl font-serif leading-tight">
+                  Alianças que transformam originação em fechamento.
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-300 font-light leading-relaxed">
+                  Trabalhamos com regras de engajamento claras, acordos de confidencialidade mútuos (NDAs) e remuneração estruturada sobre o sucesso das operações.
+                </p>
+              </div>
+              <div className="lg:col-span-5">
+                <ImageReveal
+                  src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1000&q=80"
+                  alt="Aliança Estratégica B2B e Parcerias MACK"
+                  badge="Parceria Estratégica"
+                  caption="Conexões responsáveis com governança e sigilo"
+                  aspectRatio="aspect-[16/10]"
+                />
+              </div>
+            </div>
+          </div>
+        </Reveal>
 
         {/* Note on Authorized Brands (Anti-cliché rule) */}
         <div className="p-4 bg-slate-50 border border-slate-200 rounded-lg text-xs text-slate-500 text-center">
