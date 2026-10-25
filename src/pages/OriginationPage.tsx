@@ -14,9 +14,10 @@ import {
   Layers,
 } from 'lucide-react';
 import { SiteSettings } from '../types';
-import { Reveal } from '../components/Reveal';
 import { saveLead, parseUtmsFromUrl } from '../services/crmStorage';
 import { trackEvent } from '../services/analytics';
+import { Reveal } from '../components/Reveal';
+import { ImageReveal } from '../components/ImageReveal';
 
 interface OriginationPageProps {
   onNavigate: (path: string, hash?: string, initialType?: string) => void;
@@ -97,7 +98,6 @@ export const OriginationPage: React.FC<OriginationPageProps> = ({
       </section>
 
       {/* 2. REGULATORY NOTICE BANNER */}
-      <Reveal>
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6">
         <div className="bg-amber-50/90 border border-amber-200/80 rounded-xl p-4 text-xs text-amber-950 flex items-start gap-3 shadow-2xs">
           <ShieldCheck className="w-5 h-5 text-amber-800 shrink-0 mt-0.5" />
@@ -106,10 +106,8 @@ export const OriginationPage: React.FC<OriginationPageProps> = ({
           </div>
         </div>
       </section>
-      </Reveal>
 
       {/* 3. NOSSAS QUATRO FRENTES DE ORIGINAÇÃO */}
-      <Reveal>
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         <div className="border-b border-slate-200 pb-4">
           <h2 className="text-2xl font-bold font-serif text-slate-900">
@@ -122,170 +120,216 @@ export const OriginationPage: React.FC<OriginationPageProps> = ({
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Frente 1: Precatórios */}
-          <div
-            id="precatorios"
-            className="card-lux bg-white rounded-2xl p-8 border border-slate-200/80 shadow-[0_18px_45px_-32px_rgba(11,23,40,0.45)] space-y-4 hover:border-[#C5A869]/60 transition-colors"
-          >
-            <div className="flex items-center justify-between">
-              <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#15273F] to-[#050B14] text-[#C5A869] ring-1 ring-[#C5A869]/30 shadow-lg flex items-center justify-center">
-                <Landmark className="w-5 h-5" />
+          <Reveal delay={0} variant="fade-up">
+            <div
+              id="precatorios"
+              className="card-lux h-full bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm space-y-4 hover:border-[#C5A869]/60 transition-all flex flex-col justify-between"
+            >
+              <div>
+                <ImageReveal
+                  src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=700&q=80"
+                  alt="Precatórios Judiciais Federais, Estaduais e Municipais"
+                  badge="Precatórios"
+                  aspectRatio="aspect-[16/9]"
+                />
+                <div className="p-8 space-y-4">
+                  <div className="flex items-center justify-between">
+                    <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#15273F] to-[#050B14] text-[#C5A869] ring-1 ring-[#C5A869]/30 shadow-lg flex items-center justify-center">
+                      <Landmark className="w-5 h-5" />
+                    </div>
+                    <span className="text-[11px] font-mono text-slate-500 uppercase">
+                      #precatorios
+                    </span>
+                  </div>
+
+                  <h3 className="text-xl font-bold font-serif text-slate-900">
+                    Precatórios
+                  </h3>
+
+                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                    Originação e triagem comercial de oportunidades envolvendo precatórios federais, estaduais e municipais, para encaminhamento a compradores institucionais conforme critérios de elegibilidade.
+                  </p>
+
+                  <div className="p-3.5 bg-slate-50 rounded-lg border border-slate-200 space-y-1.5 text-xs text-slate-700">
+                    <div className="font-semibold text-slate-900">Âmbito de atuação:</div>
+                    <div>• Precatórios Federais (TRFs / União Federal)</div>
+                    <div>• Precatórios Estaduais (Regime Especial e Comum)</div>
+                    <div>• Precatórios Municipais de Capitais e Grandes Centros</div>
+                  </div>
+                </div>
               </div>
-              <span className="text-[11px] font-mono text-slate-500 uppercase">
-                #precatorios
-              </span>
+
+              <div className="p-8 pt-0">
+                <button
+                  onClick={() => onNavigate('/enviar-oportunidade', undefined, 'ativo')}
+                  className="text-xs font-semibold text-[#0B1728] hover:text-[#C5A869] flex items-center gap-1.5 transition-colors cursor-pointer"
+                >
+                  <span>Apresentar precatório para triagem</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </button>
+              </div>
             </div>
-
-            <h3 className="text-xl font-bold font-serif text-slate-900">
-              Precatórios
-            </h3>
-
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-              Originação e triagem comercial de oportunidades envolvendo precatórios federais, estaduais e municipais, para encaminhamento a compradores institucionais conforme critérios de elegibilidade.
-            </p>
-
-            <div className="p-3.5 bg-slate-50 rounded-lg border border-slate-200 space-y-1.5 text-xs text-slate-700">
-              <div className="font-semibold text-slate-900">Âmbito de atuação:</div>
-              <div>• Precatórios Federais (TRFs / União Federal)</div>
-              <div>• Precatórios Estaduais (Regime Especial e Comum)</div>
-              <div>• Precatórios Municipais de Capitais e Grandes Centros</div>
-            </div>
-
-            <div className="pt-2">
-              <button
-                onClick={() => onNavigate('/enviar-oportunidade', undefined, 'ativo')}
-                className="text-xs font-semibold text-[#0B1728] hover:text-[#C5A869] flex items-center gap-1.5 transition-colors cursor-pointer"
-              >
-                <span>Apresentar precatório para triagem</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </button>
-            </div>
-          </div>
+          </Reveal>
 
           {/* Frente 2: Legal Claims */}
-          <div
-            id="legal-claims"
-            className="card-lux bg-white rounded-2xl p-8 border border-slate-200/80 shadow-[0_18px_45px_-32px_rgba(11,23,40,0.45)] space-y-4 hover:border-[#C5A869]/60 transition-colors"
-          >
-            <div className="flex items-center justify-between">
-              <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#15273F] to-[#050B14] text-[#C5A869] ring-1 ring-[#C5A869]/30 shadow-lg flex items-center justify-center">
-                <Scale className="w-5 h-5" />
+          <Reveal delay={120} variant="fade-up">
+            <div
+              id="legal-claims"
+              className="card-lux h-full bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm space-y-4 hover:border-[#C5A869]/60 transition-all flex flex-col justify-between"
+            >
+              <div>
+                <ImageReveal
+                  src="https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=700&q=80"
+                  alt="Legal Claims e Direitos Litigiosos"
+                  badge="Legal Claims"
+                  aspectRatio="aspect-[16/9]"
+                />
+                <div className="p-8 space-y-4">
+                  <div className="flex items-center justify-between">
+                    <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#15273F] to-[#050B14] text-[#C5A869] ring-1 ring-[#C5A869]/30 shadow-lg flex items-center justify-center">
+                      <Scale className="w-5 h-5" />
+                    </div>
+                    <span className="text-[11px] font-mono text-slate-500 uppercase">
+                      #legal-claims
+                    </span>
+                  </div>
+
+                  <h3 className="text-xl font-bold font-serif text-slate-900">
+                    Legal Claims
+                  </h3>
+
+                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                    Originação de direitos litigiosos e créditos judiciais com potencial de monetização, sujeitos à análise do comprador e à documentação aplicável.
+                  </p>
+
+                  <div className="p-3.5 bg-slate-50 rounded-lg border border-slate-200 space-y-1.5 text-xs text-slate-700">
+                    <div className="font-semibold text-slate-900">Perfil avaliado:</div>
+                    <div>• Ações judiciais em fase de execução contra entes solventes</div>
+                    <div>• Decisões com trânsito em julgado parcial ou homologações de cálculos</div>
+                    <div>• Demandas com comprovação pericial sólida e documentada</div>
+                  </div>
+                </div>
               </div>
-              <span className="text-[11px] font-mono text-slate-500 uppercase">
-                #legal-claims
-              </span>
+
+              <div className="p-8 pt-0">
+                <button
+                  onClick={() => onNavigate('/enviar-oportunidade', undefined, 'ativo')}
+                  className="text-xs font-semibold text-[#0B1728] hover:text-[#C5A869] flex items-center gap-1.5 transition-colors cursor-pointer"
+                >
+                  <span>Apresentar legal claims</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </button>
+              </div>
             </div>
-
-            <h3 className="text-xl font-bold font-serif text-slate-900">
-              Legal Claims
-            </h3>
-
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-              Originação de direitos litigiosos e créditos judiciais com potencial de monetização, sujeitos à análise do comprador e à documentação aplicável.
-            </p>
-
-            <div className="p-3.5 bg-slate-50 rounded-lg border border-slate-200 space-y-1.5 text-xs text-slate-700">
-              <div className="font-semibold text-slate-900">Perfil avaliado:</div>
-              <div>• Ações judiciais em fase de execução contra entes solventes</div>
-              <div>• Decisões com trânsito em julgado parcial ou homologações de cálculos</div>
-              <div>• Demandas com comprovação pericial sólida e documentada</div>
-            </div>
-
-            <div className="pt-2">
-              <button
-                onClick={() => onNavigate('/enviar-oportunidade', undefined, 'ativo')}
-                className="text-xs font-semibold text-[#0B1728] hover:text-[#C5A869] flex items-center gap-1.5 transition-colors cursor-pointer"
-              >
-                <span>Apresentar legal claims</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </button>
-            </div>
-          </div>
+          </Reveal>
 
           {/* Frente 3: Direitos Creditórios */}
-          <div
-            id="direitos-creditorios"
-            className="card-lux bg-white rounded-2xl p-8 border border-slate-200/80 shadow-[0_18px_45px_-32px_rgba(11,23,40,0.45)] space-y-4 hover:border-[#C5A869]/60 transition-colors"
-          >
-            <div className="flex items-center justify-between">
-              <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#15273F] to-[#050B14] text-[#C5A869] ring-1 ring-[#C5A869]/30 shadow-lg flex items-center justify-center">
-                <FileCheck2 className="w-5 h-5" />
+          <Reveal delay={200} variant="fade-up">
+            <div
+              id="direitos-creditorios"
+              className="card-lux h-full bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm space-y-4 hover:border-[#C5A869]/60 transition-all flex flex-col justify-between"
+            >
+              <div>
+                <ImageReveal
+                  src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=700&q=80"
+                  alt="Direitos Creditórios Empresariais e FIDCs"
+                  badge="Recebíveis"
+                  aspectRatio="aspect-[16/9]"
+                />
+                <div className="p-8 space-y-4">
+                  <div className="flex items-center justify-between">
+                    <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#15273F] to-[#050B14] text-[#C5A869] ring-1 ring-[#C5A869]/30 shadow-lg flex items-center justify-center">
+                      <FileCheck2 className="w-5 h-5" />
+                    </div>
+                    <span className="text-[11px] font-mono text-slate-500 uppercase">
+                      #direitos-creditorios
+                    </span>
+                  </div>
+
+                  <h3 className="text-xl font-bold font-serif text-slate-900">
+                    Direitos Creditórios
+                  </h3>
+
+                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                    Carteiras, recebíveis e créditos empresariais passíveis de análise e estruturação, conectando empresas a FIDCs e investidores especializados.
+                  </p>
+
+                  <div className="p-3.5 bg-slate-50 rounded-lg border border-slate-200 space-y-1.5 text-xs text-slate-700">
+                    <div className="font-semibold text-slate-900">Estruturas típicas:</div>
+                    <div>• Carteiras performadas e a performar de contratos corporativos</div>
+                    <div>• Recebíveis de fornecedores e contratos de longo prazo</div>
+                    <div>• Créditos decorrentes de transações mercantis e agropecuárias</div>
+                  </div>
+                </div>
               </div>
-              <span className="text-[11px] font-mono text-slate-500 uppercase">
-                #direitos-creditorios
-              </span>
+
+              <div className="p-8 pt-0">
+                <button
+                  onClick={() => onNavigate('/enviar-oportunidade', undefined, 'ativo')}
+                  className="text-xs font-semibold text-[#0B1728] hover:text-[#C5A869] flex items-center gap-1.5 transition-colors cursor-pointer"
+                >
+                  <span>Apresentar recebíveis ou carteiras</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </button>
+              </div>
             </div>
-
-            <h3 className="text-xl font-bold font-serif text-slate-900">
-              Direitos Creditórios
-            </h3>
-
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-              Carteiras, recebíveis e créditos empresariais passíveis de análise e estruturação, conectando empresas a FIDCs e investidores especializados.
-            </p>
-
-            <div className="p-3.5 bg-slate-50 rounded-lg border border-slate-200 space-y-1.5 text-xs text-slate-700">
-              <div className="font-semibold text-slate-900">Estruturas típicas:</div>
-              <div>• Carteiras performadas e a performar de contratos corporativos</div>
-              <div>• Recebíveis de fornecedores e contratos de longo prazo</div>
-              <div>• Créditos decorrentes de transações mercantis e agropecuárias</div>
-            </div>
-
-            <div className="pt-2">
-              <button
-                onClick={() => onNavigate('/enviar-oportunidade', undefined, 'ativo')}
-                className="text-xs font-semibold text-[#0B1728] hover:text-[#C5A869] flex items-center gap-1.5 transition-colors cursor-pointer"
-              >
-                <span>Apresentar recebíveis ou carteiras</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </button>
-            </div>
-          </div>
+          </Reveal>
 
           {/* Frente 4: Oportunidades Especiais & Ativos Imobiliários */}
-          <div
-            id="oportunidades-especiais"
-            className="card-lux bg-white rounded-2xl p-8 border border-slate-200/80 shadow-[0_18px_45px_-32px_rgba(11,23,40,0.45)] space-y-4 hover:border-[#C5A869]/60 transition-colors"
-          >
-            <div className="flex items-center justify-between">
-              <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#15273F] to-[#050B14] text-[#C5A869] ring-1 ring-[#C5A869]/30 shadow-lg flex items-center justify-center">
-                <Building className="w-5 h-5" />
+          <Reveal delay={300} variant="fade-up">
+            <div
+              id="oportunidades-especiais"
+              className="card-lux h-full bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm space-y-4 hover:border-[#C5A869]/60 transition-all flex flex-col justify-between"
+            >
+              <div>
+                <ImageReveal
+                  src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=700&q=80"
+                  alt="Oportunidades Especiais e Ativos Imobiliários"
+                  badge="Special Situations"
+                  aspectRatio="aspect-[16/9]"
+                />
+                <div className="p-8 space-y-4">
+                  <div className="flex items-center justify-between">
+                    <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#15273F] to-[#050B14] text-[#C5A869] ring-1 ring-[#C5A869]/30 shadow-lg flex items-center justify-center">
+                      <Building className="w-5 h-5" />
+                    </div>
+                    <span className="text-[11px] font-mono text-slate-500 uppercase">
+                      #oportunidades-especiais
+                    </span>
+                  </div>
+
+                  <h3 className="text-xl font-bold font-serif text-slate-900">
+                    Oportunidades Especiais & Ativos Imobiliários
+                  </h3>
+
+                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                    Ativos e situações não convencionais, inclusive ativos imobiliários e situações distressed, conforme aderência ao perfil de compradores e parceiros.
+                  </p>
+
+                  <div className="p-3.5 bg-slate-50 rounded-lg border border-slate-200 space-y-1.5 text-xs text-slate-700">
+                    <div className="font-semibold text-slate-900">Exemplos de demandas:</div>
+                    <div>• Imóveis comerciais, industriais ou rurais em situações especiais</div>
+                    <div>• Reorganização de garantias e liquidez patrimonial</div>
+                    <div>• Operações complexas com deságio e tese clara de liquidez</div>
+                  </div>
+                </div>
               </div>
-              <span className="text-[11px] font-mono text-slate-500 uppercase">
-                #oportunidades-especiais
-              </span>
+
+              <div className="p-8 pt-0">
+                <button
+                  onClick={() => onNavigate('/enviar-oportunidade', undefined, 'ativo')}
+                  className="text-xs font-semibold text-[#0B1728] hover:text-[#C5A869] flex items-center gap-1.5 transition-colors cursor-pointer"
+                >
+                  <span>Apresentar ativo imobiliário ou especial</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </button>
+              </div>
             </div>
-
-            <h3 className="text-xl font-bold font-serif text-slate-900">
-              Oportunidades Especiais & Ativos Imobiliários
-            </h3>
-
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-              Ativos e situações não convencionais, inclusive ativos imobiliários e situações distressed, conforme aderência ao perfil de compradores e parceiros.
-            </p>
-
-            <div className="p-3.5 bg-slate-50 rounded-lg border border-slate-200 space-y-1.5 text-xs text-slate-700">
-              <div className="font-semibold text-slate-900">Exemplos de demandas:</div>
-              <div>• Imóveis comerciais, industriais ou rurais em situações especiais</div>
-              <div>• Reorganização de garantias e liquidez patrimonial</div>
-              <div>• Operações complexas com deságio e tese clara de liquidez</div>
-            </div>
-
-            <div className="pt-2">
-              <button
-                onClick={() => onNavigate('/enviar-oportunidade', undefined, 'ativo')}
-                className="text-xs font-semibold text-[#0B1728] hover:text-[#C5A869] flex items-center gap-1.5 transition-colors cursor-pointer"
-              >
-                <span>Apresentar ativo imobiliário ou especial</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </button>
-            </div>
-          </div>
+          </Reveal>
         </div>
       </section>
-      </Reveal>
 
       {/* 4. CRITÉRIOS EXIBIDOS (MANDATORY SECTION 6) */}
-      <Reveal>
       <section className="bg-[#F4EFE4]/70 py-20 border-y border-[#C5A869]/15">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
           <div className="text-center max-w-2xl mx-auto space-y-2">
@@ -368,10 +412,8 @@ export const OriginationPage: React.FC<OriginationPageProps> = ({
           </div>
         </div>
       </section>
-      </Reveal>
 
       {/* 5. FORMULÁRIO DE ORIGINAÇÃO DEDICADO (SEÇÃO 16) */}
-      <Reveal>
       <section id="formulario-originacao" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-white rounded-2xl p-8 sm:p-10 border border-slate-200 shadow-xl max-w-4xl mx-auto space-y-6">
           <div className="border-b border-slate-200 pb-4">
@@ -390,10 +432,8 @@ export const OriginationPage: React.FC<OriginationPageProps> = ({
           <OriginationInlineForm onNavigate={onNavigate} />
         </div>
       </section>
-      </Reveal>
 
       {/* 6. CALL TO ACTION CONTAINER */}
-      <Reveal>
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative isolate overflow-hidden grain bg-[#050B14] text-white rounded-3xl p-8 sm:p-14 border border-[#C5A869]/20 shadow-[0_40px_80px_-40px_rgba(5,11,20,0.9)] flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-[#C5A869]/20 blur-[100px] animate-aurora pointer-events-none -z-10" />
@@ -416,7 +456,6 @@ export const OriginationPage: React.FC<OriginationPageProps> = ({
           </button>
         </div>
       </section>
-      </Reveal>
     </div>
   );
 };

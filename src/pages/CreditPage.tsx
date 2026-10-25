@@ -14,9 +14,10 @@ import {
   FileText,
 } from 'lucide-react';
 import { SiteSettings } from '../types';
-import { Reveal } from '../components/Reveal';
 import { saveLead, parseUtmsFromUrl } from '../services/crmStorage';
 import { trackEvent } from '../services/analytics';
+import { Reveal } from '../components/Reveal';
+import { ImageReveal } from '../components/ImageReveal';
 
 interface CreditPageProps {
   onNavigate: (path: string, hash?: string, initialType?: string) => void;
@@ -123,7 +124,6 @@ export const CreditPage: React.FC<CreditPageProps> = ({
       </section>
 
       {/* 2. MANDATORY REGULATORY NOTICE */}
-      <Reveal>
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6">
         <div className="bg-amber-50/90 border border-amber-200/80 rounded-xl p-4 text-xs text-amber-950 flex items-start gap-3 shadow-2xs">
           <ShieldCheck className="w-5 h-5 text-amber-800 shrink-0 mt-0.5" />
@@ -132,10 +132,8 @@ export const CreditPage: React.FC<CreditPageProps> = ({
           </div>
         </div>
       </section>
-      </Reveal>
 
       {/* 3. NOSSAS SOLUÇÕES DE CRÉDITO */}
-      <Reveal>
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-slate-200 pb-4">
           <div>
@@ -183,50 +181,87 @@ export const CreditPage: React.FC<CreditPageProps> = ({
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredSolutions.map((item) => {
+          {filteredSolutions.map((item, index) => {
             const Icon = item.icon;
             return (
-              <div
-                key={item.id}
-                className="card-lux bg-white rounded-2xl p-6 border border-slate-200/80 shadow-[0_18px_45px_-32px_rgba(11,23,40,0.45)] flex flex-col justify-between"
-              >
-                <div className="space-y-3">
-                  <div className="flex items-center justify-between">
-                    <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#15273F] to-[#050B14] text-[#C5A869] ring-1 ring-[#C5A869]/30 shadow-lg flex items-center justify-center">
-                      <Icon className="w-5 h-5" />
+              <Reveal key={item.id} delay={index * 80} variant="fade-up">
+                <div
+                  className="card-lux h-full bg-white rounded-2xl p-6 border border-slate-200/80 shadow-[0_18px_45px_-32px_rgba(11,23,40,0.45)] flex flex-col justify-between"
+                >
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between">
+                      <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#15273F] to-[#050B14] text-[#C5A869] ring-1 ring-[#C5A869]/30 shadow-lg flex items-center justify-center">
+                        <Icon className="w-5 h-5" />
+                      </div>
+                      <span className="text-[10px] font-mono uppercase bg-slate-100 text-slate-700 px-2 py-0.5 rounded">
+                        {item.tag}
+                      </span>
                     </div>
-                    <span className="text-[10px] font-mono uppercase bg-slate-100 text-slate-700 px-2 py-0.5 rounded">
-                      {item.tag}
-                    </span>
+
+                    <h3 className="text-lg font-bold font-serif text-slate-900">
+                      {item.title}
+                    </h3>
+
+                    <p className="text-xs text-slate-600 leading-relaxed">
+                      {item.description}
+                    </p>
                   </div>
 
-                  <h3 className="text-lg font-bold font-serif text-slate-900">
-                    {item.title}
-                  </h3>
-
-                  <p className="text-xs text-slate-600 leading-relaxed">
-                    {item.description}
-                  </p>
+                  <div className="pt-6 mt-4 border-t border-slate-100">
+                    <button
+                      onClick={() => onNavigate('/enviar-oportunidade', undefined, 'credito')}
+                      className="text-xs font-semibold text-[#0B1728] hover:text-[#C5A869] flex items-center gap-1.5 transition-colors cursor-pointer"
+                    >
+                      <span>Solicitar estruturação</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </button>
+                  </div>
                 </div>
-
-                <div className="pt-6 mt-4 border-t border-slate-100">
-                  <button
-                    onClick={() => onNavigate('/enviar-oportunidade', undefined, 'credito')}
-                    className="text-xs font-semibold text-[#0B1728] hover:text-[#C5A869] flex items-center gap-1.5 transition-colors cursor-pointer"
-                  >
-                    <span>Solicitar estruturação</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </button>
-                </div>
-              </div>
+              </Reveal>
             );
           })}
         </div>
       </section>
-      </Reveal>
+
+      {/* DESTAQUE VISUAL: CRÉDITO AGRO & INFRAESTRUTURA EMPRESARIAL */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+          <Reveal delay={0} variant="fade-up">
+            <div className="space-y-4">
+              <div className="inline-flex items-center gap-2 text-[10px] uppercase font-mono tracking-widest text-[#C5A869]">
+                Agro & Soluções com Garantia Real
+              </div>
+              <h3 className="text-2xl sm:text-3xl font-serif text-slate-900 leading-snug">
+                Capacidade de conexão no Centro-Oeste e eixos produtivos nacionais.
+              </h3>
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-light">
+                Com raízes e vivência prática no setor produtivo rural, a MACK qualifica operações de custeio, investimento, CPRs e crédito com garantias reais imobiliárias, conectando tomadores a fundos parceiros especializados.
+              </p>
+              <div className="pt-2">
+                <button
+                  onClick={() => onNavigate('/enviar-oportunidade', undefined, 'credito')}
+                  className="btn-gold inline-flex items-center gap-2 px-6 py-3 text-xs font-bold uppercase tracking-wider text-[#0B1728] rounded-full"
+                >
+                  <span>Simular demanda com a equipe</span>
+                  <ArrowUpRight className="w-3.5 h-3.5" />
+                </button>
+              </div>
+            </div>
+          </Reveal>
+
+          <Reveal delay={150} variant="scale">
+            <ImageReveal
+              src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=1000&q=80"
+              alt="Agronegócio e Crédito Rural Estruturado"
+              caption="Operações com garantias reais, terras produtivas e lavouras"
+              badge="Crédito Agro & PJ"
+              aspectRatio="aspect-[16/10]"
+            />
+          </Reveal>
+        </div>
+      </section>
 
       {/* 4. COMO A MACK ATUA */}
-      <Reveal>
       <section className="bg-[#F4EFE4]/70 py-20 border-y border-[#C5A869]/15">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           <div className="text-center max-w-2xl mx-auto space-y-2">
@@ -292,10 +327,8 @@ export const CreditPage: React.FC<CreditPageProps> = ({
           </div>
         </div>
       </section>
-      </Reveal>
 
       {/* 5. O QUE ANALISAMOS (SECTION 7) */}
-      <Reveal>
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         <div className="text-center max-w-2xl mx-auto space-y-2">
           <h2 className="text-2xl font-bold font-serif text-slate-900">
@@ -368,10 +401,8 @@ export const CreditPage: React.FC<CreditPageProps> = ({
           </div>
         </div>
       </section>
-      </Reveal>
 
       {/* 6. FORMULÁRIO DE CRÉDITO DEDICADO (SEÇÃO 21) */}
-      <Reveal>
       <section id="formulario-credito" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-white rounded-2xl p-8 sm:p-10 border border-slate-200 shadow-xl max-w-4xl mx-auto space-y-6">
           <div className="border-b border-slate-200 pb-4">
@@ -390,10 +421,8 @@ export const CreditPage: React.FC<CreditPageProps> = ({
           <CreditInlineForm onNavigate={onNavigate} />
         </div>
       </section>
-      </Reveal>
 
       {/* 7. CALL TO ACTION CONTAINER */}
-      <Reveal>
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative isolate overflow-hidden grain bg-[#050B14] text-white rounded-3xl p-8 sm:p-14 border border-[#C5A869]/20 shadow-[0_40px_80px_-40px_rgba(5,11,20,0.9)] flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-[#C5A869]/20 blur-[100px] animate-aurora pointer-events-none -z-10" />
@@ -416,7 +445,6 @@ export const CreditPage: React.FC<CreditPageProps> = ({
           </button>
         </div>
       </section>
-      </Reveal>
     </div>
   );
 };

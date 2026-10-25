@@ -62,46 +62,52 @@ export const AboutPage: React.FC<AboutPageProps> = ({
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Missão */}
-          <div className="card-lux bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm space-y-3">
-            <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#15273F] to-[#050B14] text-[#C5A869] ring-1 ring-[#C5A869]/30 shadow-lg flex items-center justify-center">
-              <Compass className="w-5 h-5" />
+          <Reveal delay={0} variant="fade-up">
+            <div className="card-lux h-full bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm space-y-3">
+              <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#15273F] to-[#050B14] text-[#C5A869] ring-1 ring-[#C5A869]/30 shadow-lg flex items-center justify-center">
+                <Compass className="w-5 h-5" />
+              </div>
+              <h3 className="text-lg font-bold font-serif text-slate-900">
+                Nossa Missão
+              </h3>
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                Estruturar conexões e soluções sólidas para empresas, investidores e instituições, encurtando ciclos com transparência e disciplina técnica.
+              </p>
             </div>
-            <h3 className="text-lg font-bold font-serif text-slate-900">
-              Nossa Missão
-            </h3>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-              Estruturar conexões e soluções sólidas para empresas, investidores e instituições, encurtando ciclos com transparência e disciplina técnica.
-            </p>
-          </div>
+          </Reveal>
 
           {/* Visão */}
-          <div className="card-lux bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm space-y-3">
-            <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#15273F] to-[#050B14] text-[#C5A869] ring-1 ring-[#C5A869]/30 shadow-lg flex items-center justify-center">
-              <Eye className="w-5 h-5" />
+          <Reveal delay={120} variant="fade-up">
+            <div className="card-lux h-full bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm space-y-3">
+              <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#15273F] to-[#050B14] text-[#C5A869] ring-1 ring-[#C5A869]/30 shadow-lg flex items-center justify-center">
+                <Eye className="w-5 h-5" />
+              </div>
+              <h3 className="text-lg font-bold font-serif text-slate-900">
+                Nossa Visão
+              </h3>
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                Ser referência em originação, crédito e soluções corporativas no Centro-Oeste e no Brasil, reconhecida pelo rigor e confiabilidade das conexões.
+              </p>
             </div>
-            <h3 className="text-lg font-bold font-serif text-slate-900">
-              Nossa Visão
-            </h3>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-              Ser referência em originação, crédito e soluções corporativas no Centro-Oeste e no Brasil, reconhecida pelo rigor e confiabilidade das conexões.
-            </p>
-          </div>
+          </Reveal>
 
           {/* Princípios */}
-          <div className="card-lux bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm space-y-3">
-            <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#15273F] to-[#050B14] text-[#C5A869] ring-1 ring-[#C5A869]/30 shadow-lg flex items-center justify-center">
-              <ShieldCheck className="w-5 h-5" />
+          <Reveal delay={240} variant="fade-up">
+            <div className="card-lux h-full bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm space-y-3">
+              <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#15273F] to-[#050B14] text-[#C5A869] ring-1 ring-[#C5A869]/30 shadow-lg flex items-center justify-center">
+                <ShieldCheck className="w-5 h-5" />
+              </div>
+              <h3 className="text-lg font-bold font-serif text-slate-900">
+                Nossos Princípios
+              </h3>
+              <div className="text-xs sm:text-sm text-slate-600 space-y-1">
+                <div>• Credibilidade e discrição</div>
+                <div>• Visão estratégica</div>
+                <div>• Execução responsável</div>
+                <div>• Relacionamento de longo prazo</div>
+              </div>
             </div>
-            <h3 className="text-lg font-bold font-serif text-slate-900">
-              Nossos Princípios
-            </h3>
-            <div className="text-xs sm:text-sm text-slate-600 space-y-1">
-              <div>• Credibilidade e discrição</div>
-              <div>• Visão estratégica</div>
-              <div>• Execução responsável</div>
-              <div>• Relacionamento de longo prazo</div>
-            </div>
-          </div>
+          </Reveal>
         </div>
       </section>
 

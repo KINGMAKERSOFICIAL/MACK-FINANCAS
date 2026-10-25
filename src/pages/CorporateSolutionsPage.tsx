@@ -14,9 +14,10 @@ import {
   Lock,
 } from 'lucide-react';
 import { SiteSettings } from '../types';
-import { Reveal } from '../components/Reveal';
 import { saveLead, parseUtmsFromUrl } from '../services/crmStorage';
 import { trackEvent } from '../services/analytics';
+import { Reveal } from '../components/Reveal';
+import { ImageReveal } from '../components/ImageReveal';
 
 interface CorporateSolutionsPageProps {
   onNavigate: (path: string, hash?: string, initialType?: string) => void;
@@ -139,7 +140,6 @@ export const CorporateSolutionsPage: React.FC<CorporateSolutionsPageProps> = ({
       </section>
 
       {/* 2. SOLUÇÕES ORGANIZADAS POR PROBLEMA (REGRA DO DOCUMENTO) */}
-      <Reveal>
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         <div className="border-b border-slate-200 pb-4">
           <div className="text-[11px] uppercase tracking-[0.3em] font-semibold text-[#A88B4F]">
@@ -154,67 +154,103 @@ export const CorporateSolutionsPage: React.FC<CorporateSolutionsPageProps> = ({
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {corporateProblems.map((item) => {
+          {corporateProblems.map((item, index) => {
             const Icon = item.icon;
             return (
-              <div
-                key={item.id}
-                className="card-lux bg-white rounded-2xl p-6 border border-slate-200/80 shadow-[0_18px_45px_-32px_rgba(11,23,40,0.45)] flex flex-col justify-between"
-              >
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between">
-                    <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#15273F] to-[#050B14] text-[#C5A869] ring-1 ring-[#C5A869]/30 shadow-lg flex items-center justify-center">
-                      <Icon className="w-5 h-5" />
-                    </div>
-                    <span className="text-[10px] text-slate-400 font-mono">
-                      Desafio B2B
-                    </span>
-                  </div>
-
-                  <div className="space-y-1">
-                    <span className="text-[11px] font-semibold text-rose-700 bg-rose-50 px-2 py-0.5 rounded inline-block">
-                      Dor: {item.painPoint}
-                    </span>
-                    <h3 className="text-lg font-bold font-serif text-slate-900 pt-1">
-                      {item.title}
-                    </h3>
-                  </div>
-
-                  <p className="text-xs text-slate-600 leading-relaxed">
-                    {item.solution}
-                  </p>
-
-                  <div className="pt-2 text-xs text-slate-700 space-y-1 bg-slate-50 p-3 rounded-lg border border-slate-100">
-                    <span className="font-semibold text-slate-900 text-[11px] block">
-                      Entregáveis estruturados:
-                    </span>
-                    {item.items.map((sub, i) => (
-                      <div key={i} className="flex items-start gap-1.5 text-[11px]">
-                        <span className="text-[#C5A869] font-bold">✓</span>
-                        <span>{sub}</span>
+              <Reveal key={item.id} delay={index * 80} variant="fade-up">
+                <div
+                  className="card-lux h-full bg-white rounded-2xl p-6 border border-slate-200/80 shadow-[0_18px_45px_-32px_rgba(11,23,40,0.45)] flex flex-col justify-between"
+                >
+                  <div className="space-y-4">
+                    <div className="flex items-center justify-between">
+                      <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#15273F] to-[#050B14] text-[#C5A869] ring-1 ring-[#C5A869]/30 shadow-lg flex items-center justify-center">
+                        <Icon className="w-5 h-5" />
                       </div>
-                    ))}
+                      <span className="text-[10px] text-slate-400 font-mono">
+                        Desafio B2B
+                      </span>
+                    </div>
+
+                    <div className="space-y-1">
+                      <span className="text-[11px] font-semibold text-rose-700 bg-rose-50 px-2 py-0.5 rounded inline-block">
+                        Dor: {item.painPoint}
+                      </span>
+                      <h3 className="text-lg font-bold font-serif text-slate-900 pt-1">
+                        {item.title}
+                      </h3>
+                    </div>
+
+                    <p className="text-xs text-slate-600 leading-relaxed">
+                      {item.solution}
+                    </p>
+
+                    <div className="pt-2 text-xs text-slate-700 space-y-1 bg-slate-50 p-3 rounded-lg border border-slate-100">
+                      <span className="font-semibold text-slate-900 text-[11px] block">
+                        Entregáveis estruturados:
+                      </span>
+                      {item.items.map((sub, i) => (
+                        <div key={i} className="flex items-start gap-1.5 text-[11px]">
+                          <span className="text-[#C5A869] font-bold">✓</span>
+                          <span>{sub}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="pt-6 mt-4 border-t border-slate-100">
+                    <button
+                      onClick={() => onNavigate('/enviar-oportunidade', undefined, 'corporativo')}
+                      className="text-xs font-semibold text-[#0B1728] hover:text-[#C5A869] flex items-center gap-1.5 transition-colors cursor-pointer"
+                    >
+                      <span>Apresentar demanda</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </button>
                   </div>
                 </div>
-
-                <div className="pt-6 mt-4 border-t border-slate-100">
-                  <button
-                    onClick={() => onNavigate('/enviar-oportunidade', undefined, 'corporativo')}
-                    className="text-xs font-semibold text-[#0B1728] hover:text-[#C5A869] flex items-center gap-1.5 transition-colors cursor-pointer"
-                  >
-                    <span>Apresentar demanda</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </button>
-                </div>
-              </div>
+              </Reveal>
             );
           })}
         </div>
       </section>
-      </Reveal>
+
+      {/* DESTAQUE VISUAL: ESTRATÉGIA CORPORATIVA & DIAGNÓSTICO B2B */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Reveal variant="scale">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-slate-100/60 p-8 rounded-3xl border border-slate-200">
+            <div className="lg:col-span-5">
+              <ImageReveal
+                src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1000&q=80"
+                alt="Eficiência Corporativa e Consultoria Estratégica"
+                badge="Diagnóstico B2B"
+                caption="Apoio consultivo e conexão técnica com especialistas habilitados"
+                aspectRatio="aspect-[16/11]"
+              />
+            </div>
+            <div className="lg:col-span-7 space-y-4">
+              <div className="text-[11px] font-mono uppercase tracking-widest text-[#A88B4F] font-semibold">
+                Alinhamento e Eficiência
+              </div>
+              <h3 className="text-2xl sm:text-3xl font-serif text-slate-900 leading-snug">
+                Estruturação sob medida para destravar gargalos empresariais.
+              </h3>
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-light">
+                Com abordagem personalizada, conectamos empresas a consultores seniores e soluções especializadas de governança, automação e mitigação de passivos, preservando a saúde financeira e acelerando a tomada de decisão.
+              </p>
+              <div className="pt-2">
+                <button
+                  onClick={() => onNavigate('/enviar-oportunidade', undefined, 'corporativo')}
+                  className="btn-gold inline-flex items-center gap-2 px-6 py-3 text-xs font-bold uppercase tracking-wider text-[#0B1728] rounded-full"
+                >
+                  <span>Apresentar demanda corporativa</span>
+                  <ArrowUpRight className="w-3.5 h-3.5" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </Reveal>
+      </section>
 
       {/* 3. FLUXO E BENEFÍCIOS */}
-      <Reveal>
       <section className="bg-[#F4EFE4]/70 py-20 border-y border-[#C5A869]/15">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           {/* Fluxo */}
@@ -301,10 +337,8 @@ export const CorporateSolutionsPage: React.FC<CorporateSolutionsPageProps> = ({
           </div>
         </div>
       </section>
-      </Reveal>
 
       {/* 4. MÓDULOS FUTUROS (PREVISTOS TECNICAMENTE) */}
-      <Reveal>
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
         <div className="flex items-center gap-2 text-xs font-semibold text-slate-500 uppercase tracking-wider font-mono">
           <Lock className="w-3.5 h-3.5" />
@@ -319,10 +353,8 @@ export const CorporateSolutionsPage: React.FC<CorporateSolutionsPageProps> = ({
           </p>
         </div>
       </section>
-      </Reveal>
 
       {/* 5. FORMULÁRIO DE SOLUÇÕES CORPORATIVAS DEDICADO (SEÇÃO 24) */}
-      <Reveal>
       <section id="formulario-corporativo" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-white rounded-2xl p-8 sm:p-10 border border-slate-200 shadow-xl max-w-4xl mx-auto space-y-6">
           <div className="border-b border-slate-200 pb-4">
@@ -341,10 +373,8 @@ export const CorporateSolutionsPage: React.FC<CorporateSolutionsPageProps> = ({
           <CorporateInlineForm onNavigate={onNavigate} />
         </div>
       </section>
-      </Reveal>
 
       {/* 6. CALL TO ACTION CONTAINER */}
-      <Reveal>
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative isolate overflow-hidden grain bg-[#050B14] text-white rounded-3xl p-8 sm:p-14 border border-[#C5A869]/20 shadow-[0_40px_80px_-40px_rgba(5,11,20,0.9)] flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-[#C5A869]/20 blur-[100px] animate-aurora pointer-events-none -z-10" />
@@ -367,7 +397,6 @@ export const CorporateSolutionsPage: React.FC<CorporateSolutionsPageProps> = ({
           </button>
         </div>
       </section>
-      </Reveal>
     </div>
   );
 };
