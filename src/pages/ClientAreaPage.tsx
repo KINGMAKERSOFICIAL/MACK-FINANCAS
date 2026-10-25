@@ -32,7 +32,7 @@ export const ClientAreaPage: React.FC<ClientAreaPageProps> = ({
         <div className="absolute inset-0 opacity-[0.06] bg-[linear-gradient(to_right,#C5A869_1px,transparent_1px),linear-gradient(to_bottom,#C5A869_1px,transparent_1px)] [background-size:88px_88px] [mask-image:radial-gradient(ellipse_at_30%_40%,black_20%,transparent_70%)] pointer-events-none" />
         <div className="absolute inset-x-0 bottom-0 gold-hairline" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-3xl space-y-4">
+          <div className="max-w-3xl space-y-4 scroll-drift">
             <div className="flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-[#C5A869] font-mono">
               <span className="bg-slate-900 border border-[#C5A869]/30 px-2 py-0.5 rounded">
                 Ambiente em Implantação Técnica · Fase 3

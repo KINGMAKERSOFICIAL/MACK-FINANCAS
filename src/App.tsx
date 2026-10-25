@@ -58,6 +58,27 @@ export default function App() {
     return () => window.removeEventListener('pointermove', handlePointerMove);
   }, []);
 
+  // Reading progress for the gold line at the top of the page
+  useEffect(() => {
+    let frame = 0;
+    const update = () => {
+      frame = 0;
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      document.documentElement.style.setProperty('--scroll', String(max > 0 ? window.scrollY / max : 0));
+    };
+    const handleScroll = () => {
+      if (!frame) frame = requestAnimationFrame(update);
+    };
+    update();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('resize', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleScroll);
+      cancelAnimationFrame(frame);
+    };
+  }, [currentPath]);
+
   // Update leads count
   useEffect(() => {
     const updateCount = () => {
@@ -154,6 +175,8 @@ export default function App() {
           Ver Documento de Diretrizes (PDF)
         </a>
       </div>
+
+      <div className="scroll-progress" aria-hidden="true" />
 
       {/* Main Top Bar */}
       <Navbar
