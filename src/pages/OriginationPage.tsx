@@ -42,6 +42,14 @@ export const OriginationPage: React.FC<OriginationPageProps> = ({
     <div className="space-y-16 pb-20">
       {/* 1. HERO HEADER */}
       <section className="bg-[#050B14] text-white pt-20 pb-24 sm:pt-24 sm:pb-28 relative overflow-hidden grain">
+        <img
+          src="/assets/sectors/legal-claims.webp"
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 w-full h-full object-cover scale-110 opacity-45 pointer-events-none select-none scroll-parallax"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#050B14] via-[#050B14]/90 to-[#050B14]/35 pointer-events-none" />
+        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#050B14] to-transparent pointer-events-none" />
         <div className="absolute -top-40 -left-40 w-[40rem] h-[40rem] rounded-full bg-[#15345A]/60 blur-[120px] animate-aurora pointer-events-none" />
         <div className="absolute top-10 right-[-12rem] w-[34rem] h-[34rem] rounded-full bg-[#C5A869]/15 blur-[120px] animate-aurora [animation-delay:-9s] pointer-events-none" />
         <div className="absolute inset-0 opacity-[0.06] bg-[linear-gradient(to_right,#C5A869_1px,transparent_1px),linear-gradient(to_bottom,#C5A869_1px,transparent_1px)] [background-size:88px_88px] [mask-image:radial-gradient(ellipse_at_30%_40%,black_20%,transparent_70%)] pointer-events-none" />
@@ -127,7 +135,7 @@ export const OriginationPage: React.FC<OriginationPageProps> = ({
             >
               <div>
                 <ImageReveal
-                  src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=700&q=80"
+                  src="/assets/sectors/juridico.webp"
                   alt="Precatórios Judiciais Federais, Estaduais e Municipais"
                   badge="Precatórios"
                   aspectRatio="aspect-[16/9]"
@@ -179,7 +187,7 @@ export const OriginationPage: React.FC<OriginationPageProps> = ({
             >
               <div>
                 <ImageReveal
-                  src="https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=700&q=80"
+                  src="/assets/sectors/legal-claims.webp"
                   alt="Legal Claims e Direitos Litigiosos"
                   badge="Legal Claims"
                   aspectRatio="aspect-[16/9]"
@@ -231,7 +239,7 @@ export const OriginationPage: React.FC<OriginationPageProps> = ({
             >
               <div>
                 <ImageReveal
-                  src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=700&q=80"
+                  src="/assets/sectors/recebiveis.webp"
                   alt="Direitos Creditórios Empresariais e FIDCs"
                   badge="Recebíveis"
                   aspectRatio="aspect-[16/9]"
@@ -283,7 +291,7 @@ export const OriginationPage: React.FC<OriginationPageProps> = ({
             >
               <div>
                 <ImageReveal
-                  src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=700&q=80"
+                  src="/assets/sectors/imobiliario.webp"
                   alt="Oportunidades Especiais e Ativos Imobiliários"
                   badge="Special Situations"
                   aspectRatio="aspect-[16/9]"

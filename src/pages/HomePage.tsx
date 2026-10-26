@@ -252,7 +252,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, settings }) => {
             <div className="card-lux h-full bg-gradient-to-b from-[#FBF8F1] to-white rounded-2xl overflow-hidden border border-[#C5A869]/50 shadow-[0_20px_50px_-35px_rgba(197,168,105,0.8)] flex flex-col justify-between">
               <div>
                 <ImageReveal
-                  src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=800&q=80"
+                  src="/assets/sectors/juridico.webp"
                   alt="Precatórios e Ativos Judiciais Institucionais"
                   badge="Prioridade Máxima"
                   aspectRatio="aspect-[16/10]"
@@ -296,7 +296,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, settings }) => {
             <div className="card-lux h-full bg-white rounded-2xl overflow-hidden border border-slate-200/80 shadow-sm flex flex-col justify-between">
               <div>
                 <ImageReveal
-                  src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=800&q=80"
+                  src="/assets/sectors/agro.webp"
                   alt="Crédito PJ e Agronegócio Moderno"
                   badge="Corporativo & Agro"
                   aspectRatio="aspect-[16/10]"
@@ -340,7 +340,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, settings }) => {
             <div className="card-lux h-full bg-white rounded-2xl overflow-hidden border border-slate-200/80 shadow-sm flex flex-col justify-between">
               <div>
                 <ImageReveal
-                  src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80"
+                  src="/assets/sectors/corporativo.webp"
                   alt="Soluções Corporativas e Eficiência Empresarial"
                   badge="Multisserviços"
                   aspectRatio="aspect-[16/10]"
@@ -384,7 +384,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, settings }) => {
             <div className="card-lux h-full bg-white rounded-2xl overflow-hidden border border-slate-200/80 shadow-sm flex flex-col justify-between">
               <div>
                 <ImageReveal
-                  src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=800&q=80"
+                  src="/assets/sectors/govtech.webp"
                   alt="GovTech e Modernização do Mercado Público"
                   badge="Em Ativação"
                   aspectRatio="aspect-[16/10]"
@@ -461,7 +461,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, settings }) => {
 
               <div className="lg:col-span-5">
                 <ImageReveal
-                  src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1000&q=80"
+                  src="/assets/sectors/estrategia.webp"
                   alt="Centro Estratégico de Operações e Negócios B2B"
                   caption="Ambiente de alta confidencialidade para originação e crédito"
                   aspectRatio="aspect-[4/3]"
