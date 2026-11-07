@@ -42,10 +42,10 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, settings }) => {
               {/* Quiet Descriptor (Unboxed metadata style) */}
               <div className="animate-fade-up flex items-center gap-3 text-[11px] font-semibold tracking-[0.3em] uppercase text-[#C5A869]">
                 <span>Originação</span>
-                <span className="text-[#C5A869]/40">◆</span>
+                <span className="text-[#C5A869]/40">•</span>
                 <span>Crédito</span>
-                <span className="text-[#C5A869]/40">◆</span>
-                <span className="hidden sm:inline">Soluções Corporativas</span>
+                <span className="text-[#C5A869]/40">•</span>
+                <span>Soluções Corporativas</span>
               </div>
 
               {/* Main Headline */}
@@ -56,7 +56,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, settings }) => {
 
               {/* Mandatory Support Text */}
               <p className="animate-fade-up [animation-delay:240ms] text-base sm:text-lg text-slate-300/90 leading-relaxed max-w-2xl font-light">
-                A MACK é uma plataforma B2B de originação, crédito e soluções corporativas, que identifica oportunidades, qualifica demandas e conecta empresas, ativos e capital a parceiros especializados.
+                A MACK é uma plataforma B2B de originação e soluções empresariais. Identificamos oportunidades, qualificamos demandas e conectamos empresas, ativos e projetos a instituições, compradores e parceiros especializados.
               </p>
 
               {/* CTAs */}
@@ -65,33 +65,35 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, settings }) => {
                   onClick={() => onNavigate('/enviar-oportunidade')}
                   className="btn-gold inline-flex items-center justify-center gap-2 px-7 py-4 text-xs font-bold uppercase tracking-[0.18em] text-[#0B1728] rounded-full cursor-pointer whitespace-nowrap"
                 >
-                  <span>Enviar Oportunidade</span>
+                  <span>Enviar oportunidade</span>
                   <ArrowUpRight className="w-4 h-4" />
                 </button>
 
-                <button
-                  onClick={() => onNavigate('/originacao-ativos')}
+                <a
+                  href={`https://wa.me/${settings.whatsappNumber.replace(/\D/g, '')}?text=${encodeURIComponent('Olá! Gostaria de falar com a equipe da MACK Estratégias e Negócios.')}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="btn-glass inline-flex items-center justify-center gap-2 px-6 py-4 text-xs font-semibold uppercase tracking-[0.18em] text-slate-100 rounded-full cursor-pointer whitespace-nowrap"
                 >
-                  <span>Conhecer Ativos e Originação</span>
+                  <span>Falar com a MACK</span>
                   <ArrowRight className="w-3.5 h-3.5" />
-                </button>
+                </a>
               </div>
 
               {/* Short Regulatory Notice */}
               <div className="animate-fade-up [animation-delay:480ms] flex items-start gap-2 pt-3 text-xs text-slate-400 max-w-xl">
                 <ShieldCheck className="w-4 h-4 text-[#C5A869] shrink-0 mt-0.5" />
                 <span>
-                  Atuação comercial e de originação. Soluções executadas com parceiros especializados. Crédito e aquisição dependem de análise e aprovação.
+                  Atuação comercial e de originação. Determinadas soluções são executadas por instituições ou parceiros especializados e estão sujeitas a análise, elegibilidade, aprovação e contratação específicas.
                 </span>
               </div>
 
               {/* Core pillars */}
               <div className="animate-fade-up [animation-delay:600ms] grid grid-cols-1 sm:grid-cols-3 gap-px rounded-2xl overflow-hidden border border-white/5 bg-white/5 mt-4">
                 {[
-                  { icon: Scale, title: 'Originação & Special Situations', text: 'Precatórios, créditos judiciais e ativos.' },
-                  { icon: Coins, title: 'Crédito PJ & Agronegócio', text: 'Giro, garantias reais e crédito agro.' },
-                  { icon: Briefcase, title: 'Soluções Corporativas', text: 'Eficiência, riscos e reestruturação.' },
+                  { icon: Scale, title: 'Originação & Special Situations', text: 'Precatórios, legal claims e direitos creditórios.' },
+                  { icon: Coins, title: 'Crédito PJ & Agro', text: 'Capital de giro, garantias e crédito agro.' },
+                  { icon: Briefcase, title: 'Soluções Corporativas', text: 'Tecnologia, risco e eficiência empresarial.' },
                 ].map(({ icon: Icon, title, text }) => (
                   <div key={title} className="group bg-[#050B14]/80 backdrop-blur p-4 hover:bg-[#0B1728] transition-colors duration-500">
                     <Icon className="w-4 h-4 text-[#C5A869] mb-2 transition-transform duration-500 group-hover:-translate-y-0.5" />
@@ -134,7 +136,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, settings }) => {
         </div>
       </section>
 
-      {/* 2. TRÊS PORTAS DE ENTRADA (MANDATORY SECTION 4 & 5) */}
+      {/* 2. TRÊS PORTAS DE ENTRADA (MANDATORY SECTION 3.2) */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-10 sm:-mt-14 relative z-20">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Porta 1: Tenho um ativo */}
@@ -156,7 +158,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, settings }) => {
                   </h3>
                 </div>
                 <p className="text-xs text-slate-600 leading-relaxed">
-                  Apresente seu ativo ou operação. Conectamos a parceiros com capacidade comprovada de análise e execução (precatórios, créditos judiciais, carteiras e distressed).
+                  Precatórios, legal claims, direitos creditórios, ativos imobiliários e oportunidades especiais.
                 </p>
               </div>
 
@@ -182,16 +184,16 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, settings }) => {
                     Porta 02
                   </span>
                   <h3 className="text-xl font-bold text-slate-900 font-serif">
-                    Preciso de crédito / solução
+                    Preciso de crédito/solução
                   </h3>
                 </div>
                 <p className="text-xs text-slate-600 leading-relaxed">
-                  Traga sua demanda. Apoiamos na estruturação comercial e conexão com as soluções mais aderentes ao seu perfil junto a instituições e fundos parceiros habilitados.
+                  Crédito empresarial, agro, garantias, home equity, consórcios e soluções corporativas.
                 </p>
               </div>
 
               <div className="pt-6 mt-4 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-[#0B1728] group-hover:text-[#C5A869] transition-colors">
-                <span>Solicitar estruturação</span>
+                <span>Apresentar demanda</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </div>
             </div>
@@ -216,12 +218,12 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, settings }) => {
                   </h3>
                 </div>
                 <p className="text-xs text-slate-600 leading-relaxed">
-                  Faça parte da nossa rede. Conectamos compradores institucionais, instituições de crédito, fintechs e consultorias a um fluxo qualificado de oportunidades.
+                  Originadores, compradores, instituições, consultorias, empresas de tecnologia e fornecedores especializados.
                 </p>
               </div>
 
               <div className="pt-6 mt-4 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-[#0B1728] group-hover:text-[#C5A869] transition-colors">
-                <span>Credenciar como parceiro</span>
+                <span>Quero ser parceiro</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </div>
             </div>
@@ -267,13 +269,13 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, settings }) => {
                     Originação & Special Situations
                   </h3>
                   <p className="text-xs text-slate-600 leading-relaxed">
-                    Identificação e estruturação de ativos, empresas e operações especiais, com foco em geração de valor e execução para compradores institucionais.
+                    Precatórios, legal claims, direitos creditórios, oportunidades distressed e ativos imobiliários para compradores institucionais.
                   </p>
                   <div className="pt-2 text-[11px] text-slate-500 space-y-1">
-                    <div>• Precatórios (Federais, Estaduais, Municipais)</div>
-                    <div>• Legal Claims & Créditos Judiciais</div>
-                    <div>• Direitos Creditórios Empresariais</div>
-                    <div>• Ativos Imobiliários & Distressed</div>
+                    <div>• Precatórios federais, estaduais e municipais</div>
+                    <div>• Legal claims e créditos judiciais</div>
+                    <div>• Direitos creditórios e ativos distressed</div>
+                    <div>• Ativos imobiliários qualificados</div>
                   </div>
                 </div>
               </div>
@@ -311,13 +313,13 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, settings }) => {
                     Crédito PJ & Agro
                   </h3>
                   <p className="text-xs text-slate-600 leading-relaxed">
-                    Conexão com soluções de crédito para empresas e para o agronegócio, considerando diferentes perfis e estruturas junto a parceiros habilitados.
+                    Capital de giro, crédito com garantias, home equity, crédito agro, consórcios e soluções estruturadas por parceiros habilitados.
                   </p>
                   <div className="pt-2 text-[11px] text-slate-500 space-y-1">
-                    <div>• Capital de Giro com agilidade</div>
-                    <div>• Crédito com Garantia Real</div>
-                    <div>• Home Equity corporativo</div>
-                    <div>• Custeio e Investimento Agro</div>
+                    <div>• Capital de giro empresarial</div>
+                    <div>• Crédito com garantias reais e home equity</div>
+                    <div>• Crédito agro estruturado</div>
+                    <div>• Consórcios e soluções sob medida</div>
                   </div>
                 </div>
               </div>
@@ -355,13 +357,13 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, settings }) => {
                     Soluções Corporativas
                   </h3>
                   <p className="text-xs text-slate-600 leading-relaxed">
-                    Apoio em projetos estratégicos, reestruturações, eficiência operacional, automação de dados e soluções sob medida para o seu negócio.
+                    Tecnologia, análise de risco, eficiência operacional, serviços B2B e soluções especializadas.
                   </p>
                   <div className="pt-2 text-[11px] text-slate-500 space-y-1">
-                    <div>• Eficiência Tributária & Operacional</div>
-                    <div>• Tecnologia & Automação de Processos</div>
-                    <div>• Análise de Risco & Informações</div>
-                    <div>• Recuperação & Reorganização</div>
+                    <div>• Eficiência tributária e operacional</div>
+                    <div>• Tecnologia e automação corporativa</div>
+                    <div>• Inteligência de dados e risco</div>
+                    <div>• Reestruturação e recuperação financeira</div>
                   </div>
                 </div>
               </div>
@@ -378,34 +380,34 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, settings }) => {
             </div>
           </Reveal>
 
-          {/* Vertical 4: GovTech & Mercado Público (Em ativação) */}
+          {/* Vertical 4: GovTech & Mercado Público */}
           <Reveal delay={360} variant="fade-up">
             <div className="card-lux h-full bg-white rounded-2xl overflow-hidden border border-slate-200/80 shadow-sm flex flex-col justify-between">
               <div>
                 <ImageReveal
                   src="/assets/sectors/govtech.webp"
                   alt="GovTech e Modernização do Mercado Público"
-                  badge="Em Ativação"
+                  badge="Mercado Público"
                   aspectRatio="aspect-[16/10]"
                 />
                 <div className="p-6 space-y-3">
                   <div className="flex items-center justify-between">
-                    <span className="text-[10px] font-mono font-semibold uppercase text-amber-800 bg-amber-50 px-2 py-0.5 rounded">
-                      Fase 2
+                    <span className="text-[10px] font-mono font-semibold uppercase text-slate-700 bg-slate-100 px-2 py-0.5 rounded">
+                      Setor Público
                     </span>
-                    <Landmark className="w-5 h-5 text-slate-500" />
+                    <Landmark className="w-5 h-5 text-slate-700" />
                   </div>
                   <h3 className="text-lg font-bold text-slate-900 font-serif">
                     GovTech & Mercado Público
                   </h3>
                   <p className="text-xs text-slate-600 leading-relaxed">
-                    Conexão com oportunidades e soluções para o setor público, com foco em inovação, eficiência, transparência e compliance legal.
+                    Representação comercial, desenvolvimento de mercado e estruturação de canais para fornecedores de soluções voltadas ao setor público.
                   </p>
                   <div className="pt-2 text-[11px] text-slate-500 space-y-1">
-                    <div>• Representação Comercial Tech</div>
-                    <div>• Desenvolvimento de Canais</div>
-                    <div>• Inteligência de Oportunidades</div>
-                    <div>• Apoio à Estratégia de Mercado</div>
+                    <div>• Representação comercial especializada</div>
+                    <div>• Desenvolvimento de novos mercados</div>
+                    <div>• Inteligência de oportunidades públicas</div>
+                    <div>• Apoio à estratégia comercial</div>
                   </div>
                 </div>
               </div>
@@ -413,9 +415,9 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, settings }) => {
               <div className="p-6 pt-0 mt-4 border-t border-slate-100">
                 <button
                   onClick={() => onNavigate('/govtech')}
-                  className="text-xs font-semibold text-slate-500 hover:text-slate-900 flex items-center gap-1.5 transition-colors cursor-pointer"
+                  className="text-xs font-semibold text-[#0B1728] hover:text-[#C5A869] flex items-center gap-1.5 transition-colors cursor-pointer"
                 >
-                  <span>Ver diretrizes preliminares</span>
+                  <span>Acessar vertical</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </button>
               </div>
@@ -446,7 +448,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, settings }) => {
                     onClick={() => onNavigate('/enviar-oportunidade')}
                     className="btn-gold inline-flex items-center gap-2 px-6 py-3 text-xs font-bold uppercase tracking-wider text-[#0B1728] rounded-full"
                   >
-                    <span>Submeter Oportunidade</span>
+                    <span>Enviar oportunidade</span>
                     <ArrowUpRight className="w-3.5 h-3.5" />
                   </button>
                   <button
@@ -557,8 +559,8 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, settings }) => {
             </Reveal>
           </div>
 
-          <div className="mt-8 text-center text-[11px] text-slate-500 font-light">
-            Atuação comercial e de originação. Soluções estruturadas com parceiros especializados. Sem promessa de créditos ou aquisições sem aprovação.
+          <div className="mt-8 text-center text-xs text-slate-500 font-light max-w-3xl mx-auto">
+            Atuação comercial e de originação. Determinadas soluções são executadas por instituições ou parceiros especializados e estão sujeitas a análise, elegibilidade, aprovação e contratação específicas.
           </div>
         </div>
       </section>

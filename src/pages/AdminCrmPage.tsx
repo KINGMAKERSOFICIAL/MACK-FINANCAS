@@ -472,7 +472,92 @@ export const AdminCrmPage: React.FC<AdminCrmPageProps> = ({
 
               <div>
                 <label className="block font-semibold text-slate-700 mb-1">
-                  LinkedIn Oficial Marcos Aguiar
+                  Razão Social *
+                </label>
+                <input
+                  type="text"
+                  required
+                  value={settings.corporateReason || ''}
+                  onChange={(e) => setSettings({ ...settings, corporateReason: e.target.value })}
+                  placeholder="M.A.C.K - Estratégias Financeiras LTDA"
+                  className="w-full px-3 py-2.5 rounded-lg border border-slate-300 font-mono"
+                />
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label className="block font-semibold text-slate-700 mb-1">
+                  Atividade / Tipo de Empresa
+                </label>
+                <input
+                  type="text"
+                  value={settings.companyType || ''}
+                  onChange={(e) => setSettings({ ...settings, companyType: e.target.value })}
+                  placeholder="Empresa de intermediação de negócios"
+                  className="w-full px-3 py-2.5 rounded-lg border border-slate-300"
+                />
+              </div>
+
+              <div>
+                <label className="block font-semibold text-slate-700 mb-1">
+                  Endereço Oficial / Sede
+                </label>
+                <input
+                  type="text"
+                  value={settings.address || ''}
+                  onChange={(e) => setSettings({ ...settings, address: e.target.value })}
+                  placeholder="SQN 215 bloco B apartamento 207 - Asa Norte, Brasilia/DF, CEP: 70.784-020"
+                  className="w-full px-3 py-2.5 rounded-lg border border-slate-300"
+                />
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div>
+                <label className="block font-semibold text-slate-700 mb-1">
+                  Apresentada por (Nome)
+                </label>
+                <input
+                  type="text"
+                  value={settings.representativeName || ''}
+                  onChange={(e) => setSettings({ ...settings, representativeName: e.target.value })}
+                  placeholder="Marcos Luiz Aguiar Cunha Santos"
+                  className="w-full px-3 py-2.5 rounded-lg border border-slate-300"
+                />
+              </div>
+
+              <div>
+                <label className="block font-semibold text-slate-700 mb-1">
+                  Registro OAB
+                </label>
+                <input
+                  type="text"
+                  value={settings.representativeOab || ''}
+                  onChange={(e) => setSettings({ ...settings, representativeOab: e.target.value })}
+                  placeholder="OAB/DF n°. 25.333"
+                  className="w-full px-3 py-2.5 rounded-lg border border-slate-300 font-mono"
+                />
+              </div>
+
+              <div>
+                <label className="block font-semibold text-slate-700 mb-1">
+                  Registro CRECI
+                </label>
+                <input
+                  type="text"
+                  value={settings.representativeCreci || ''}
+                  onChange={(e) => setSettings({ ...settings, representativeCreci: e.target.value })}
+                  placeholder="CRECI/DF n° 22.087"
+                  className="w-full px-3 py-2.5 rounded-lg border border-slate-300 font-mono"
+                />
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div>
+                <label className="block font-semibold text-slate-700 mb-1">
+                  LinkedIn Oficial
                 </label>
                 <input
                   type="text"
@@ -480,6 +565,81 @@ export const AdminCrmPage: React.FC<AdminCrmPageProps> = ({
                   onChange={(e) => setSettings({ ...settings, linkedinUrl: e.target.value })}
                   className="w-full px-3 py-2.5 rounded-lg border border-slate-300 font-mono"
                 />
+              </div>
+
+              <div>
+                <label className="block font-semibold text-slate-700 mb-1">
+                  Instagram Handle
+                </label>
+                <input
+                  type="text"
+                  value={settings.instagramHandle}
+                  onChange={(e) => setSettings({ ...settings, instagramHandle: e.target.value })}
+                  placeholder="@marcosaguiar80"
+                  className="w-full px-3 py-2.5 rounded-lg border border-slate-300 font-mono"
+                />
+              </div>
+
+              <div>
+                <label className="block font-semibold text-slate-700 mb-1">
+                  Facebook Handle
+                </label>
+                <input
+                  type="text"
+                  value={settings.facebookHandle}
+                  onChange={(e) => setSettings({ ...settings, facebookHandle: e.target.value })}
+                  placeholder="@marcosaguiar80"
+                  className="w-full px-3 py-2.5 rounded-lg border border-slate-300 font-mono"
+                />
+              </div>
+            </div>
+
+            {/* Banking data section */}
+            <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-3">
+              <div className="font-semibold text-slate-800 text-xs uppercase tracking-wider">
+                Dados Bancários & PIX Institucionais
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-4 gap-3">
+                <div>
+                  <label className="block text-[11px] font-semibold text-slate-600 mb-1">Banco</label>
+                  <input
+                    type="text"
+                    value={settings.bankName || ''}
+                    onChange={(e) => setSettings({ ...settings, bankName: e.target.value })}
+                    placeholder="BTG (208)"
+                    className="w-full px-3 py-2 text-xs rounded border border-slate-300 font-mono"
+                  />
+                </div>
+                <div>
+                  <label className="block text-[11px] font-semibold text-slate-600 mb-1">Agência</label>
+                  <input
+                    type="text"
+                    value={settings.bankAgency || ''}
+                    onChange={(e) => setSettings({ ...settings, bankAgency: e.target.value })}
+                    placeholder="0050"
+                    className="w-full px-3 py-2 text-xs rounded border border-slate-300 font-mono"
+                  />
+                </div>
+                <div>
+                  <label className="block text-[11px] font-semibold text-slate-600 mb-1">Conta Corrente</label>
+                  <input
+                    type="text"
+                    value={settings.bankAccount || ''}
+                    onChange={(e) => setSettings({ ...settings, bankAccount: e.target.value })}
+                    placeholder="1334597-0"
+                    className="w-full px-3 py-2 text-xs rounded border border-slate-300 font-mono"
+                  />
+                </div>
+                <div>
+                  <label className="block text-[11px] font-semibold text-slate-600 mb-1">Chave PIX (CNPJ)</label>
+                  <input
+                    type="text"
+                    value={settings.bankPix || ''}
+                    onChange={(e) => setSettings({ ...settings, bankPix: e.target.value })}
+                    placeholder="61.811.636/0001-08"
+                    className="w-full px-3 py-2 text-xs rounded border border-slate-300 font-mono"
+                  />
+                </div>
               </div>
             </div>
 

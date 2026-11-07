@@ -50,50 +50,46 @@ export default function App() {
     const routeSeo: Record<string, { title: string; desc: string }> = {
       '/': {
         title: 'MACK Estratégias e Negócios | Originação • Crédito • Soluções Corporativas',
-        desc: 'A MACK é uma plataforma B2B de originação, crédito e soluções corporativas. Conectamos empresas, ativos e capital a parceiros especializados e capazes de executar.',
+        desc: 'Conectamos empresas, ativos e capital a parceiros capazes de executar. Plataforma B2B de originação e soluções empresariais.',
       },
       '/originacao-ativos': {
-        title: 'Originação de Ativos & Negócios | MACK Estratégias',
-        desc: 'Identificação e originação qualificada de ativos imobiliários, precatórios e direitos creditórios para fundos e investidores institucionais.',
-      },
-      '/precatorios': {
-        title: 'Precatórios & Direitos Creditórios | MACK Estratégias',
-        desc: 'Originação e liquidez para precatórios judiciais federais e estaduais com governança e análise jurídica rigorosa.',
+        title: 'Originação & Ativos | MACK Estratégias e Negócios',
+        desc: 'Estruturamos e conectamos oportunidades para compradores e parceiros com capacidade de execução.',
       },
       '/credito-pj-agro': {
-        title: 'Crédito Estruturado PJ & Agro | MACK Estratégias',
-        desc: 'Soluções de crédito sob medida, capital de giro e financiamento estruturado para médias e grandes empresas e produtores rurais.',
+        title: 'Crédito PJ & Agro | MACK Estratégias e Negócios',
+        desc: 'Conectamos empresas e produtores a soluções de crédito estruturadas com parceiros habilitados.',
       },
       '/solucoes-corporativas': {
-        title: 'Soluções Corporativas & M&A Estratégico | MACK Estratégias',
-        desc: 'Consultoria estratégica em reestruturação financeira, M&A, fusões e aquisições e eficiência de balanço patrimonial.',
+        title: 'Soluções Corporativas | MACK Estratégias e Negócios',
+        desc: 'Portfólio de soluções empresariais estruturadas com apoio de parceiros especializados.',
       },
       '/govtech': {
-        title: 'GovTech & Modernização Pública | MACK Estratégias',
-        desc: 'Soluções de tecnologia e governança para eficiência da gestão pública e modernização fiscal de municípios.',
+        title: 'GovTech & Mercado Público | MACK Estratégias e Negócios',
+        desc: 'Representação comercial, desenvolvimento de mercado e estruturação de canais para soluções voltadas ao setor público.',
       },
       '/parceiros': {
-        title: 'Rede de Parceiros & Co-Originação | MACK Estratégias',
-        desc: 'Conecte-se à nossa rede de parceiros estratégicos, originadores, escritórios e consultorias com modelo de co-originação transparente.',
+        title: 'Parceiros | MACK Estratégias e Negócios',
+        desc: 'A MACK funciona como hub comercial que identifica oportunidades, qualifica demandas e aciona o parceiro mais adequado.',
       },
       '/enviar-oportunidade': {
-        title: 'Enviar Oportunidade & Demanda de Capital | MACK Estratégias',
-        desc: 'Envie sua oportunidade ou demanda de crédito e ativos corporativos para qualificação e conexão imediata com parceiros executores.',
+        title: 'Enviar Oportunidade | MACK Estratégias e Negócios',
+        desc: 'Apresente seu ativo, demanda de crédito ou credenciamento de parceria para qualificação e conexão ágil.',
       },
       '/conteudo': {
-        title: 'Inteligência de Mercado & Artigos | MACK Estratégias',
-        desc: 'Análises aprofundadas sobre mercado de crédito, originação de ativos, agronegócio e conjuntura econômica brasileira.',
+        title: 'Conteúdo & Artigos B2B | MACK Estratégias e Negócios',
+        desc: 'Diretrizes, análises e inteligência sobre originação de ativos, crédito PJ e agro e soluções empresariais.',
       },
       '/quem-somos': {
-        title: 'Quem Somos & Governança Institucional | MACK Estratégias',
-        desc: 'Conheça o propósito, liderança e governança da MACK Estratégias e Negócios, plataforma B2B de conexão de capital e ativos.',
+        title: 'Quem Somos | MACK Estratégias e Negócios',
+        desc: 'A MACK Estratégias e Negócios é uma plataforma B2B de originação, crédito e soluções corporativas.',
       },
       '/area-do-cliente': {
-        title: 'Área do Cliente & Acompanhamento | MACK Estratégias',
-        desc: 'Acesso seguro para clientes acompanharem o status de suas propostas, operações de crédito e ativos em originação.',
+        title: 'Área do Cliente (Em Implantação) | MACK Estratégias e Negócios',
+        desc: 'Área do Cliente MACK — ambiente em implantação para acompanhamento de oportunidades, documentos e propostas.',
       },
       '/admin': {
-        title: 'Portal Administrativo & CRM | MACK Estratégias',
+        title: 'Portal Administrativo & CRM | MACK Estratégias e Negócios',
         desc: 'Gestão institucional e monitoramento de pipeline de oportunidades e parceiros credenciados.',
       },
     };

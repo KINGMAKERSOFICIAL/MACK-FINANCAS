@@ -88,11 +88,11 @@ export const LegalModal: React.FC<LegalModalProps> = ({
                 <span>Política de Privacidade e Proteção de Dados (LGPD - Lei 13.709/2018)</span>
               </div>
               <p>
-                A <strong>MACK Estratégias e Negócios</strong> (CNPJ: {settings.cnpj}), sediada em Brasília/DF, valoriza a privacidade e o sigilo de seus usuários, parceiros e clientes corporativos.
+                A <strong>M.A.C.K - Estratégias Financeiras LTDA</strong> (nome fantasia: <strong>MACK Estratégias e Negócios</strong>), empresa de intermediação de negócios inscrita no CNPJ sob o n° <strong>61.811.636/0001-08</strong>, estabelecida à <strong>SQN 215 bloco B apartamento 207 - Asa Norte, Brasília/DF, CEP: 70.784-020</strong>, apresentada por <strong>Marcos Luiz Aguiar Cunha Santos</strong>, advogado (OAB/DF n°. 25.333), planejador financeiro, brasileiro, divorciado, CRECI/DF n° 22.087 e CPF n° 705.340.391-20, valoriza a privacidade, a conformidade e o sigilo de seus parceiros e clientes corporativos.
               </p>
               <h4 className="font-semibold text-slate-900 pt-2">1. Finalidade do Tratamento de Dados</h4>
               <p>
-                Os dados cadastrais e de demandas empresariais fornecidos através dos formulários do site (tais como nome, e-mail corporativo, telefone, CNPJ da empresa, informações preliminares sobre ativos ou necessidades de crédito) têm como finalidade exclusiva:
+                Os dados cadastrais e de demandas empresariais fornecidos através dos formulários do site (tais como nome, e-mail corporativo, telefone/WhatsApp, CNPJ da empresa, informações preliminares sobre ativos ou necessidades de crédito) têm como finalidade exclusiva:
               </p>
               <ul className="list-disc pl-5 space-y-1">
                 <li>Triagem e qualificação técnica da oportunidade comercial submetida;</li>
@@ -105,7 +105,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({
               </p>
               <h4 className="font-semibold text-slate-900 pt-2">3. Direitos do Titular</h4>
               <p>
-                Em conformidade com o Artigo 18 da Lei Geral de Proteção de Dados, o titular poderá a qualquer momento solicitar a confirmação, retificação ou exclusão de seus dados pessoais através do canal oficial de privacidade: <span className="font-mono text-slate-900">{settings.generalEmail}</span>.
+                Em conformidade com o Artigo 18 da Lei Geral de Proteção de Dados, o titular poderá a qualquer momento solicitar a confirmação, retificação ou exclusão de seus dados pessoais através do canal oficial: <span className="font-mono text-slate-900">{settings.generalEmail}</span> ou via telefone/celular: <span className="font-mono text-slate-900">{settings.whatsappDisplay}</span>.
               </p>
             </div>
           )}

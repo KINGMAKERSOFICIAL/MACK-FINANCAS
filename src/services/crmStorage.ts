@@ -8,15 +8,29 @@ const MODULES_STORAGE_KEY = 'mack_modules_v1';
 
 
 export const DEFAULT_SETTINGS: SiteSettings = {
-  whatsappNumber: '5561999887766',
-  whatsappDisplay: '(61) 99988-7766',
-  generalEmail: 'contato@mackfinancas.com.br',
+  whatsappNumber: '5561981519135',
+  whatsappDisplay: '(61) 98151-9135',
+  generalEmail: 'marcos.aguiar@mackfinancas.com.br',
   originationEmail: 'originacao@mackfinancas.com.br',
   partnersEmail: 'parceiros@mackfinancas.com.br',
   linkedinUrl: 'https://www.linkedin.com/in/marcosaguiar',
   instagramHandle: '@marcosaguiar80',
   facebookHandle: '@marcosaguiar80',
-  cnpj: '49.832.148/0001-20',
+  cnpj: '61.811.636/0001-08',
+  corporateReason: 'M.A.C.K - Estratégias Financeiras LTDA',
+  companyType: 'Empresa de intermediação de negócios',
+  address: 'SQN 215 bloco B apartamento 207 - Asa Norte, Brasilia/DF, CEP: 70.784-020',
+  addressCityState: 'Brasília / DF',
+  representativeName: 'Marcos Luiz Aguiar Cunha Santos',
+  representativeRole: 'Advogado e Planejador Financeiro',
+  representativeOab: 'OAB/DF n°. 25.333',
+  representativeCreci: 'CRECI/DF n° 22.087',
+  representativeCpf: '705.340.391-20',
+  representativeEmail: 'marcos.aguiar@mackfinancas.com.br',
+  bankName: 'BTG (208)',
+  bankAgency: '0050',
+  bankAccount: '1334597-0',
+  bankPix: '61.811.636/0001-08',
   govTechActive: false,
   clientAreaActive: false,
 };
@@ -232,8 +246,8 @@ export function saveLead(newLeadData: Omit<Lead, 'id' | 'createdAt' | 'status' |
     createdAt: new Date().toISOString(),
     status: 'Novo',
     assignedTo: 'Triagem MACK',
-    nextAction: 'Qualificação inicial de informações e aderência',
-    nextActionDate: new Date(Date.now() + 86400000 * 2).toISOString().split('T')[0],
+    nextAction: 'Qualificação inicial de informações e triagem de elegibilidade',
+    nextActionDate: new Date(Date.now() + 86400000).toISOString().split('T')[0], // 24 horas úteis
     internalRoutePartner: 'A definir na qualificação',
   };
 
@@ -268,7 +282,39 @@ export function getSettings(): SiteSettings {
       localStorage.setItem(SETTINGS_STORAGE_KEY, JSON.stringify(DEFAULT_SETTINGS));
       return DEFAULT_SETTINGS;
     }
-    return { ...DEFAULT_SETTINGS, ...JSON.parse(raw) };
+    const parsed = JSON.parse(raw);
+    if (
+      parsed.cnpj === '46.071.748/0001-38' ||
+      !parsed.corporateReason ||
+      !parsed.bankPix ||
+      parsed.whatsappNumber === '5561999887766'
+    ) {
+      const merged: SiteSettings = {
+        ...DEFAULT_SETTINGS,
+        ...parsed,
+        cnpj: DEFAULT_SETTINGS.cnpj,
+        corporateReason: DEFAULT_SETTINGS.corporateReason,
+        companyType: DEFAULT_SETTINGS.companyType,
+        address: DEFAULT_SETTINGS.address,
+        addressCityState: DEFAULT_SETTINGS.addressCityState,
+        representativeName: DEFAULT_SETTINGS.representativeName,
+        representativeRole: DEFAULT_SETTINGS.representativeRole,
+        representativeOab: DEFAULT_SETTINGS.representativeOab,
+        representativeCreci: DEFAULT_SETTINGS.representativeCreci,
+        representativeCpf: DEFAULT_SETTINGS.representativeCpf,
+        representativeEmail: DEFAULT_SETTINGS.representativeEmail,
+        bankName: DEFAULT_SETTINGS.bankName,
+        bankAgency: DEFAULT_SETTINGS.bankAgency,
+        bankAccount: DEFAULT_SETTINGS.bankAccount,
+        bankPix: DEFAULT_SETTINGS.bankPix,
+        whatsappNumber: DEFAULT_SETTINGS.whatsappNumber,
+        whatsappDisplay: DEFAULT_SETTINGS.whatsappDisplay,
+        generalEmail: DEFAULT_SETTINGS.generalEmail,
+      };
+      localStorage.setItem(SETTINGS_STORAGE_KEY, JSON.stringify(merged));
+      return merged;
+    }
+    return { ...DEFAULT_SETTINGS, ...parsed };
   } catch {
     return DEFAULT_SETTINGS;
   }

@@ -124,19 +124,29 @@ export const CreditPage: React.FC<CreditPageProps> = ({
               Conectamos empresas e produtores a soluções de crédito estruturadas com parceiros habilitados.
             </p>
 
-            <div className="pt-2 text-xs text-slate-400">
-              A MACK atua na conexão com instituições financeiras e fundos parceiros para viabilizar crédito com condições competitivas, agilidade e segurança, de acordo com o perfil e a necessidade do seu negócio.
+            <div className="pt-2 flex flex-wrap items-center gap-4">
+              <button
+                onClick={() => onNavigate('/enviar-oportunidade', undefined, 'credito')}
+                className="btn-gold inline-flex items-center gap-2 px-6 py-3.5 text-xs font-bold uppercase tracking-wider text-[#0B1728] rounded-full cursor-pointer"
+              >
+                <span>Apresentar demanda</span>
+                <ArrowUpRight className="w-4 h-4" />
+              </button>
+
+              <div className="text-xs text-slate-400 max-w-lg leading-relaxed">
+                A MACK apoia a estruturação comercial da demanda e o encaminhamento a parceiros habilitados, conforme perfil, documentação, elegibilidade e condições disponíveis.
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 2. MANDATORY REGULATORY NOTICE */}
+      {/* 2. MANDATORY REGULATORY NOTICE (AVISO) */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6">
         <div className="bg-amber-50/90 border border-amber-200/80 rounded-xl p-4 text-xs text-amber-950 flex items-start gap-3 shadow-2xs">
           <ShieldCheck className="w-5 h-5 text-amber-800 shrink-0 mt-0.5" />
           <div className="leading-relaxed">
-            <strong className="font-semibold text-amber-900">Aviso Regulatório Obrigatório:</strong> A MACK não é instituição financeira e não concede empréstimos diretamente. Conecta demandas empresariais e rurais a instituições e parceiros habilitados. Aprovação, taxa, prazo, garantia e liberação dependem exclusivamente da análise e contratação com o parceiro responsável.
+            <strong className="font-semibold text-amber-900">Aviso Regulatório Obrigatório:</strong> A MACK não garante concessão de crédito, taxa, prazo, aprovação ou liberação de recursos. A decisão final é da instituição responsável pela operação. A MACK atua exclusivamente no apoio à estruturação comercial e conexão com parceiros habilitados.
           </div>
         </div>
       </section>

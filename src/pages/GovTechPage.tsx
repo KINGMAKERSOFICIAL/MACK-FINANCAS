@@ -60,8 +60,18 @@ export const GovTechPage: React.FC<GovTechPageProps> = ({
               Representação comercial, desenvolvimento de mercado e estruturação de canais para soluções voltadas ao setor público.
             </p>
 
-            <div className="pt-2 text-xs text-slate-400">
-              Conectamos soluções inovadoras a oportunidades reais no setor público, com atuação estratégica, conhecimento de mercado e relacionamento qualificado sob os mais estritos princípios da administração pública.
+            <div className="pt-2 flex flex-wrap items-center gap-4">
+              <button
+                onClick={() => onNavigate('/enviar-oportunidade', undefined, 'parceiro')}
+                className="btn-gold inline-flex items-center gap-2 px-6 py-3.5 text-xs font-bold uppercase tracking-wider text-[#0B1728] rounded-full cursor-pointer"
+              >
+                <span>Apresentar solução</span>
+                <ArrowUpRight className="w-4 h-4" />
+              </button>
+
+              <div className="text-xs text-slate-400 max-w-lg leading-relaxed">
+                Conectamos fornecedores de tecnologia e inovação a oportunidades no setor público, com atuação estratégica, ética e foco na eficiência da gestão pública.
+              </div>
             </div>
           </div>
         </div>
@@ -71,12 +81,12 @@ export const GovTechPage: React.FC<GovTechPageProps> = ({
       <Reveal>
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6">
         <div className="bg-amber-50 border border-amber-200 rounded-xl p-5 text-xs text-amber-950 flex items-start gap-3 shadow-2xs">
-          <AlertTriangle className="w-5 h-5 text-amber-800 shrink-0 mt-0.5" />
+          <ShieldCheck className="w-5 h-5 text-amber-800 shrink-0 mt-0.5" />
           <div className="space-y-1 leading-relaxed">
             <strong className="font-semibold text-amber-950 block">
-              Compromisso de Integridade e Aviso Regulatório Obrigatório:
+              Bloco de Compliance e Conformidade:
             </strong>
-            A MACK atua estritamente na frente comercial, estratégica e de estruturação de mercado. Não realizamos qualquer ato de facilitação indevida, tráfico de influência ou intermediação ilícita. A contratação pública subordina-se rigorosamente ao processo legal aplicável (Lei 14.133/2021 e marcos setoriais), e a implementação e conformidade técnica são de responsabilidade integral do fornecedor da solução.
+            A atuação da MACK é comercial e estratégica, em conformidade com a legislação aplicável, políticas de integridade, anticorrupção e regras de contratação pública. A MACK não sugere nem possui influência sobre agente público, garantia de contratação, acesso privilegiado, direcionamento de licitação ou vantagem indevida. Toda contratação pública subordina-se estritamente à legislação vigente.
           </div>
         </div>
       </section>

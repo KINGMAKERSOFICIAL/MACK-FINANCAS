@@ -70,8 +70,22 @@ export const OriginationPage: React.FC<OriginationPageProps> = ({
             </h1>
 
             <p className="animate-fade-up [animation-delay:240ms] text-base sm:text-xl text-slate-300 font-light leading-relaxed">
-              Estruturamos e conectamos oportunidades a compradores e parceiros com capacidade de execução.
+              Estruturamos e conectamos oportunidades para compradores e parceiros com capacidade de execução.
             </p>
+
+            <div className="pt-2 flex flex-wrap items-center gap-4">
+              <button
+                onClick={() => onNavigate('/enviar-oportunidade', undefined, 'ativo')}
+                className="btn-gold inline-flex items-center gap-2 px-6 py-3.5 text-xs font-bold uppercase tracking-wider text-[#0B1728] rounded-full cursor-pointer"
+              >
+                <span>Enviar oportunidade</span>
+                <ArrowUpRight className="w-4 h-4" />
+              </button>
+
+              <div className="text-xs text-slate-400 max-w-md">
+                A MACK atua na originação, triagem comercial e documental, organização das informações e conexão da oportunidade a compradores ou parceiros compatíveis com seu perfil.
+              </div>
+            </div>
 
             {/* Quick anchors bar */}
             <div className="pt-4 flex flex-wrap items-center gap-2">
@@ -98,19 +112,19 @@ export const OriginationPage: React.FC<OriginationPageProps> = ({
                 onClick={() => scrollToAnchor('oportunidades-especiais')}
                 className="btn-glass px-4 py-2 rounded-full text-xs text-slate-200 hover:text-[#E9D6A4] cursor-pointer"
               >
-                Oportunidades Especiais & Imóveis
+                Oportunidades Especiais & Ativos Imobiliários
               </button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 2. REGULATORY NOTICE BANNER */}
+      {/* 2. REGULATORY & LEGAL EXCLUSION BANNER */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6">
         <div className="bg-amber-50/90 border border-amber-200/80 rounded-xl p-4 text-xs text-amber-950 flex items-start gap-3 shadow-2xs">
           <ShieldCheck className="w-5 h-5 text-amber-800 shrink-0 mt-0.5" />
           <div className="leading-relaxed">
-            <strong className="font-semibold text-amber-900">Nota de Governança e Segregação Comercial:</strong> A MACK atua na originação e estruturação comercial de oportunidades. Não há promessa de aquisição, preço, deságio garantido ou fechamento sem prévia análise e aprovação formal da contraparte compradora responsável. Não realizamos compra direta com capital próprio.
+            <strong className="font-semibold text-amber-900">Nota Institucional e de Governança:</strong> A MACK atua exclusivamente na originação, triagem comercial e conexão da oportunidade a compradores ou parceiros. A MACK não presta assessoria jurídica, não emite parecer jurídico, não garante compra e não realiza análise jurídica do ativo. Eventual atuação jurídica deve ser contratada separadamente com profissional ou escritório competente.
           </div>
         </div>
       </section>

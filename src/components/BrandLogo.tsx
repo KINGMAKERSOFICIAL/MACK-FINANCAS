@@ -13,58 +13,41 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
   className = '',
   size = 'md',
 }) => {
-  const isDark = variant === 'dark';
-  const textColor = isDark ? 'text-[#0B1728]' : 'text-white';
-  const subTextColor = isDark ? 'text-slate-500' : 'text-slate-300';
-  const goldColor = '#C5A869';
+  // Responsive image dimensions based on size prop
+  // sm: Header / Navbar
+  // md: Footer / Cards
+  // lg: Hero / Standalone displays
+  const sizeClasses = {
+    sm: 'h-9 sm:h-10 md:h-11 w-auto max-w-[210px] sm:max-w-[240px]',
+    md: 'h-11 sm:h-13 md:h-14 w-auto max-w-[260px] sm:max-w-[300px]',
+    lg: 'h-16 sm:h-20 w-auto max-w-[360px]',
+  }[size];
+
+  const subTextColor = variant === 'dark' ? 'text-slate-600' : 'text-slate-300';
 
   return (
     <div className={`flex flex-col select-none ${className}`}>
-      <div className="flex items-center gap-2.5">
-        {/* Emblem */}
-        <div className="emblem-gold w-9 h-9 rounded-lg flex items-center justify-center shrink-0">
-          <svg viewBox="0 0 32 32" fill="none" className="relative w-5 h-5">
-            <defs>
-              <linearGradient id="mack-gold" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stopColor="#F4E4BC" />
-                <stop offset="55%" stopColor={goldColor} />
-                <stop offset="100%" stopColor="#9C7F43" />
-              </linearGradient>
-            </defs>
-            {/* Geometric M with subtle gold pillar */}
-            <path
-              d="M6 24V8L16 17L26 8V24"
-              stroke="#FFFFFF"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-            <path
-              d="M16 17V24"
-              stroke="url(#mack-gold)"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-            />
-          </svg>
-        </div>
-
-        {/* Wordmark */}
-        <div className="flex flex-col leading-none">
-          <div className="flex items-baseline gap-1.5">
-            <span className={`text-xl font-bold tracking-[0.12em] font-serif ${textColor}`}>
-              MACK
-            </span>
-            <span className="text-[10px] font-semibold tracking-widest text-[#C5A869] uppercase font-sans">
-              Estratégias & Negócios
-            </span>
-          </div>
-          {showDescriptor && (
-            <span className={`text-[9px] tracking-wider uppercase mt-1 ${subTextColor}`}>
-              Originação <span className="text-[#C5A869]">•</span> Crédito <span className="text-[#C5A869]">•</span> Soluções Corporativas
-            </span>
-          )}
-        </div>
+      <div className="flex items-center">
+        <img
+          src="/assets/brand-logo.jpeg"
+          onError={(e) => {
+            // Fallback to the uploaded file path if needed
+            const target = e.currentTarget;
+            if (target.src.indexOf('WhatsApp_Image') === -1) {
+              target.src = '/assets/aistudio/WhatsApp_Image_2026-10-27_at_09.57.32_fba1ea16.jpeg';
+            }
+          }}
+          alt="MACK Estratégias e Negócios"
+          className={`${sizeClasses} object-contain object-left transition-transform duration-300 group-hover:scale-[1.02]`}
+          loading="eager"
+        />
       </div>
+
+      {showDescriptor && (
+        <span className={`text-[10px] sm:text-[11px] font-medium tracking-wider uppercase mt-2 ${subTextColor}`}>
+          Originação <span className="text-[#C5A869]">•</span> Crédito <span className="text-[#C5A869]">•</span> Soluções Corporativas
+        </span>
+      )}
     </div>
   );
 };

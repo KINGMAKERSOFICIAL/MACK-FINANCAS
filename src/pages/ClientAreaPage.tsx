@@ -40,11 +40,11 @@ export const ClientAreaPage: React.FC<ClientAreaPageProps> = ({
             </div>
 
             <h1 className="animate-fade-up [animation-delay:120ms] text-4xl sm:text-6xl font-semibold font-serif text-white tracking-tight leading-[1.05] text-balance">
-              Área do Cliente / Sistema
+              Área do Cliente
             </h1>
 
             <p className="animate-fade-up [animation-delay:240ms] text-base sm:text-xl text-slate-300 font-light leading-relaxed">
-              Ambiente reservado para acompanhamento de demandas, documentos e interações com a equipe MACK.
+              Área do Cliente MACK — ambiente em implantação para acompanhamento de oportunidades, documentos, propostas e interações. Solicite acesso à equipe MACK.
             </p>
           </div>
         </div>
@@ -60,13 +60,13 @@ export const ClientAreaPage: React.FC<ClientAreaPageProps> = ({
             </div>
             <div className="space-y-2">
               <h3 className="text-lg font-bold font-serif text-white">
-                Infraestrutura em Fase de Homologação e Segurança (Fase 3)
+                Área do Cliente MACK — Ambiente em Implantação
               </h3>
-              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                Em estrito cumprimento às diretrizes de governança e proteção de dados, a MACK não disponibiliza formulários de login fictícios ou telas simuladas sem autenticação e criptografia de ponta a ponta plenamente operacionais.
+              <p className="text-sm text-slate-200 leading-relaxed font-medium">
+                Área do Cliente MACK — ambiente em implantação para acompanhamento de oportunidades, documentos, propostas e interações. Solicite acesso à equipe MACK.
               </p>
               <p className="text-xs text-slate-400">
-                Se você já possui uma operação em andamento com a MACK e deseja consultar o status atual, prazos ou enviar documentos complementares, entre em contato diretamente com o responsável pela sua demanda pelos canais oficiais abaixo.
+                Em conformidade com nossos padrões de segurança e privacidade da informação, não utilizamos telas de autenticação simuladas ou captura fictícia de senhas. Para consultar o andamento de sua demanda ou enviar documentação, utilize os canais diretos abaixo.
               </p>
             </div>
           </div>

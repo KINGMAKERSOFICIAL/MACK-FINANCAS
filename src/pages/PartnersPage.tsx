@@ -108,87 +108,127 @@ export const PartnersPage: React.FC<PartnersPageProps> = ({
             </h1>
 
             <p className="animate-fade-up [animation-delay:240ms] text-base sm:text-xl text-slate-300 font-light leading-relaxed">
-              A MACK funciona como hub comercial que identifica a oportunidade, qualifica a demanda e aciona o parceiro certo.
+              A MACK funciona como hub comercial que identifica oportunidades, qualifica demandas e aciona o parceiro mais adequado.
             </p>
 
-            <div className="pt-2 text-xs text-slate-400">
-              Juntos, vamos mais longe: conectamos compradores, fundos, fintechs, integradores e especialistas a demandas reais e qualificadas.
+            <div className="pt-2 flex flex-wrap items-center gap-4">
+              <a
+                href="#credenciamento-parceiro"
+                className="btn-gold inline-flex items-center gap-2 px-6 py-3.5 text-xs font-bold uppercase tracking-wider text-[#0B1728] rounded-full cursor-pointer"
+              >
+                <span>Quero ser parceiro</span>
+                <ArrowRight className="w-4 h-4" />
+              </a>
+
+              <div className="text-xs text-slate-400 max-w-lg leading-relaxed">
+                Conectamos originadores, investidores, instituições financeiras e consultorias especializadas a fluxos qualificados de oportunidades.
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 2. CATEGORIAS DE PARCEIROS (SECTION 10) */}
+      {/* 2. CATEGORIAS DE PARCEIROS (SECTION 8.1) */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         <div className="border-b border-slate-200 pb-4">
           <div className="text-[11px] uppercase tracking-[0.3em] font-semibold text-[#A88B4F]">
             Ecossistema Estruturado
           </div>
           <h2 className="text-2xl font-bold font-serif text-slate-900 mt-1">
-            Nossos Parceiros Estratégicos
+            Tipos de Parceiro
           </h2>
           <p className="text-xs sm:text-sm text-slate-600 mt-1">
-            Trabalhamos com parceiros estratégicos em diferentes frentes, conectando oportunidades a soluções reais.
+            A MACK articula e qualifica conexões comerciais com parceiros habilitados em 6 frentes centrais.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {/* Categoria 1 */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Tipo 1 */}
           <Reveal delay={0} variant="fade-up">
             <div className="card-lux h-full bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm space-y-3">
               <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#15273F] to-[#050B14] text-[#C5A869] ring-1 ring-[#C5A869]/30 shadow-lg flex items-center justify-center">
                 <Building2 className="w-5 h-5" />
               </div>
               <h3 className="text-base font-bold text-slate-900 font-serif">
-                Compradores Institucionais
+                Compradores institucionais e investidores profissionais
               </h3>
               <p className="text-xs text-slate-600 leading-relaxed">
-                Conectamos ativos e oportunidades a fundos de investimento, family offices, asset managers e outros investidores institucionais.
+                Fundos de investimento, family offices, gestoras de special situations e investidores qualificados para precatórios, legal claims e ativos distressed.
               </p>
             </div>
           </Reveal>
 
-          {/* Categoria 2 */}
-          <Reveal delay={100} variant="fade-up">
+          {/* Tipo 2 */}
+          <Reveal delay={80} variant="fade-up">
             <div className="card-lux h-full bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm space-y-3">
               <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#15273F] to-[#050B14] text-[#C5A869] ring-1 ring-[#C5A869]/30 shadow-lg flex items-center justify-center">
                 <Coins className="w-5 h-5" />
               </div>
               <h3 className="text-base font-bold text-slate-900 font-serif">
-                Instituições & Soluções de Crédito
+                Instituições e soluções de crédito
               </h3>
               <p className="text-xs text-slate-600 leading-relaxed">
-                Parceria com bancos, FIDCs, fintechs e estruturadores de crédito para viabilizar soluções sob medida para empresas e produtores.
+                Bancos, FIDCs, securitizadoras, fintechs e estruturadores de crédito com capacidade de análise e concessão de capital de giro e garantias.
               </p>
             </div>
           </Reveal>
 
-          {/* Categoria 3 */}
-          <Reveal delay={200} variant="fade-up">
+          {/* Tipo 3 */}
+          <Reveal delay={160} variant="fade-up">
             <div className="card-lux h-full bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm space-y-3">
               <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#15273F] to-[#050B14] text-[#C5A869] ring-1 ring-[#C5A869]/30 shadow-lg flex items-center justify-center">
                 <Briefcase className="w-5 h-5" />
               </div>
               <h3 className="text-base font-bold text-slate-900 font-serif">
-                Soluções Corporativas
+                Soluções corporativas e consultorias especializadas
               </h3>
               <p className="text-xs text-slate-600 leading-relaxed">
-                Colaboração com consultorias, integradores e empresas especializadas para entregar soluções operacionais, estratégicas e tecnológicas.
+                Empresas especializadas em eficiência tributária, governança, reorganização societária e recuperação econômico-financeira.
               </p>
             </div>
           </Reveal>
 
-          {/* Categoria 4 */}
-          <Reveal delay={300} variant="fade-up">
+          {/* Tipo 4 */}
+          <Reveal delay={240} variant="fade-up">
+            <div className="card-lux h-full bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm space-y-3">
+              <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#15273F] to-[#050B14] text-[#C5A869] ring-1 ring-[#C5A869]/30 shadow-lg flex items-center justify-center">
+                <ShieldCheck className="w-5 h-5" />
+              </div>
+              <h3 className="text-base font-bold text-slate-900 font-serif">
+                Tecnologia e serviços B2B
+              </h3>
+              <p className="text-xs text-slate-600 leading-relaxed">
+                Fornecedores de automação de processos, infraestrutura de dados, esteiras de risco/KYC e plataformas de serviços empresariais.
+              </p>
+            </div>
+          </Reveal>
+
+          {/* Tipo 5 */}
+          <Reveal delay={320} variant="fade-up">
             <div className="card-lux h-full bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm space-y-3">
               <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#15273F] to-[#050B14] text-[#C5A869] ring-1 ring-[#C5A869]/30 shadow-lg flex items-center justify-center">
                 <Landmark className="w-5 h-5" />
               </div>
               <h3 className="text-base font-bold text-slate-900 font-serif">
-                Soluções para Setor Público
+                Soluções para mercado público
               </h3>
               <p className="text-xs text-slate-600 leading-relaxed">
-                Parceria com empresas e instituições que atuam no mercado público, para desenvolvimento e execução de soluções inovadoras e eficientes.
+                Desenvolvedores e fornecedores de tecnologia, software de gestão e soluções em conformidade com as exigências da administração pública.
+              </p>
+            </div>
+          </Reveal>
+
+          {/* Tipo 6 */}
+          <Reveal delay={400} variant="fade-up">
+            <div className="card-lux h-full bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm space-y-3">
+              <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#15273F] to-[#050B14] text-[#C5A869] ring-1 ring-[#C5A869]/30 shadow-lg flex items-center justify-center">
+                <Users className="w-5 h-5" />
+              </div>
+              <h3 className="text-base font-bold text-slate-900 font-serif">
+                Originadores e canais comerciais
+              </h3>
+              <p className="text-xs text-slate-600 leading-relaxed">
+                Profissionais, corretores especializados, advogados e agentes comerciais que identificam oportunidades e demandam capacidade de estruturação e fechamento.
               </p>
             </div>
           </Reveal>

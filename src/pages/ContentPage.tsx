@@ -38,7 +38,7 @@ export const ContentPage: React.FC<ContentPageProps> = ({
     'Originação & Ativos',
     'Crédito PJ & Agro',
     'Soluções Corporativas',
-    ...(settings.govTechActive ? ['GovTech'] : []),
+    'GovTech & Mercado Público',
     'Mercado',
     'Parceiros',
   ];

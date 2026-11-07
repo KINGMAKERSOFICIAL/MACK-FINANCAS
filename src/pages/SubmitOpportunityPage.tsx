@@ -56,6 +56,7 @@ export const SubmitOpportunityPage: React.FC<SubmitOpportunityPageProps> = ({
     // Crédito fields
     creditProfile: 'Empresa' as 'Empresa' | 'Produtor' | 'Outro',
     creditPurpose: 'Capital de Giro',
+    creditRevenue: '',
     hasCollateral: 'Sim' as 'Sim' | 'Não',
     collateralType: '',
     urgency: 'Até 30 dias',
@@ -69,6 +70,7 @@ export const SubmitOpportunityPage: React.FC<SubmitOpportunityPageProps> = ({
     partnerCityState: '',
     partnerType: 'Originação',
     partnerContribution: '',
+    partnerWebsite: '',
   });
 
   const [submittedLeadId, setSubmittedLeadId] = useState<string | null>(null);
@@ -122,6 +124,7 @@ export const SubmitOpportunityPage: React.FC<SubmitOpportunityPageProps> = ({
         creditProfile: formData.creditProfile,
         creditPurpose: formData.creditPurpose,
         estimatedValue: formData.estimatedValue,
+        estimatedRevenue: formData.creditRevenue,
         hasCollateral: formData.hasCollateral,
         collateralType: formData.collateralType,
         urgency: formData.urgency,
@@ -136,6 +139,7 @@ export const SubmitOpportunityPage: React.FC<SubmitOpportunityPageProps> = ({
         partnerCityState: formData.partnerCityState,
         partnerType: formData.partnerType,
         partnerContribution: formData.partnerContribution,
+        partnerWebsite: formData.partnerWebsite,
       }),
     });
 
@@ -575,24 +579,40 @@ export const SubmitOpportunityPage: React.FC<SubmitOpportunityPageProps> = ({
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
                       <div>
                         <label className="block font-semibold text-slate-700 mb-1">
-                          Valor Estimado *
+                          Faturamento Aproximado *
                         </label>
                         <input
                           type="text"
                           required
-                          value={formData.estimatedValue}
-                          onChange={(e) => setFormData({ ...formData, estimatedValue: e.target.value })}
-                          placeholder="Ex: R$ 5.000.000,00"
+                          value={formData.creditRevenue}
+                          onChange={(e) => setFormData({ ...formData, creditRevenue: e.target.value })}
+                          placeholder="Ex: R$ 12M / ano ou R$ 1M / mês"
                           className="w-full px-3 py-2.5 rounded-lg border border-slate-300 focus:outline-hidden focus:border-[#C5A869]"
                         />
                       </div>
 
                       <div>
                         <label className="block font-semibold text-slate-700 mb-1">
-                          Possui Garantia Real?
+                          Valor Pretendido *
+                        </label>
+                        <input
+                          type="text"
+                          required
+                          value={formData.estimatedValue}
+                          onChange={(e) => setFormData({ ...formData, estimatedValue: e.target.value })}
+                          placeholder="Ex: R$ 3.500.000,00"
+                          className="w-full px-3 py-2.5 rounded-lg border border-slate-300 focus:outline-hidden focus:border-[#C5A869]"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+                      <div>
+                        <label className="block font-semibold text-slate-700 mb-1">
+                          Possui Garantia Real? *
                         </label>
                         <select
                           value={formData.hasCollateral}
@@ -606,7 +626,7 @@ export const SubmitOpportunityPage: React.FC<SubmitOpportunityPageProps> = ({
 
                       <div>
                         <label className="block font-semibold text-slate-700 mb-1">
-                          Urgência Desejada
+                          Urgência Desejada *
                         </label>
                         <select
                           value={formData.urgency}
@@ -624,10 +644,11 @@ export const SubmitOpportunityPage: React.FC<SubmitOpportunityPageProps> = ({
                     {formData.hasCollateral === 'Sim' && (
                       <div className="text-xs">
                         <label className="block font-semibold text-slate-700 mb-1">
-                          Tipo de Garantia Disponível
+                          Tipo de Garantia Disponível *
                         </label>
                         <input
                           type="text"
+                          required
                           value={formData.collateralType}
                           onChange={(e) => setFormData({ ...formData, collateralType: e.target.value })}
                           placeholder="Ex: Imóvel comercial quitado em Brasília avaliado em R$ 8M"
@@ -648,28 +669,61 @@ export const SubmitOpportunityPage: React.FC<SubmitOpportunityPageProps> = ({
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
                       <div>
                         <label className="block font-semibold text-slate-700 mb-1">
-                          Segmento da Instituição *
+                          Tipo de Parceria *
+                        </label>
+                        <select
+                          value={formData.partnerType}
+                          onChange={(e) => setFormData({ ...formData, partnerType: e.target.value })}
+                          className="w-full px-3 py-2.5 rounded-lg border border-slate-300 focus:outline-hidden focus:border-[#C5A869] bg-white"
+                        >
+                          <option value="Comprador Institucional">Comprador institucional / investidor profissional</option>
+                          <option value="Solução de Crédito">Instituição / solução de crédito</option>
+                          <option value="Solução Corporativa">Soluções corporativas / consultoria especializada</option>
+                          <option value="Tecnologia B2B">Tecnologia e serviços B2B</option>
+                          <option value="Mercado Público">Soluções para mercado público</option>
+                          <option value="Originador Comercial">Originador e canal comercial</option>
+                        </select>
+                      </div>
+
+                      <div>
+                        <label className="block font-semibold text-slate-700 mb-1">
+                          Site da Empresa / Instituição
+                        </label>
+                        <input
+                          type="url"
+                          value={formData.partnerWebsite}
+                          onChange={(e) => setFormData({ ...formData, partnerWebsite: e.target.value })}
+                          placeholder="https://www.suaempresa.com.br"
+                          className="w-full px-3 py-2.5 rounded-lg border border-slate-300 focus:outline-hidden focus:border-[#C5A869]"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+                      <div>
+                        <label className="block font-semibold text-slate-700 mb-1">
+                          Segmento de Atuação *
                         </label>
                         <input
                           type="text"
                           required
                           value={formData.partnerSegment}
                           onChange={(e) => setFormData({ ...formData, partnerSegment: e.target.value })}
-                          placeholder="Ex: Fundo Special Situations, Banco, FIDC, Consultoria..."
+                          placeholder="Ex: Fundo Special Situations, Banco, Consultoria..."
                           className="w-full px-3 py-2.5 rounded-lg border border-slate-300 focus:outline-hidden focus:border-[#C5A869]"
                         />
                       </div>
 
                       <div>
                         <label className="block font-semibold text-slate-700 mb-1">
-                          Cidade / UF de Base *
+                          Região de Atuação *
                         </label>
                         <input
                           type="text"
                           required
                           value={formData.partnerCityState}
                           onChange={(e) => setFormData({ ...formData, partnerCityState: e.target.value })}
-                          placeholder="Ex: São Paulo / SP"
+                          placeholder="Ex: Nacional, Centro-Oeste, SP, etc."
                           className="w-full px-3 py-2.5 rounded-lg border border-slate-300 focus:outline-hidden focus:border-[#C5A869]"
                         />
                       </div>
@@ -677,18 +731,16 @@ export const SubmitOpportunityPage: React.FC<SubmitOpportunityPageProps> = ({
 
                     <div className="text-xs">
                       <label className="block font-semibold text-slate-700 mb-1">
-                        Área de Conexão na MACK *
+                        Soluções que oferece / procura *
                       </label>
-                      <select
-                        value={formData.partnerType}
-                        onChange={(e) => setFormData({ ...formData, partnerType: e.target.value })}
-                        className="w-full px-3 py-2.5 rounded-lg border border-slate-300 focus:outline-hidden focus:border-[#C5A869] bg-white"
-                      >
-                        <option value="Originação">Originação & Ativos (Comprador ou originador qualificado)</option>
-                        <option value="Crédito">Crédito PJ & Agro (Provedor ou estruturador de crédito)</option>
-                        <option value="Solução Corporativa">Soluções Corporativas (Prestador técnico homologado)</option>
-                        <option value="Setor Público">Setor Público & GovTech</option>
-                      </select>
+                      <input
+                        type="text"
+                        required
+                        value={formData.partnerContribution}
+                        onChange={(e) => setFormData({ ...formData, partnerContribution: e.target.value })}
+                        placeholder="Ex: Oferecemos capital para precatórios federais acima de R$ 2M; buscamos demandas qualificadas..."
+                        className="w-full px-3 py-2.5 rounded-lg border border-slate-300 focus:outline-hidden focus:border-[#C5A869]"
+                      />
                     </div>
                   </div>
                 )}
@@ -788,8 +840,8 @@ export const SubmitOpportunityPage: React.FC<SubmitOpportunityPageProps> = ({
                     <span>{isSubmitting ? 'Gravando Oportunidade no CRM...' : 'Enviar oportunidade para avaliação'}</span>
                     <ArrowUpRight className="w-4 h-4" />
                   </button>
-                  <p className="text-[10px] text-center text-slate-400 mt-2">
-                    O envio não gera obrigação de fechamento, aquisição ou aprovação de crédito.
+                  <p className="text-[11px] text-center text-slate-500 mt-3 max-w-xl mx-auto leading-relaxed">
+                    O envio das informações não gera obrigação de fechamento, aquisição, concessão de crédito ou contratação. A oportunidade será submetida à análise e qualificação.
                   </p>
                 </div>
               </form>

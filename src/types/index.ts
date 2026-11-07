@@ -50,6 +50,7 @@ export interface Lead {
   partnerCityState?: string;
   partnerType?: string;
   partnerContribution?: string;
+  partnerWebsite?: string;
 
   // Condicionais GovTech
   govtechOrg?: string;
@@ -99,6 +100,20 @@ export interface SiteSettings {
   instagramHandle: string;
   facebookHandle: string;
   cnpj: string;
+  corporateReason: string;
+  companyType: string;
+  address: string;
+  addressCityState: string;
+  representativeName: string;
+  representativeRole: string;
+  representativeOab: string;
+  representativeCreci: string;
+  representativeCpf?: string;
+  representativeEmail: string;
+  bankName: string;
+  bankAgency: string;
+  bankAccount: string;
+  bankPix: string;
   govTechActive: boolean;
   clientAreaActive: boolean;
 }

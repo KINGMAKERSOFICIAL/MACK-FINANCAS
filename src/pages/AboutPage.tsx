@@ -52,7 +52,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({
             </p>
 
             <p className="text-sm sm:text-base text-slate-300 font-light leading-relaxed pt-2">
-              A MACK atua como plataforma B2B de originação e soluções empresariais, organizando oportunidades, qualificando demandas e conectando clientes e parceiros com capacidade de análise e execução.
+              A MACK Estratégias e Negócios é uma plataforma B2B de originação, crédito e soluções corporativas. Atua conectando empresas, ativos e capital a compradores, instituições e parceiros especializados, com foco em qualificação de oportunidades, estruturação comercial e execução coordenada.
             </p>
           </div>
         </div>
@@ -161,21 +161,34 @@ export const AboutPage: React.FC<AboutPageProps> = ({
             <Reveal delay={150} className="lg:col-span-7 space-y-6">
               <div className="flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.3em] text-[#C5A869]">
                 <span className="w-10 h-px bg-[#C5A869]/70" />
-                Nosso Fundador
+                Liderança & Apresentação
               </div>
 
               <h3 className="text-3xl sm:text-5xl font-semibold font-serif text-white leading-[1.1]">
-                Advocacia, Engenharia e{' '}
-                <span className="text-gold-foil italic">Visão Empresarial</span>
+                Advocacia, Planejamento Financeiro e{' '}
+                <span className="text-gold-foil italic">Visão de Negócios</span>
               </h3>
 
               <p className="text-base text-slate-200 leading-relaxed font-light">
-                <strong className="font-semibold text-white">Marcos Aguiar</strong> é advogado, engenheiro florestal e empresário, com ampla trajetória de atuação no Centro-Oeste e no mercado nacional em negócios estratégicos, crédito, precatórios e soluções corporativas.
+                Apresentada por <strong className="font-semibold text-white">Marcos Luiz Aguiar Cunha Santos</strong>, advogado (OAB/DF n°. 25.333), planejador financeiro e consultor credenciado (CRECI/DF n° 22.087), a MACK atua como empresa de intermediação de negócios voltada à estruturação comercial, originação de ativos, crédito PJ & Agro e soluções corporativas.
               </p>
 
               <p className="text-sm text-slate-400 leading-relaxed">
-                Sua formação multidisciplinar alia a precisão jurídica e a visão técnica de engenharia e agronegócio à prática comercial assertiva, permitindo estruturar operações complexas com velocidade, discrição e segurança institucional para compradores, tomadores e investidores.
+                Com base em Brasília/DF (SQN 215 bloco B apto 207, Asa Norte) e atuação nacional, a MACK conecta oportunidades de alto valor com discrição, velocidade técnica e governança.
               </p>
+
+              {/* Founder credential tags */}
+              <div className="flex flex-wrap gap-2 pt-1">
+                <span className="px-3 py-1 rounded-full text-[11px] font-mono bg-white/5 border border-white/10 text-slate-300">
+                  OAB/DF n°. 25.333
+                </span>
+                <span className="px-3 py-1 rounded-full text-[11px] font-mono bg-white/5 border border-white/10 text-slate-300">
+                  CRECI/DF n° 22.087
+                </span>
+                <span className="px-3 py-1 rounded-full text-[11px] font-mono bg-[#C5A869]/10 border border-[#C5A869]/30 text-[#E9D6A4]">
+                  CNPJ 61.811.636/0001-08
+                </span>
+              </div>
 
               {/* Institutional quote box */}
               <figure className="relative mt-4 p-7 rounded-2xl bg-white/[0.03] border border-[#C5A869]/20 backdrop-blur">
@@ -184,7 +197,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({
                   Conectar oportunidades é acreditar no potencial das pessoas, na força dos empreendedores e no desenvolvimento do Brasil.
                 </blockquote>
                 <figcaption className="mt-4 text-[10px] uppercase tracking-[0.3em] text-[#C5A869]">
-                  Marcos Aguiar
+                  Marcos Luiz Aguiar Cunha Santos
                 </figcaption>
               </figure>
             </Reveal>

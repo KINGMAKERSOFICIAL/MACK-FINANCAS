@@ -35,10 +35,10 @@ export const CorporateSolutionsPage: React.FC<CorporateSolutionsPageProps> = ({
       icon: TrendingDown,
       painPoint: 'Carga tributária elevada e gargalos operacionais',
       solution:
-        'Estratégias estruturadas para reduzir legalmente a carga tributária, otimizar processos internos e aumentar a eficiência e a margem operacional do negócio.',
+        'Soluções especializadas para revisão, eficiência, recuperação e melhoria de processos, conforme escopo e parceiro contratado.',
       items: [
         'Revisão e conformidade de créditos tributários',
-        'Planejamento tributário e societário (com assessoria jurídica independente)',
+        'Planejamento tributário e societário (com assessoria independente)',
         'Mapeamento e eliminação de desperdícios de processos'
       ]
     },
@@ -48,7 +48,7 @@ export const CorporateSolutionsPage: React.FC<CorporateSolutionsPageProps> = ({
       icon: Cpu,
       painPoint: 'Processos manuais, perda de produtividade e lentidão sistêmica',
       solution:
-        'Soluções de tecnologia corporativa, automação de processos de ponta a ponta e transformação digital para ganhos sustentáveis de escala e produtividade.',
+        'Soluções para digitalização, automação e eficiência operacional.',
       items: [
         'Automação de rotinas financeiras e de backoffice',
         'Integração de sistemas legados com esteiras modernas',
@@ -57,15 +57,15 @@ export const CorporateSolutionsPage: React.FC<CorporateSolutionsPageProps> = ({
     },
     {
       id: 'risco',
-      title: 'Análise de Risco e Informações',
+      title: 'Inteligência, Risco & Monitoramento',
       icon: ShieldAlert,
       painPoint: 'Insegurança em concessão comercial e assimetria de informações',
       solution:
-        'Inteligência em dados, compliance comercial e análises aprofundadas para tomadas de decisão seguras, prevenção de fraudes e identificação de oportunidades.',
+        'Consultas, análise de risco, pesquisa e monitoramento de informações empresariais e cadastrais.',
       items: [
         'Auditoria prévia de fornecedores e parceiros estratégicos',
         'Modelagem de risco de crédito B2B customizada',
-        'Inteligência competitiva e due diligence cadastral'
+        'Inteligência cadastral e due diligence prévia'
       ]
     },
     {
@@ -74,11 +74,11 @@ export const CorporateSolutionsPage: React.FC<CorporateSolutionsPageProps> = ({
       icon: GitMerge,
       painPoint: 'Complexidade de expansão, reorganização societária ou sucessão',
       solution:
-        'Apoio consultivo na modelagem de projetos estratégicos, acordos de sócios, governança e preparação para atração de novos sócios ou investidores.',
+        'Apoio comercial em reorganização, expansão, ativos e operações especiais.',
       items: [
-        'Modelagem societária e acordos parassociais',
-        'Preparação para M&A e rodadas de investimento',
-        'Assessoria técnica com rede de parceiros homologados'
+        'Modelagem societária e governança empresarial',
+        'Apoio em operações de M&A e atração de capital',
+        'Estruturação comercial com parceiros especializados'
       ]
     },
     {
@@ -87,10 +87,10 @@ export const CorporateSolutionsPage: React.FC<CorporateSolutionsPageProps> = ({
       icon: CreditCard,
       painPoint: 'Custos bancários elevados e lentidão no fluxo de caixa',
       solution:
-        'Soluções financeiras contemporâneas, meios de pagamento otimizados, antecipação de recebíveis e serviços especializados sob medida para empresas.',
+        'Infraestrutura e serviços financeiros empresariais disponibilizados por parceiros especializados.',
       items: [
         'Estruturação de meios de pagamento dedicados',
-        'Esteira ágil de antecipação de contratos e duplicatas',
+        'Esteira ágil de antecipação de recebíveis e duplicatas',
         'Otimização do custo médio de transação B2B'
       ]
     },
@@ -100,9 +100,9 @@ export const CorporateSolutionsPage: React.FC<CorporateSolutionsPageProps> = ({
       icon: RefreshCw,
       painPoint: 'Endividamento excessivo, pressão de credores e estresse de caixa',
       solution:
-        'Estratégias para reestruturação financeira e operacional, mediação de passivos com credores e reorganização da solvência patrimonial.',
+        'Soluções de cobrança, recuperação e reorganização financeira executadas conforme natureza da demanda.',
       items: [
-        'Renegociação de passivos bancários e com fornecedores',
+        'Renegociação estruturada de passivos bancários e comerciais',
         'Plano de recuperação econômico-financeira',
         'Estruturação de plano de solvência continuada'
       ]
@@ -140,8 +140,18 @@ export const CorporateSolutionsPage: React.FC<CorporateSolutionsPageProps> = ({
               Portfólio de soluções empresariais estruturadas com apoio de parceiros especializados.
             </p>
 
-            <div className="pt-2 text-xs text-slate-400">
-              Conectamos sua empresa às soluções certas para superar desafios, destravar oportunidades e gerar valor sustentável, sem sobrecarregar sua estrutura fixa.
+            <div className="pt-2 flex flex-wrap items-center gap-4">
+              <button
+                onClick={() => onNavigate('/enviar-oportunidade', undefined, 'corporativo')}
+                className="btn-gold inline-flex items-center gap-2 px-6 py-3.5 text-xs font-bold uppercase tracking-wider text-[#0B1728] rounded-full cursor-pointer"
+              >
+                <span>Apresentar demanda</span>
+                <ArrowUpRight className="w-4 h-4" />
+              </button>
+
+              <div className="text-xs text-slate-400 max-w-lg leading-relaxed">
+                Conectamos sua empresa a parceiros e soluções sob medida para superar desafios, destravar oportunidades e gerar valor sustentável.
+              </div>
             </div>
           </div>
         </div>
@@ -346,19 +356,34 @@ export const CorporateSolutionsPage: React.FC<CorporateSolutionsPageProps> = ({
         </div>
       </section>
 
-      {/* 4. MÓDULOS FUTUROS (PREVISTOS TECNICAMENTE) */}
+      {/* 4. MÓDULOS FUTUROS (PREVISTOS TECNICAMENTE - SEÇÃO 6.2) */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
         <div className="flex items-center gap-2 text-xs font-semibold text-slate-500 uppercase tracking-wider font-mono">
-          <Lock className="w-3.5 h-3.5" />
-          <span>Módulos em Homologação Cadastral · Expansão Fase 2</span>
+          <Lock className="w-3.5 h-3.5 text-[#C5A869]" />
+          <span>Módulos Técnicos Preparados · Desativados até Contratação/Ativação</span>
         </div>
-        <div className="bg-slate-50 border border-slate-200 rounded-xl p-6 text-xs text-slate-600 space-y-2">
+        <div className="bg-slate-50 border border-slate-200 rounded-xl p-6 text-xs text-slate-600 space-y-3">
           <div className="font-semibold text-slate-800">
-            Roadmap Operacional de Novas Soluções:
+            Módulos prontos tecnicamente, desativados até contratação/ativação formal:
           </div>
-          <p className="leading-relaxed">
-            Conforme as diretrizes institucionais 2026, os módulos de <strong>pesquisa e monitoramento CPF/CNPJ</strong>, <strong>análise de risco/KYC comercial</strong>, <strong>plataforma financeira white label</strong> e <strong>planejamento patrimonial</strong> encontram-se em homologação técnica e operacional. Sua ativação comercial ocorrerá estritamente após a conclusão dos instrumentos de conformidade.
-          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+            <div className="p-3 bg-white rounded-lg border border-slate-200/80 flex items-center justify-between">
+              <span className="font-medium text-slate-700">Consulta e monitoramento CPF/CNPJ</span>
+              <span className="text-[10px] font-mono uppercase bg-slate-100 text-slate-500 px-2 py-0.5 rounded">Em estruturação</span>
+            </div>
+            <div className="p-3 bg-white rounded-lg border border-slate-200/80 flex items-center justify-between">
+              <span className="font-medium text-slate-700">Módulo white label de serviços empresariais</span>
+              <span className="text-[10px] font-mono uppercase bg-slate-100 text-slate-500 px-2 py-0.5 rounded">Em estruturação</span>
+            </div>
+            <div className="p-3 bg-white rounded-lg border border-slate-200/80 flex items-center justify-between">
+              <span className="font-medium text-slate-700">Integrações com APIs de parceiros</span>
+              <span className="text-[10px] font-mono uppercase bg-slate-100 text-slate-500 px-2 py-0.5 rounded">Em estruturação</span>
+            </div>
+            <div className="p-3 bg-white rounded-lg border border-slate-200/80 flex items-center justify-between">
+              <span className="font-medium text-slate-700">Relatórios e alertas do cliente</span>
+              <span className="text-[10px] font-mono uppercase bg-slate-100 text-slate-500 px-2 py-0.5 rounded">Em estruturação</span>
+            </div>
+          </div>
         </div>
       </section>
 

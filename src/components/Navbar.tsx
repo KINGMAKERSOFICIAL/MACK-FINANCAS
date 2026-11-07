@@ -33,7 +33,7 @@ export const Navbar: React.FC<NavbarProps> = ({
     { label: 'Originação & Ativos', path: '/originacao-ativos' },
     { label: 'Crédito PJ & Agro', path: '/credito-pj-agro' },
     { label: 'Soluções Corporativas', path: '/solucoes-corporativas' },
-    { label: 'GovTech & Mercado Público', path: '/govtech', tag: 'Em ativação' },
+    { label: 'GovTech & Mercado Público', path: '/govtech' },
     { label: 'Parceiros', path: '/parceiros' },
     { label: 'Conteúdo', path: '/conteudo' },
   ];
@@ -42,7 +42,6 @@ export const Navbar: React.FC<NavbarProps> = ({
     onNavigate(path);
     setMobileMenuOpen(false);
   };
-
 
   return (
     <header
@@ -54,7 +53,7 @@ export const Navbar: React.FC<NavbarProps> = ({
     >
       <div className="absolute inset-x-0 bottom-0 gold-hairline opacity-60" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className={`flex items-center justify-between gap-3 sm:gap-8 transition-all duration-500 ${scrolled ? 'h-16' : 'h-20'}`}>
+        <div className={`flex items-center justify-between gap-3 sm:gap-6 transition-all duration-500 ${scrolled ? 'h-16' : 'h-20'}`}>
           {/* Zone 1: Brand Wordmark (Single text element anchor) */}
           <button
             onClick={() => handleLinkClick('/')}
@@ -65,7 +64,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           </button>
 
           {/* Zone 2: Navigation Links (single-line, quiet hover effect) */}
-          <nav className="hidden 2xl:flex items-center gap-5 2xl:gap-7 text-sm font-medium text-slate-300">
+          <nav className="hidden xl:flex items-center gap-4 2xl:gap-6 text-sm font-medium text-slate-300">
             {navLinks.map((link) => {
               const isActive = currentPath === link.path;
               return (
@@ -79,11 +78,6 @@ export const Navbar: React.FC<NavbarProps> = ({
                   }`}
                 >
                   {link.label}
-                  {link.tag && (
-                    <span className="text-[9px] text-[#C5A869]/80 ml-1 font-mono lowercase tracking-normal">
-                      ({link.tag})
-                    </span>
-                  )}
                   <span
                     className={`absolute -bottom-0.5 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#C5A869] to-transparent origin-center transition-transform duration-500 ${
                       isActive ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
@@ -95,14 +89,14 @@ export const Navbar: React.FC<NavbarProps> = ({
           </nav>
 
           {/* Zone 3: Primary Action */}
-          <div className="hidden md:flex items-center gap-3 shrink-0 ml-auto 2xl:ml-0">
+          <div className="hidden md:flex items-center gap-3 shrink-0 ml-auto xl:ml-0">
             {/* Primary Action Button */}
             <button
               onClick={() => {
                 trackEvent('clique_cta', 'Enviar oportunidade - Header Desktop');
                 handleLinkClick('/enviar-oportunidade');
               }}
-              className="btn-gold inline-flex items-center justify-center gap-2 px-5 py-2.5 text-[11px] font-bold uppercase tracking-[0.16em] text-[#0B1728] rounded-full cursor-pointer whitespace-nowrap"
+              className="btn-gold inline-flex items-center justify-center gap-2 px-5 py-2.5 text-[11px] font-bold uppercase tracking-[0.16em] text-[#0B1728] rounded-full cursor-pointer whitespace-nowrap shadow-md hover:shadow-[#C5A869]/20"
             >
               <span>Enviar oportunidade</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
@@ -110,7 +104,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           </div>
 
           {/* Mobile menu trigger */}
-          <div className="flex 2xl:hidden items-center gap-2">
+          <div className="flex xl:hidden items-center gap-2">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2 text-slate-300 hover:text-white focus:outline-hidden"
@@ -124,7 +118,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="2xl:hidden bg-[#050B14] border-b border-[#C5A869]/20 px-5 pt-3 pb-6 space-y-3 animate-fade-up">
+        <div className="xl:hidden bg-[#050B14] border-b border-[#C5A869]/20 px-5 pt-3 pb-6 space-y-3 animate-fade-up">
           <div className="text-[10px] uppercase font-semibold text-[#C5A869] tracking-widest px-2 pb-1">
             Navegação Principal
           </div>
